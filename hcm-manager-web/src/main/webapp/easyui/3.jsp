@@ -11,7 +11,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/easyui/locale/easyui-lang-zh_CN.js"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/ztree/zTreeStyle/zTreeStyle.css" type="text/css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/ztree/jquery.ztree.all.js"></script>
-<title>Insert title here</title>
+<title>下拉框</title>
 </head>
 <body>
 <a data-options="iconCls:'icon-help',menu:'#mm'" class="easyui-menubutton">控制面板</a>
