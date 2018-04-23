@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.zouhuachao.mapper.StaffTransferMapper" >
+  <resultMap id="BaseResultMap" type="cn.zouhuachao.pojo.StaffTransfer" >
+    <id column="trans_id" property="transId" jdbcType="VARCHAR" />
+    <result column="staff_id" property="staffId" jdbcType="VARCHAR" />
+    <result column="last_department" property="lastDepartment" jdbcType="VARCHAR" />
+    <result column="last_job" property="lastJob" jdbcType="VARCHAR" />
+    <result column="trans_reason" property="transReason" jdbcType="VARCHAR" />
+    <result column="trans_time" property="transTime" jdbcType="TIMESTAMP" />
+    <result column="new_department" property="newDepartment" jdbcType="VARCHAR" />
+    <result column="new_job" property="newJob" jdbcType="VARCHAR" />
+    <result column="applicant" property="applicant" jdbcType="VARCHAR" />
+    <result column="approver" property="approver" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    trans_id, staff_id, last_department, last_job, trans_reason, trans_time, new_department, 
+    new_job, applicant, approver
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zouhuachao.pojo.StaffTransferExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from staff_transfer
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from staff_transfer
+    where trans_id = #{transId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from staff_transfer
+    where trans_id = #{transId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.zouhuachao.pojo.StaffTransferExample" >
+    delete from staff_transfer
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.zouhuachao.pojo.StaffTransfer" >
+    insert into staff_transfer (trans_id, staff_id, last_department, 
+      last_job, trans_reason, trans_time, 
+      new_department, new_job, applicant, 
+      approver)
+    values (#{transId,jdbcType=VARCHAR}, #{staffId,jdbcType=VARCHAR}, #{lastDepartment,jdbcType=VARCHAR}, 
+      #{lastJob,jdbcType=VARCHAR}, #{transReason,jdbcType=VARCHAR}, #{transTime,jdbcType=TIMESTAMP}, 
+      #{newDepartment,jdbcType=VARCHAR}, #{newJob,jdbcType=VARCHAR}, #{applicant,jdbcType=VARCHAR}, 
+      #{approver,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.zouhuachao.pojo.StaffTransfer" >
+    insert into staff_transfer
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="transId != null" >
+        trans_id,
+      </if>
+      <if test="staffId != null" >
+        staff_id,
+      </if>
+      <if test="lastDepartment != null" >
+        last_department,
+      </if>
+      <if test="lastJob != null" >
+        last_job,
+      </if>
+      <if test="transReason != null" >
+        trans_reason,
+      </if>
+      <if test="transTime != null" >
+        trans_time,
+      </if>
+      <if test="newDepartment != null" >
+        new_department,
+      </if>
+      <if test="newJob != null" >
+        new_job,
+      </if>
+      <if test="applicant != null" >
+        applicant,
+      </if>
+      <if test="approver != null" >
+        approver,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="transId != null" >
+        #{transId,jdbcType=VARCHAR},
+      </if>
+      <if test="staffId != null" >
+        #{staffId,jdbcType=VARCHAR},
+      </if>
+      <if test="lastDepartment != null" >
+        #{lastDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="lastJob != null" >
+        #{lastJob,jdbcType=VARCHAR},
+      </if>
+      <if test="transReason != null" >
+        #{transReason,jdbcType=VARCHAR},
+      </if>
+      <if test="transTime != null" >
+        #{transTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="newDepartment != null" >
+        #{newDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="newJob != null" >
+        #{newJob,jdbcType=VARCHAR},
+      </if>
+      <if test="applicant != null" >
+        #{applicant,jdbcType=VARCHAR},
+      </if>
+      <if test="approver != null" >
+        #{approver,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.zouhuachao.pojo.StaffTransferExample" resultType="java.lang.Integer" >
+    select count(*) from staff_transfer
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update staff_transfer
+    <set >
+      <if test="record.transId != null" >
+        trans_id = #{record.transId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.staffId != null" >
+        staff_id = #{record.staffId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lastDepartment != null" >
+        last_department = #{record.lastDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lastJob != null" >
+        last_job = #{record.lastJob,jdbcType=VARCHAR},
+      </if>
+      <if test="record.transReason != null" >
+        trans_reason = #{record.transReason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.transTime != null" >
+        trans_time = #{record.transTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.newDepartment != null" >
+        new_department = #{record.newDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="record.newJob != null" >
+        new_job = #{record.newJob,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicant != null" >
+        applicant = #{record.applicant,jdbcType=VARCHAR},
+      </if>
+      <if test="record.approver != null" >
+        approver = #{record.approver,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update staff_transfer
+    set trans_id = #{record.transId,jdbcType=VARCHAR},
+      staff_id = #{record.staffId,jdbcType=VARCHAR},
+      last_department = #{record.lastDepartment,jdbcType=VARCHAR},
+      last_job = #{record.lastJob,jdbcType=VARCHAR},
+      trans_reason = #{record.transReason,jdbcType=VARCHAR},
+      trans_time = #{record.transTime,jdbcType=TIMESTAMP},
+      new_department = #{record.newDepartment,jdbcType=VARCHAR},
+      new_job = #{record.newJob,jdbcType=VARCHAR},
+      applicant = #{record.applicant,jdbcType=VARCHAR},
+      approver = #{record.approver,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.zouhuachao.pojo.StaffTransfer" >
+    update staff_transfer
+    <set >
+      <if test="staffId != null" >
+        staff_id = #{staffId,jdbcType=VARCHAR},
+      </if>
+      <if test="lastDepartment != null" >
+        last_department = #{lastDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="lastJob != null" >
+        last_job = #{lastJob,jdbcType=VARCHAR},
+      </if>
+      <if test="transReason != null" >
+        trans_reason = #{transReason,jdbcType=VARCHAR},
+      </if>
+      <if test="transTime != null" >
+        trans_time = #{transTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="newDepartment != null" >
+        new_department = #{newDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="newJob != null" >
+        new_job = #{newJob,jdbcType=VARCHAR},
+      </if>
+      <if test="applicant != null" >
+        applicant = #{applicant,jdbcType=VARCHAR},
+      </if>
+      <if test="approver != null" >
+        approver = #{approver,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where trans_id = #{transId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.zouhuachao.pojo.StaffTransfer" >
+    update staff_transfer
+    set staff_id = #{staffId,jdbcType=VARCHAR},
+      last_department = #{lastDepartment,jdbcType=VARCHAR},
+      last_job = #{lastJob,jdbcType=VARCHAR},
+      trans_reason = #{transReason,jdbcType=VARCHAR},
+      trans_time = #{transTime,jdbcType=TIMESTAMP},
+      new_department = #{newDepartment,jdbcType=VARCHAR},
+      new_job = #{newJob,jdbcType=VARCHAR},
+      applicant = #{applicant,jdbcType=VARCHAR},
+      approver = #{approver,jdbcType=VARCHAR}
+    where trans_id = #{transId,jdbcType=VARCHAR}
+  </update>
+</mapper>

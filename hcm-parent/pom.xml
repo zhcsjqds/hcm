@@ -37,6 +37,7 @@
 		<activemq.version>5.11.2</activemq.version>
 		<freemarker.version>2.3.23</freemarker.version>
 		<quartz.version>2.2.2</quartz.version>
+		<shiro.version>1.2.3</shiro.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -68,7 +69,7 @@
 				<artifactId>jackson-databind</artifactId>
 				<version>${jackson.version}</version>
 			</dependency>
-			<!-- httpclient 模拟浏览器发送请求，可以做爬虫-->
+			<!-- httpclient 模拟浏览器发送请求，可以做爬虫 -->
 			<dependency>
 				<groupId>org.apache.httpcomponents</groupId>
 				<artifactId>httpclient</artifactId>
@@ -224,7 +225,13 @@
 				<artifactId>freemarker</artifactId>
 				<version>${freemarker.version}</version>
 			</dependency>
-
+			<!-- shiro -->
+			<!-- apache shiro dependencies -->
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-all</artifactId>
+				<version>${shiro.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 

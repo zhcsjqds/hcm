@@ -1,0 +1,16 @@
+[
+		{ "id":"12", "pId":"0", "name":"员工录入" ,"icon":"css/easyui/themes/icons/user.png"},
+		{ "id":"13", "pId":"0", "name":"员工调配"},
+		{ "id":"131", "pId":"13", "name":"调配办理","page":"changePassword"},
+		{ "id":"132", "pId":"13", "name":"调配记录","page":"page_qupai_diaodu.action"},
+		{ "id":"14", "pId":"0", "name":"员工离职"},
+		{ "id":"141", "pId":"14", "name":"离职办理","page":""},
+		{ "id":"141", "pId":"14", "name":"待审核","page":""},
+		{ "id":"142", "pId":"14", "name":"已离职","page":"page_qupai_diaodu.action"},
+		{ "id":"11", "pId":"0", "name":"员工花名册","page":"staffList"},
+		{ "id":"112", "pId":"11", "name":"人事部",  "page":"page_base_staff.action"},
+		{ "id":"113", "pId":"11", "name":"财务部","page":"page_base_region.action"},
+		{ "id":"114", "pId":"11", "name":"技术部", "page":"page_base_subarea.action"},
+		{ "id":"115", "pId":"11", "name":"法律部","page":"page_base_decidedzone.action"},
+		{ "id":"115", "pId":"11", "name":"保安部","page":"page_base_decidedzone.action"}
+]

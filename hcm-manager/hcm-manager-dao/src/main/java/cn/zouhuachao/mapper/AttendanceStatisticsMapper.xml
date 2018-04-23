@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.zouhuachao.mapper.AttendanceStatisticsMapper" >
+  <resultMap id="BaseResultMap" type="cn.zouhuachao.pojo.AttendanceStatistics" >
+    <id column="stat_id" property="statId" jdbcType="VARCHAR" />
+    <result column="staff_id" property="staffId" jdbcType="VARCHAR" />
+    <result column="date" property="date" jdbcType="TIMESTAMP" />
+    <result column="hday" property="hday" jdbcType="INTEGER" />
+    <result column="sday" property="sday" jdbcType="INTEGER" />
+    <result column="oday" property="oday" jdbcType="INTEGER" />
+    <result column="leave" property="leave" jdbcType="REAL" />
+    <result column="late" property="late" jdbcType="INTEGER" />
+    <result column="early" property="early" jdbcType="INTEGER" />
+    <result column="holiday_ot" property="holidayOt" jdbcType="INTEGER" />
+    <result column="other_ot" property="otherOt" jdbcType="INTEGER" />
+    <result column="evection" property="evection" jdbcType="INTEGER" />
+    <result column="ot_pay" property="otPay" jdbcType="DECIMAL" />
+    <result column="other" property="other" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    stat_id, staff_id, date, hday, sday, oday, leave, late, early, holiday_ot, other_ot, 
+    evection, ot_pay, other, remark
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zouhuachao.pojo.AttendanceStatisticsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from attendance_statistics
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from attendance_statistics
+    where stat_id = #{statId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from attendance_statistics
+    where stat_id = #{statId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.zouhuachao.pojo.AttendanceStatisticsExample" >
+    delete from attendance_statistics
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.zouhuachao.pojo.AttendanceStatistics" >
+    insert into attendance_statistics (stat_id, staff_id, date, 
+      hday, sday, oday, leave, 
+      late, early, holiday_ot, 
+      other_ot, evection, ot_pay, 
+      other, remark)
+    values (#{statId,jdbcType=VARCHAR}, #{staffId,jdbcType=VARCHAR}, #{date,jdbcType=TIMESTAMP}, 
+      #{hday,jdbcType=INTEGER}, #{sday,jdbcType=INTEGER}, #{oday,jdbcType=INTEGER}, #{leave,jdbcType=REAL}, 
+      #{late,jdbcType=INTEGER}, #{early,jdbcType=INTEGER}, #{holidayOt,jdbcType=INTEGER}, 
+      #{otherOt,jdbcType=INTEGER}, #{evection,jdbcType=INTEGER}, #{otPay,jdbcType=DECIMAL}, 
+      #{other,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.zouhuachao.pojo.AttendanceStatistics" >
+    insert into attendance_statistics
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="statId != null" >
+        stat_id,
+      </if>
+      <if test="staffId != null" >
+        staff_id,
+      </if>
+      <if test="date != null" >
+        date,
+      </if>
+      <if test="hday != null" >
+        hday,
+      </if>
+      <if test="sday != null" >
+        sday,
+      </if>
+      <if test="oday != null" >
+        oday,
+      </if>
+      <if test="leave != null" >
+        leave,
+      </if>
+      <if test="late != null" >
+        late,
+      </if>
+      <if test="early != null" >
+        early,
+      </if>
+      <if test="holidayOt != null" >
+        holiday_ot,
+      </if>
+      <if test="otherOt != null" >
+        other_ot,
+      </if>
+      <if test="evection != null" >
+        evection,
+      </if>
+      <if test="otPay != null" >
+        ot_pay,
+      </if>
+      <if test="other != null" >
+        other,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="statId != null" >
+        #{statId,jdbcType=VARCHAR},
+      </if>
+      <if test="staffId != null" >
+        #{staffId,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null" >
+        #{date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="hday != null" >
+        #{hday,jdbcType=INTEGER},
+      </if>
+      <if test="sday != null" >
+        #{sday,jdbcType=INTEGER},
+      </if>
+      <if test="oday != null" >
+        #{oday,jdbcType=INTEGER},
+      </if>
+      <if test="leave != null" >
+        #{leave,jdbcType=REAL},
+      </if>
+      <if test="late != null" >
+        #{late,jdbcType=INTEGER},
+      </if>
+      <if test="early != null" >
+        #{early,jdbcType=INTEGER},
+      </if>
+      <if test="holidayOt != null" >
+        #{holidayOt,jdbcType=INTEGER},
+      </if>
+      <if test="otherOt != null" >
+        #{otherOt,jdbcType=INTEGER},
+      </if>
+      <if test="evection != null" >
+        #{evection,jdbcType=INTEGER},
+      </if>
+      <if test="otPay != null" >
+        #{otPay,jdbcType=DECIMAL},
+      </if>
+      <if test="other != null" >
+        #{other,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.zouhuachao.pojo.AttendanceStatisticsExample" resultType="java.lang.Integer" >
+    select count(*) from attendance_statistics
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update attendance_statistics
+    <set >
+      <if test="record.statId != null" >
+        stat_id = #{record.statId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.staffId != null" >
+        staff_id = #{record.staffId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.date != null" >
+        date = #{record.date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.hday != null" >
+        hday = #{record.hday,jdbcType=INTEGER},
+      </if>
+      <if test="record.sday != null" >
+        sday = #{record.sday,jdbcType=INTEGER},
+      </if>
+      <if test="record.oday != null" >
+        oday = #{record.oday,jdbcType=INTEGER},
+      </if>
+      <if test="record.leave != null" >
+        leave = #{record.leave,jdbcType=REAL},
+      </if>
+      <if test="record.late != null" >
+        late = #{record.late,jdbcType=INTEGER},
+      </if>
+      <if test="record.early != null" >
+        early = #{record.early,jdbcType=INTEGER},
+      </if>
+      <if test="record.holidayOt != null" >
+        holiday_ot = #{record.holidayOt,jdbcType=INTEGER},
+      </if>
+      <if test="record.otherOt != null" >
+        other_ot = #{record.otherOt,jdbcType=INTEGER},
+      </if>
+      <if test="record.evection != null" >
+        evection = #{record.evection,jdbcType=INTEGER},
+      </if>
+      <if test="record.otPay != null" >
+        ot_pay = #{record.otPay,jdbcType=DECIMAL},
+      </if>
+      <if test="record.other != null" >
+        other = #{record.other,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null" >
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update attendance_statistics
+    set stat_id = #{record.statId,jdbcType=VARCHAR},
+      staff_id = #{record.staffId,jdbcType=VARCHAR},
+      date = #{record.date,jdbcType=TIMESTAMP},
+      hday = #{record.hday,jdbcType=INTEGER},
+      sday = #{record.sday,jdbcType=INTEGER},
+      oday = #{record.oday,jdbcType=INTEGER},
+      leave = #{record.leave,jdbcType=REAL},
+      late = #{record.late,jdbcType=INTEGER},
+      early = #{record.early,jdbcType=INTEGER},
+      holiday_ot = #{record.holidayOt,jdbcType=INTEGER},
+      other_ot = #{record.otherOt,jdbcType=INTEGER},
+      evection = #{record.evection,jdbcType=INTEGER},
+      ot_pay = #{record.otPay,jdbcType=DECIMAL},
+      other = #{record.other,jdbcType=VARCHAR},
+      remark = #{record.remark,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.zouhuachao.pojo.AttendanceStatistics" >
+    update attendance_statistics
+    <set >
+      <if test="staffId != null" >
+        staff_id = #{staffId,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null" >
+        date = #{date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="hday != null" >
+        hday = #{hday,jdbcType=INTEGER},
+      </if>
+      <if test="sday != null" >
+        sday = #{sday,jdbcType=INTEGER},
+      </if>
+      <if test="oday != null" >
+        oday = #{oday,jdbcType=INTEGER},
+      </if>
+      <if test="leave != null" >
+        leave = #{leave,jdbcType=REAL},
+      </if>
+      <if test="late != null" >
+        late = #{late,jdbcType=INTEGER},
+      </if>
+      <if test="early != null" >
+        early = #{early,jdbcType=INTEGER},
+      </if>
+      <if test="holidayOt != null" >
+        holiday_ot = #{holidayOt,jdbcType=INTEGER},
+      </if>
+      <if test="otherOt != null" >
+        other_ot = #{otherOt,jdbcType=INTEGER},
+      </if>
+      <if test="evection != null" >
+        evection = #{evection,jdbcType=INTEGER},
+      </if>
+      <if test="otPay != null" >
+        ot_pay = #{otPay,jdbcType=DECIMAL},
+      </if>
+      <if test="other != null" >
+        other = #{other,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where stat_id = #{statId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.zouhuachao.pojo.AttendanceStatistics" >
+    update attendance_statistics
+    set staff_id = #{staffId,jdbcType=VARCHAR},
+      date = #{date,jdbcType=TIMESTAMP},
+      hday = #{hday,jdbcType=INTEGER},
+      sday = #{sday,jdbcType=INTEGER},
+      oday = #{oday,jdbcType=INTEGER},
+      leave = #{leave,jdbcType=REAL},
+      late = #{late,jdbcType=INTEGER},
+      early = #{early,jdbcType=INTEGER},
+      holiday_ot = #{holidayOt,jdbcType=INTEGER},
+      other_ot = #{otherOt,jdbcType=INTEGER},
+      evection = #{evection,jdbcType=INTEGER},
+      ot_pay = #{otPay,jdbcType=DECIMAL},
+      other = #{other,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where stat_id = #{statId,jdbcType=VARCHAR}
+  </update>
+</mapper>
