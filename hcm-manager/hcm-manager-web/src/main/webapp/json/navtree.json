@@ -1,0 +1,13 @@
+[
+		{ "id":"12", "pId":"0", "text":"员工录入" ,"iconCls":"icon-user","url":"staff-add"},
+		{ "id":"11", "pId":"0", "text":"员工花名册","url":"staff-list"},
+		{ "id":"13", "pId":"0", "text":"调职处理","state":"closed","children":[
+			{"id":"131", "pId":"13", "text":"调职办理","url":"changePassword"},
+			{"id":"132", "pId":"13", "text":"调职记录","url":"transfer-list"}
+		]},
+		{ "id":"14", "pId":"0", "text":"离职处理","state":"closed","children":[
+			{ "id":"141", "pId":"14", "text":"离职办理","url":""},
+			{ "id":"142", "pId":"14", "text":"待审核","url":""},
+			{ "id":"143", "pId":"14", "text":"离职记录","url":"dimission-list"}
+		]}
+]

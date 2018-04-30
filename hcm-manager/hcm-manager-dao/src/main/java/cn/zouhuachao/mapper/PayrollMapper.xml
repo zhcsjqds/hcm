@@ -2,17 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.zouhuachao.mapper.PayrollMapper" >
   <resultMap id="BaseResultMap" type="cn.zouhuachao.pojo.Payroll" >
-    <id column="pay_id" property="payId" jdbcType="VARCHAR" />
-    <result column="staff_id" property="staffId" jdbcType="VARCHAR" />
-    <result column="paygrade_id" property="paygradeId" jdbcType="VARCHAR" />
+    <id column="payid" property="payid" jdbcType="VARCHAR" />
+    <result column="staffid" property="staffid" jdbcType="VARCHAR" />
+    <result column="paygradeid" property="paygradeid" jdbcType="VARCHAR" />
     <result column="allowance" property="allowance" jdbcType="DECIMAL" />
     <result column="bonus" property="bonus" jdbcType="DECIMAL" />
     <result column="overtime" property="overtime" jdbcType="DECIMAL" />
     <result column="attendance" property="attendance" jdbcType="DECIMAL" />
-    <result column="endowment_ins" property="endowmentIns" jdbcType="DECIMAL" />
-    <result column="medical_ins" property="medicalIns" jdbcType="DECIMAL" />
-    <result column="unemployment_ins" property="unemploymentIns" jdbcType="DECIMAL" />
-    <result column="housing_fund" property="housingFund" jdbcType="DECIMAL" />
+    <result column="endowmentins" property="endowmentins" jdbcType="DECIMAL" />
+    <result column="medicalins" property="medicalins" jdbcType="DECIMAL" />
+    <result column="unemploymentins" property="unemploymentins" jdbcType="DECIMAL" />
+    <result column="housingfund" property="housingfund" jdbcType="DECIMAL" />
     <result column="incometax" property="incometax" jdbcType="DECIMAL" />
     <result column="fsalary" property="fsalary" jdbcType="DECIMAL" />
     <result column="paytime" property="paytime" jdbcType="TIMESTAMP" />
@@ -79,9 +79,9 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    pay_id, staff_id, paygrade_id, allowance, bonus, overtime, attendance, endowment_ins, 
-    medical_ins, unemployment_ins, housing_fund, incometax, fsalary, paytime, payway, 
-    paystatus, tsalary
+    payid, staffid, paygradeid, allowance, bonus, overtime, attendance, endowmentins, 
+    medicalins, unemploymentins, housingfund, incometax, fsalary, paytime, payway, paystatus, 
+    tsalary
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zouhuachao.pojo.PayrollExample" >
     select
@@ -101,11 +101,11 @@
     select 
     <include refid="Base_Column_List" />
     from payroll
-    where pay_id = #{payId,jdbcType=VARCHAR}
+    where payid = #{payid,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from payroll
-    where pay_id = #{payId,jdbcType=VARCHAR}
+    where payid = #{payid,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="cn.zouhuachao.pojo.PayrollExample" >
     delete from payroll
@@ -114,30 +114,30 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.zouhuachao.pojo.Payroll" >
-    insert into payroll (pay_id, staff_id, paygrade_id, 
+    insert into payroll (payid, staffid, paygradeid, 
       allowance, bonus, overtime, 
-      attendance, endowment_ins, medical_ins, 
-      unemployment_ins, housing_fund, incometax, 
+      attendance, endowmentins, medicalins, 
+      unemploymentins, housingfund, incometax, 
       fsalary, paytime, payway, 
       paystatus, tsalary)
-    values (#{payId,jdbcType=VARCHAR}, #{staffId,jdbcType=VARCHAR}, #{paygradeId,jdbcType=VARCHAR}, 
+    values (#{payid,jdbcType=VARCHAR}, #{staffid,jdbcType=VARCHAR}, #{paygradeid,jdbcType=VARCHAR}, 
       #{allowance,jdbcType=DECIMAL}, #{bonus,jdbcType=DECIMAL}, #{overtime,jdbcType=DECIMAL}, 
-      #{attendance,jdbcType=DECIMAL}, #{endowmentIns,jdbcType=DECIMAL}, #{medicalIns,jdbcType=DECIMAL}, 
-      #{unemploymentIns,jdbcType=DECIMAL}, #{housingFund,jdbcType=DECIMAL}, #{incometax,jdbcType=DECIMAL}, 
+      #{attendance,jdbcType=DECIMAL}, #{endowmentins,jdbcType=DECIMAL}, #{medicalins,jdbcType=DECIMAL}, 
+      #{unemploymentins,jdbcType=DECIMAL}, #{housingfund,jdbcType=DECIMAL}, #{incometax,jdbcType=DECIMAL}, 
       #{fsalary,jdbcType=DECIMAL}, #{paytime,jdbcType=TIMESTAMP}, #{payway,jdbcType=VARCHAR}, 
       #{paystatus,jdbcType=VARCHAR}, #{tsalary,jdbcType=DECIMAL})
   </insert>
   <insert id="insertSelective" parameterType="cn.zouhuachao.pojo.Payroll" >
     insert into payroll
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="payId != null" >
-        pay_id,
+      <if test="payid != null" >
+        payid,
       </if>
-      <if test="staffId != null" >
-        staff_id,
+      <if test="staffid != null" >
+        staffid,
       </if>
-      <if test="paygradeId != null" >
-        paygrade_id,
+      <if test="paygradeid != null" >
+        paygradeid,
       </if>
       <if test="allowance != null" >
         allowance,
@@ -151,17 +151,17 @@
       <if test="attendance != null" >
         attendance,
       </if>
-      <if test="endowmentIns != null" >
-        endowment_ins,
+      <if test="endowmentins != null" >
+        endowmentins,
       </if>
-      <if test="medicalIns != null" >
-        medical_ins,
+      <if test="medicalins != null" >
+        medicalins,
       </if>
-      <if test="unemploymentIns != null" >
-        unemployment_ins,
+      <if test="unemploymentins != null" >
+        unemploymentins,
       </if>
-      <if test="housingFund != null" >
-        housing_fund,
+      <if test="housingfund != null" >
+        housingfund,
       </if>
       <if test="incometax != null" >
         incometax,
@@ -183,14 +183,14 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="payId != null" >
-        #{payId,jdbcType=VARCHAR},
+      <if test="payid != null" >
+        #{payid,jdbcType=VARCHAR},
       </if>
-      <if test="staffId != null" >
-        #{staffId,jdbcType=VARCHAR},
+      <if test="staffid != null" >
+        #{staffid,jdbcType=VARCHAR},
       </if>
-      <if test="paygradeId != null" >
-        #{paygradeId,jdbcType=VARCHAR},
+      <if test="paygradeid != null" >
+        #{paygradeid,jdbcType=VARCHAR},
       </if>
       <if test="allowance != null" >
         #{allowance,jdbcType=DECIMAL},
@@ -204,17 +204,17 @@
       <if test="attendance != null" >
         #{attendance,jdbcType=DECIMAL},
       </if>
-      <if test="endowmentIns != null" >
-        #{endowmentIns,jdbcType=DECIMAL},
+      <if test="endowmentins != null" >
+        #{endowmentins,jdbcType=DECIMAL},
       </if>
-      <if test="medicalIns != null" >
-        #{medicalIns,jdbcType=DECIMAL},
+      <if test="medicalins != null" >
+        #{medicalins,jdbcType=DECIMAL},
       </if>
-      <if test="unemploymentIns != null" >
-        #{unemploymentIns,jdbcType=DECIMAL},
+      <if test="unemploymentins != null" >
+        #{unemploymentins,jdbcType=DECIMAL},
       </if>
-      <if test="housingFund != null" >
-        #{housingFund,jdbcType=DECIMAL},
+      <if test="housingfund != null" >
+        #{housingfund,jdbcType=DECIMAL},
       </if>
       <if test="incometax != null" >
         #{incometax,jdbcType=DECIMAL},
@@ -245,14 +245,14 @@
   <update id="updateByExampleSelective" parameterType="map" >
     update payroll
     <set >
-      <if test="record.payId != null" >
-        pay_id = #{record.payId,jdbcType=VARCHAR},
+      <if test="record.payid != null" >
+        payid = #{record.payid,jdbcType=VARCHAR},
       </if>
-      <if test="record.staffId != null" >
-        staff_id = #{record.staffId,jdbcType=VARCHAR},
+      <if test="record.staffid != null" >
+        staffid = #{record.staffid,jdbcType=VARCHAR},
       </if>
-      <if test="record.paygradeId != null" >
-        paygrade_id = #{record.paygradeId,jdbcType=VARCHAR},
+      <if test="record.paygradeid != null" >
+        paygradeid = #{record.paygradeid,jdbcType=VARCHAR},
       </if>
       <if test="record.allowance != null" >
         allowance = #{record.allowance,jdbcType=DECIMAL},
@@ -266,17 +266,17 @@
       <if test="record.attendance != null" >
         attendance = #{record.attendance,jdbcType=DECIMAL},
       </if>
-      <if test="record.endowmentIns != null" >
-        endowment_ins = #{record.endowmentIns,jdbcType=DECIMAL},
+      <if test="record.endowmentins != null" >
+        endowmentins = #{record.endowmentins,jdbcType=DECIMAL},
       </if>
-      <if test="record.medicalIns != null" >
-        medical_ins = #{record.medicalIns,jdbcType=DECIMAL},
+      <if test="record.medicalins != null" >
+        medicalins = #{record.medicalins,jdbcType=DECIMAL},
       </if>
-      <if test="record.unemploymentIns != null" >
-        unemployment_ins = #{record.unemploymentIns,jdbcType=DECIMAL},
+      <if test="record.unemploymentins != null" >
+        unemploymentins = #{record.unemploymentins,jdbcType=DECIMAL},
       </if>
-      <if test="record.housingFund != null" >
-        housing_fund = #{record.housingFund,jdbcType=DECIMAL},
+      <if test="record.housingfund != null" >
+        housingfund = #{record.housingfund,jdbcType=DECIMAL},
       </if>
       <if test="record.incometax != null" >
         incometax = #{record.incometax,jdbcType=DECIMAL},
@@ -303,17 +303,17 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update payroll
-    set pay_id = #{record.payId,jdbcType=VARCHAR},
-      staff_id = #{record.staffId,jdbcType=VARCHAR},
-      paygrade_id = #{record.paygradeId,jdbcType=VARCHAR},
+    set payid = #{record.payid,jdbcType=VARCHAR},
+      staffid = #{record.staffid,jdbcType=VARCHAR},
+      paygradeid = #{record.paygradeid,jdbcType=VARCHAR},
       allowance = #{record.allowance,jdbcType=DECIMAL},
       bonus = #{record.bonus,jdbcType=DECIMAL},
       overtime = #{record.overtime,jdbcType=DECIMAL},
       attendance = #{record.attendance,jdbcType=DECIMAL},
-      endowment_ins = #{record.endowmentIns,jdbcType=DECIMAL},
-      medical_ins = #{record.medicalIns,jdbcType=DECIMAL},
-      unemployment_ins = #{record.unemploymentIns,jdbcType=DECIMAL},
-      housing_fund = #{record.housingFund,jdbcType=DECIMAL},
+      endowmentins = #{record.endowmentins,jdbcType=DECIMAL},
+      medicalins = #{record.medicalins,jdbcType=DECIMAL},
+      unemploymentins = #{record.unemploymentins,jdbcType=DECIMAL},
+      housingfund = #{record.housingfund,jdbcType=DECIMAL},
       incometax = #{record.incometax,jdbcType=DECIMAL},
       fsalary = #{record.fsalary,jdbcType=DECIMAL},
       paytime = #{record.paytime,jdbcType=TIMESTAMP},
@@ -327,11 +327,11 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.zouhuachao.pojo.Payroll" >
     update payroll
     <set >
-      <if test="staffId != null" >
-        staff_id = #{staffId,jdbcType=VARCHAR},
+      <if test="staffid != null" >
+        staffid = #{staffid,jdbcType=VARCHAR},
       </if>
-      <if test="paygradeId != null" >
-        paygrade_id = #{paygradeId,jdbcType=VARCHAR},
+      <if test="paygradeid != null" >
+        paygradeid = #{paygradeid,jdbcType=VARCHAR},
       </if>
       <if test="allowance != null" >
         allowance = #{allowance,jdbcType=DECIMAL},
@@ -345,17 +345,17 @@
       <if test="attendance != null" >
         attendance = #{attendance,jdbcType=DECIMAL},
       </if>
-      <if test="endowmentIns != null" >
-        endowment_ins = #{endowmentIns,jdbcType=DECIMAL},
+      <if test="endowmentins != null" >
+        endowmentins = #{endowmentins,jdbcType=DECIMAL},
       </if>
-      <if test="medicalIns != null" >
-        medical_ins = #{medicalIns,jdbcType=DECIMAL},
+      <if test="medicalins != null" >
+        medicalins = #{medicalins,jdbcType=DECIMAL},
       </if>
-      <if test="unemploymentIns != null" >
-        unemployment_ins = #{unemploymentIns,jdbcType=DECIMAL},
+      <if test="unemploymentins != null" >
+        unemploymentins = #{unemploymentins,jdbcType=DECIMAL},
       </if>
-      <if test="housingFund != null" >
-        housing_fund = #{housingFund,jdbcType=DECIMAL},
+      <if test="housingfund != null" >
+        housingfund = #{housingfund,jdbcType=DECIMAL},
       </if>
       <if test="incometax != null" >
         incometax = #{incometax,jdbcType=DECIMAL},
@@ -376,26 +376,26 @@
         tsalary = #{tsalary,jdbcType=DECIMAL},
       </if>
     </set>
-    where pay_id = #{payId,jdbcType=VARCHAR}
+    where payid = #{payid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.zouhuachao.pojo.Payroll" >
     update payroll
-    set staff_id = #{staffId,jdbcType=VARCHAR},
-      paygrade_id = #{paygradeId,jdbcType=VARCHAR},
+    set staffid = #{staffid,jdbcType=VARCHAR},
+      paygradeid = #{paygradeid,jdbcType=VARCHAR},
       allowance = #{allowance,jdbcType=DECIMAL},
       bonus = #{bonus,jdbcType=DECIMAL},
       overtime = #{overtime,jdbcType=DECIMAL},
       attendance = #{attendance,jdbcType=DECIMAL},
-      endowment_ins = #{endowmentIns,jdbcType=DECIMAL},
-      medical_ins = #{medicalIns,jdbcType=DECIMAL},
-      unemployment_ins = #{unemploymentIns,jdbcType=DECIMAL},
-      housing_fund = #{housingFund,jdbcType=DECIMAL},
+      endowmentins = #{endowmentins,jdbcType=DECIMAL},
+      medicalins = #{medicalins,jdbcType=DECIMAL},
+      unemploymentins = #{unemploymentins,jdbcType=DECIMAL},
+      housingfund = #{housingfund,jdbcType=DECIMAL},
       incometax = #{incometax,jdbcType=DECIMAL},
       fsalary = #{fsalary,jdbcType=DECIMAL},
       paytime = #{paytime,jdbcType=TIMESTAMP},
       payway = #{payway,jdbcType=VARCHAR},
       paystatus = #{paystatus,jdbcType=VARCHAR},
       tsalary = #{tsalary,jdbcType=DECIMAL}
-    where pay_id = #{payId,jdbcType=VARCHAR}
+    where payid = #{payid,jdbcType=VARCHAR}
   </update>
 </mapper>

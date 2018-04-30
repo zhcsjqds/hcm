@@ -3,42 +3,42 @@ package cn.zouhuachao.pojo;
 import java.util.Date;
 
 public class StaffTrain {
-    private String trainId;
+    private String trainid;
 
-    private String staffId;
+    private String staffid;
 
-    private String trainType;
+    private String traintype;
 
     private Date starttime;
 
     private Date endtime;
 
-    private String trainGrade;
+    private String traingrade;
 
     private String remark;
 
-    public String getTrainId() {
-        return trainId;
+    public String getTrainid() {
+        return trainid;
     }
 
-    public void setTrainId(String trainId) {
-        this.trainId = trainId == null ? null : trainId.trim();
+    public void setTrainid(String trainid) {
+        this.trainid = trainid == null ? null : trainid.trim();
     }
 
-    public String getStaffId() {
-        return staffId;
+    public String getStaffid() {
+        return staffid;
     }
 
-    public void setStaffId(String staffId) {
-        this.staffId = staffId == null ? null : staffId.trim();
+    public void setStaffid(String staffid) {
+        this.staffid = staffid == null ? null : staffid.trim();
     }
 
-    public String getTrainType() {
-        return trainType;
+    public String getTraintype() {
+        return traintype;
     }
 
-    public void setTrainType(String trainType) {
-        this.trainType = trainType == null ? null : trainType.trim();
+    public void setTraintype(String traintype) {
+        this.traintype = traintype == null ? null : traintype.trim();
     }
 
     public Date getStarttime() {
@@ -57,12 +57,12 @@ public class StaffTrain {
         this.endtime = endtime;
     }
 
-    public String getTrainGrade() {
-        return trainGrade;
+    public String getTraingrade() {
+        return traingrade;
     }
 
-    public void setTrainGrade(String trainGrade) {
-        this.trainGrade = trainGrade == null ? null : trainGrade.trim();
+    public void setTraingrade(String traingrade) {
+        this.traingrade = traingrade == null ? null : traingrade.trim();
     }
 
     public String getRemark() {

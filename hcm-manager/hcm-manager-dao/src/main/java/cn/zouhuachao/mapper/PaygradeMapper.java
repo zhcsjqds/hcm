@@ -10,7 +10,7 @@ public interface PaygradeMapper {
 
     int deleteByExample(PaygradeExample example);
 
-    int deleteByPrimaryKey(String paygradeId);
+    int deleteByPrimaryKey(String paygradeid);
 
     int insert(Paygrade record);
 
@@ -18,7 +18,7 @@ public interface PaygradeMapper {
 
     List<Paygrade> selectByExample(PaygradeExample example);
 
-    Paygrade selectByPrimaryKey(String paygradeId);
+    Paygrade selectByPrimaryKey(String paygradeid);
 
     int updateByExampleSelective(@Param("record") Paygrade record, @Param("example") PaygradeExample example);
 

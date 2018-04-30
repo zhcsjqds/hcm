@@ -2,16 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.zouhuachao.mapper.StaffTransferMapper" >
   <resultMap id="BaseResultMap" type="cn.zouhuachao.pojo.StaffTransfer" >
-    <id column="trans_id" property="transId" jdbcType="VARCHAR" />
-    <result column="staff_id" property="staffId" jdbcType="VARCHAR" />
-    <result column="last_department" property="lastDepartment" jdbcType="VARCHAR" />
-    <result column="last_job" property="lastJob" jdbcType="VARCHAR" />
-    <result column="trans_reason" property="transReason" jdbcType="VARCHAR" />
-    <result column="trans_time" property="transTime" jdbcType="TIMESTAMP" />
-    <result column="new_department" property="newDepartment" jdbcType="VARCHAR" />
-    <result column="new_job" property="newJob" jdbcType="VARCHAR" />
+    <id column="transid" property="transid" jdbcType="VARCHAR" />
+    <result column="staffid" property="staffid" jdbcType="VARCHAR" />
+    <result column="staffrealname" property="staffrealname" jdbcType="VARCHAR" />
+    <result column="lastdepartment" property="lastdepartment" jdbcType="VARCHAR" />
+    <result column="lastjob" property="lastjob" jdbcType="VARCHAR" />
+    <result column="newdepartment" property="newdepartment" jdbcType="VARCHAR" />
+    <result column="newjob" property="newjob" jdbcType="VARCHAR" />
     <result column="applicant" property="applicant" jdbcType="VARCHAR" />
     <result column="approver" property="approver" jdbcType="VARCHAR" />
+    <result column="applicantiontime" property="applicantiontime" jdbcType="TIMESTAMP" />
+    <result column="transtime" property="transtime" jdbcType="TIMESTAMP" />
+    <result column="transreason" property="transreason" jdbcType="VARCHAR" />
+    <result column="transtatus" property="transtatus" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -72,8 +75,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    trans_id, staff_id, last_department, last_job, trans_reason, trans_time, new_department, 
-    new_job, applicant, approver
+    transid, staffid, staffrealname, lastdepartment, lastjob, newdepartment, newjob, 
+    applicant, approver, applicantiontime, transtime, transreason, transtatus
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zouhuachao.pojo.StaffTransferExample" >
     select
@@ -93,11 +96,11 @@
     select 
     <include refid="Base_Column_List" />
     from staff_transfer
-    where trans_id = #{transId,jdbcType=VARCHAR}
+    where transid = #{transid,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from staff_transfer
-    where trans_id = #{transId,jdbcType=VARCHAR}
+    where transid = #{transid,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="cn.zouhuachao.pojo.StaffTransferExample" >
     delete from staff_transfer
@@ -106,41 +109,40 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.zouhuachao.pojo.StaffTransfer" >
-    insert into staff_transfer (trans_id, staff_id, last_department, 
-      last_job, trans_reason, trans_time, 
-      new_department, new_job, applicant, 
-      approver)
-    values (#{transId,jdbcType=VARCHAR}, #{staffId,jdbcType=VARCHAR}, #{lastDepartment,jdbcType=VARCHAR}, 
-      #{lastJob,jdbcType=VARCHAR}, #{transReason,jdbcType=VARCHAR}, #{transTime,jdbcType=TIMESTAMP}, 
-      #{newDepartment,jdbcType=VARCHAR}, #{newJob,jdbcType=VARCHAR}, #{applicant,jdbcType=VARCHAR}, 
-      #{approver,jdbcType=VARCHAR})
+    insert into staff_transfer (transid, staffid, staffrealname, 
+      lastdepartment, lastjob, newdepartment, 
+      newjob, applicant, approver, 
+      applicantiontime, transtime, transreason, 
+      transtatus)
+    values (#{transid,jdbcType=VARCHAR}, #{staffid,jdbcType=VARCHAR}, #{staffrealname,jdbcType=VARCHAR}, 
+      #{lastdepartment,jdbcType=VARCHAR}, #{lastjob,jdbcType=VARCHAR}, #{newdepartment,jdbcType=VARCHAR}, 
+      #{newjob,jdbcType=VARCHAR}, #{applicant,jdbcType=VARCHAR}, #{approver,jdbcType=VARCHAR}, 
+      #{applicantiontime,jdbcType=TIMESTAMP}, #{transtime,jdbcType=TIMESTAMP}, #{transreason,jdbcType=VARCHAR}, 
+      #{transtatus,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.zouhuachao.pojo.StaffTransfer" >
     insert into staff_transfer
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="transId != null" >
-        trans_id,
+      <if test="transid != null" >
+        transid,
       </if>
-      <if test="staffId != null" >
-        staff_id,
+      <if test="staffid != null" >
+        staffid,
       </if>
-      <if test="lastDepartment != null" >
-        last_department,
+      <if test="staffrealname != null" >
+        staffrealname,
       </if>
-      <if test="lastJob != null" >
-        last_job,
+      <if test="lastdepartment != null" >
+        lastdepartment,
       </if>
-      <if test="transReason != null" >
-        trans_reason,
+      <if test="lastjob != null" >
+        lastjob,
       </if>
-      <if test="transTime != null" >
-        trans_time,
+      <if test="newdepartment != null" >
+        newdepartment,
       </if>
-      <if test="newDepartment != null" >
-        new_department,
-      </if>
-      <if test="newJob != null" >
-        new_job,
+      <if test="newjob != null" >
+        newjob,
       </if>
       <if test="applicant != null" >
         applicant,
@@ -148,37 +150,58 @@
       <if test="approver != null" >
         approver,
       </if>
+      <if test="applicantiontime != null" >
+        applicantiontime,
+      </if>
+      <if test="transtime != null" >
+        transtime,
+      </if>
+      <if test="transreason != null" >
+        transreason,
+      </if>
+      <if test="transtatus != null" >
+        transtatus,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="transId != null" >
-        #{transId,jdbcType=VARCHAR},
+      <if test="transid != null" >
+        #{transid,jdbcType=VARCHAR},
       </if>
-      <if test="staffId != null" >
-        #{staffId,jdbcType=VARCHAR},
+      <if test="staffid != null" >
+        #{staffid,jdbcType=VARCHAR},
       </if>
-      <if test="lastDepartment != null" >
-        #{lastDepartment,jdbcType=VARCHAR},
+      <if test="staffrealname != null" >
+        #{staffrealname,jdbcType=VARCHAR},
       </if>
-      <if test="lastJob != null" >
-        #{lastJob,jdbcType=VARCHAR},
+      <if test="lastdepartment != null" >
+        #{lastdepartment,jdbcType=VARCHAR},
       </if>
-      <if test="transReason != null" >
-        #{transReason,jdbcType=VARCHAR},
+      <if test="lastjob != null" >
+        #{lastjob,jdbcType=VARCHAR},
       </if>
-      <if test="transTime != null" >
-        #{transTime,jdbcType=TIMESTAMP},
+      <if test="newdepartment != null" >
+        #{newdepartment,jdbcType=VARCHAR},
       </if>
-      <if test="newDepartment != null" >
-        #{newDepartment,jdbcType=VARCHAR},
-      </if>
-      <if test="newJob != null" >
-        #{newJob,jdbcType=VARCHAR},
+      <if test="newjob != null" >
+        #{newjob,jdbcType=VARCHAR},
       </if>
       <if test="applicant != null" >
         #{applicant,jdbcType=VARCHAR},
       </if>
       <if test="approver != null" >
         #{approver,jdbcType=VARCHAR},
+      </if>
+      <if test="applicantiontime != null" >
+        #{applicantiontime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="transtime != null" >
+        #{transtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="transreason != null" >
+        #{transreason,jdbcType=VARCHAR},
+      </if>
+      <if test="transtatus != null" >
+        #{transtatus,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -191,35 +214,44 @@
   <update id="updateByExampleSelective" parameterType="map" >
     update staff_transfer
     <set >
-      <if test="record.transId != null" >
-        trans_id = #{record.transId,jdbcType=VARCHAR},
+      <if test="record.transid != null" >
+        transid = #{record.transid,jdbcType=VARCHAR},
       </if>
-      <if test="record.staffId != null" >
-        staff_id = #{record.staffId,jdbcType=VARCHAR},
+      <if test="record.staffid != null" >
+        staffid = #{record.staffid,jdbcType=VARCHAR},
       </if>
-      <if test="record.lastDepartment != null" >
-        last_department = #{record.lastDepartment,jdbcType=VARCHAR},
+      <if test="record.staffrealname != null" >
+        staffrealname = #{record.staffrealname,jdbcType=VARCHAR},
       </if>
-      <if test="record.lastJob != null" >
-        last_job = #{record.lastJob,jdbcType=VARCHAR},
+      <if test="record.lastdepartment != null" >
+        lastdepartment = #{record.lastdepartment,jdbcType=VARCHAR},
       </if>
-      <if test="record.transReason != null" >
-        trans_reason = #{record.transReason,jdbcType=VARCHAR},
+      <if test="record.lastjob != null" >
+        lastjob = #{record.lastjob,jdbcType=VARCHAR},
       </if>
-      <if test="record.transTime != null" >
-        trans_time = #{record.transTime,jdbcType=TIMESTAMP},
+      <if test="record.newdepartment != null" >
+        newdepartment = #{record.newdepartment,jdbcType=VARCHAR},
       </if>
-      <if test="record.newDepartment != null" >
-        new_department = #{record.newDepartment,jdbcType=VARCHAR},
-      </if>
-      <if test="record.newJob != null" >
-        new_job = #{record.newJob,jdbcType=VARCHAR},
+      <if test="record.newjob != null" >
+        newjob = #{record.newjob,jdbcType=VARCHAR},
       </if>
       <if test="record.applicant != null" >
         applicant = #{record.applicant,jdbcType=VARCHAR},
       </if>
       <if test="record.approver != null" >
         approver = #{record.approver,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicantiontime != null" >
+        applicantiontime = #{record.applicantiontime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.transtime != null" >
+        transtime = #{record.transtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.transreason != null" >
+        transreason = #{record.transreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.transtatus != null" >
+        transtatus = #{record.transtatus,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -228,16 +260,19 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update staff_transfer
-    set trans_id = #{record.transId,jdbcType=VARCHAR},
-      staff_id = #{record.staffId,jdbcType=VARCHAR},
-      last_department = #{record.lastDepartment,jdbcType=VARCHAR},
-      last_job = #{record.lastJob,jdbcType=VARCHAR},
-      trans_reason = #{record.transReason,jdbcType=VARCHAR},
-      trans_time = #{record.transTime,jdbcType=TIMESTAMP},
-      new_department = #{record.newDepartment,jdbcType=VARCHAR},
-      new_job = #{record.newJob,jdbcType=VARCHAR},
+    set transid = #{record.transid,jdbcType=VARCHAR},
+      staffid = #{record.staffid,jdbcType=VARCHAR},
+      staffrealname = #{record.staffrealname,jdbcType=VARCHAR},
+      lastdepartment = #{record.lastdepartment,jdbcType=VARCHAR},
+      lastjob = #{record.lastjob,jdbcType=VARCHAR},
+      newdepartment = #{record.newdepartment,jdbcType=VARCHAR},
+      newjob = #{record.newjob,jdbcType=VARCHAR},
       applicant = #{record.applicant,jdbcType=VARCHAR},
-      approver = #{record.approver,jdbcType=VARCHAR}
+      approver = #{record.approver,jdbcType=VARCHAR},
+      applicantiontime = #{record.applicantiontime,jdbcType=TIMESTAMP},
+      transtime = #{record.transtime,jdbcType=TIMESTAMP},
+      transreason = #{record.transreason,jdbcType=VARCHAR},
+      transtatus = #{record.transtatus,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -245,26 +280,23 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.zouhuachao.pojo.StaffTransfer" >
     update staff_transfer
     <set >
-      <if test="staffId != null" >
-        staff_id = #{staffId,jdbcType=VARCHAR},
+      <if test="staffid != null" >
+        staffid = #{staffid,jdbcType=VARCHAR},
       </if>
-      <if test="lastDepartment != null" >
-        last_department = #{lastDepartment,jdbcType=VARCHAR},
+      <if test="staffrealname != null" >
+        staffrealname = #{staffrealname,jdbcType=VARCHAR},
       </if>
-      <if test="lastJob != null" >
-        last_job = #{lastJob,jdbcType=VARCHAR},
+      <if test="lastdepartment != null" >
+        lastdepartment = #{lastdepartment,jdbcType=VARCHAR},
       </if>
-      <if test="transReason != null" >
-        trans_reason = #{transReason,jdbcType=VARCHAR},
+      <if test="lastjob != null" >
+        lastjob = #{lastjob,jdbcType=VARCHAR},
       </if>
-      <if test="transTime != null" >
-        trans_time = #{transTime,jdbcType=TIMESTAMP},
+      <if test="newdepartment != null" >
+        newdepartment = #{newdepartment,jdbcType=VARCHAR},
       </if>
-      <if test="newDepartment != null" >
-        new_department = #{newDepartment,jdbcType=VARCHAR},
-      </if>
-      <if test="newJob != null" >
-        new_job = #{newJob,jdbcType=VARCHAR},
+      <if test="newjob != null" >
+        newjob = #{newjob,jdbcType=VARCHAR},
       </if>
       <if test="applicant != null" >
         applicant = #{applicant,jdbcType=VARCHAR},
@@ -272,20 +304,35 @@
       <if test="approver != null" >
         approver = #{approver,jdbcType=VARCHAR},
       </if>
+      <if test="applicantiontime != null" >
+        applicantiontime = #{applicantiontime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="transtime != null" >
+        transtime = #{transtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="transreason != null" >
+        transreason = #{transreason,jdbcType=VARCHAR},
+      </if>
+      <if test="transtatus != null" >
+        transtatus = #{transtatus,jdbcType=VARCHAR},
+      </if>
     </set>
-    where trans_id = #{transId,jdbcType=VARCHAR}
+    where transid = #{transid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.zouhuachao.pojo.StaffTransfer" >
     update staff_transfer
-    set staff_id = #{staffId,jdbcType=VARCHAR},
-      last_department = #{lastDepartment,jdbcType=VARCHAR},
-      last_job = #{lastJob,jdbcType=VARCHAR},
-      trans_reason = #{transReason,jdbcType=VARCHAR},
-      trans_time = #{transTime,jdbcType=TIMESTAMP},
-      new_department = #{newDepartment,jdbcType=VARCHAR},
-      new_job = #{newJob,jdbcType=VARCHAR},
+    set staffid = #{staffid,jdbcType=VARCHAR},
+      staffrealname = #{staffrealname,jdbcType=VARCHAR},
+      lastdepartment = #{lastdepartment,jdbcType=VARCHAR},
+      lastjob = #{lastjob,jdbcType=VARCHAR},
+      newdepartment = #{newdepartment,jdbcType=VARCHAR},
+      newjob = #{newjob,jdbcType=VARCHAR},
       applicant = #{applicant,jdbcType=VARCHAR},
-      approver = #{approver,jdbcType=VARCHAR}
-    where trans_id = #{transId,jdbcType=VARCHAR}
+      approver = #{approver,jdbcType=VARCHAR},
+      applicantiontime = #{applicantiontime,jdbcType=TIMESTAMP},
+      transtime = #{transtime,jdbcType=TIMESTAMP},
+      transreason = #{transreason,jdbcType=VARCHAR},
+      transtatus = #{transtatus,jdbcType=VARCHAR}
+    where transid = #{transid,jdbcType=VARCHAR}
   </update>
 </mapper>

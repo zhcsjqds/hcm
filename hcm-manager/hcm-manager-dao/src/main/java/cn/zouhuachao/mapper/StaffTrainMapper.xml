@@ -2,12 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.zouhuachao.mapper.StaffTrainMapper" >
   <resultMap id="BaseResultMap" type="cn.zouhuachao.pojo.StaffTrain" >
-    <id column="train_id" property="trainId" jdbcType="VARCHAR" />
-    <result column="staff_id" property="staffId" jdbcType="VARCHAR" />
-    <result column="train_type" property="trainType" jdbcType="VARCHAR" />
+    <id column="trainid" property="trainid" jdbcType="VARCHAR" />
+    <result column="staffid" property="staffid" jdbcType="VARCHAR" />
+    <result column="traintype" property="traintype" jdbcType="VARCHAR" />
     <result column="starttime" property="starttime" jdbcType="TIMESTAMP" />
     <result column="endtime" property="endtime" jdbcType="TIMESTAMP" />
-    <result column="train_grade" property="trainGrade" jdbcType="VARCHAR" />
+    <result column="traingrade" property="traingrade" jdbcType="VARCHAR" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -69,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    train_id, staff_id, train_type, starttime, endtime, train_grade, remark
+    trainid, staffid, traintype, starttime, endtime, traingrade, remark
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zouhuachao.pojo.StaffTrainExample" >
     select
@@ -89,11 +89,11 @@
     select 
     <include refid="Base_Column_List" />
     from staff_train
-    where train_id = #{trainId,jdbcType=VARCHAR}
+    where trainid = #{trainid,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from staff_train
-    where train_id = #{trainId,jdbcType=VARCHAR}
+    where trainid = #{trainid,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="cn.zouhuachao.pojo.StaffTrainExample" >
     delete from staff_train
@@ -102,24 +102,24 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.zouhuachao.pojo.StaffTrain" >
-    insert into staff_train (train_id, staff_id, train_type, 
-      starttime, endtime, train_grade, 
+    insert into staff_train (trainid, staffid, traintype, 
+      starttime, endtime, traingrade, 
       remark)
-    values (#{trainId,jdbcType=VARCHAR}, #{staffId,jdbcType=VARCHAR}, #{trainType,jdbcType=VARCHAR}, 
-      #{starttime,jdbcType=TIMESTAMP}, #{endtime,jdbcType=TIMESTAMP}, #{trainGrade,jdbcType=VARCHAR}, 
+    values (#{trainid,jdbcType=VARCHAR}, #{staffid,jdbcType=VARCHAR}, #{traintype,jdbcType=VARCHAR}, 
+      #{starttime,jdbcType=TIMESTAMP}, #{endtime,jdbcType=TIMESTAMP}, #{traingrade,jdbcType=VARCHAR}, 
       #{remark,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.zouhuachao.pojo.StaffTrain" >
     insert into staff_train
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="trainId != null" >
-        train_id,
+      <if test="trainid != null" >
+        trainid,
       </if>
-      <if test="staffId != null" >
-        staff_id,
+      <if test="staffid != null" >
+        staffid,
       </if>
-      <if test="trainType != null" >
-        train_type,
+      <if test="traintype != null" >
+        traintype,
       </if>
       <if test="starttime != null" >
         starttime,
@@ -127,22 +127,22 @@
       <if test="endtime != null" >
         endtime,
       </if>
-      <if test="trainGrade != null" >
-        train_grade,
+      <if test="traingrade != null" >
+        traingrade,
       </if>
       <if test="remark != null" >
         remark,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="trainId != null" >
-        #{trainId,jdbcType=VARCHAR},
+      <if test="trainid != null" >
+        #{trainid,jdbcType=VARCHAR},
       </if>
-      <if test="staffId != null" >
-        #{staffId,jdbcType=VARCHAR},
+      <if test="staffid != null" >
+        #{staffid,jdbcType=VARCHAR},
       </if>
-      <if test="trainType != null" >
-        #{trainType,jdbcType=VARCHAR},
+      <if test="traintype != null" >
+        #{traintype,jdbcType=VARCHAR},
       </if>
       <if test="starttime != null" >
         #{starttime,jdbcType=TIMESTAMP},
@@ -150,8 +150,8 @@
       <if test="endtime != null" >
         #{endtime,jdbcType=TIMESTAMP},
       </if>
-      <if test="trainGrade != null" >
-        #{trainGrade,jdbcType=VARCHAR},
+      <if test="traingrade != null" >
+        #{traingrade,jdbcType=VARCHAR},
       </if>
       <if test="remark != null" >
         #{remark,jdbcType=VARCHAR},
@@ -167,14 +167,14 @@
   <update id="updateByExampleSelective" parameterType="map" >
     update staff_train
     <set >
-      <if test="record.trainId != null" >
-        train_id = #{record.trainId,jdbcType=VARCHAR},
+      <if test="record.trainid != null" >
+        trainid = #{record.trainid,jdbcType=VARCHAR},
       </if>
-      <if test="record.staffId != null" >
-        staff_id = #{record.staffId,jdbcType=VARCHAR},
+      <if test="record.staffid != null" >
+        staffid = #{record.staffid,jdbcType=VARCHAR},
       </if>
-      <if test="record.trainType != null" >
-        train_type = #{record.trainType,jdbcType=VARCHAR},
+      <if test="record.traintype != null" >
+        traintype = #{record.traintype,jdbcType=VARCHAR},
       </if>
       <if test="record.starttime != null" >
         starttime = #{record.starttime,jdbcType=TIMESTAMP},
@@ -182,8 +182,8 @@
       <if test="record.endtime != null" >
         endtime = #{record.endtime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.trainGrade != null" >
-        train_grade = #{record.trainGrade,jdbcType=VARCHAR},
+      <if test="record.traingrade != null" >
+        traingrade = #{record.traingrade,jdbcType=VARCHAR},
       </if>
       <if test="record.remark != null" >
         remark = #{record.remark,jdbcType=VARCHAR},
@@ -195,12 +195,12 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update staff_train
-    set train_id = #{record.trainId,jdbcType=VARCHAR},
-      staff_id = #{record.staffId,jdbcType=VARCHAR},
-      train_type = #{record.trainType,jdbcType=VARCHAR},
+    set trainid = #{record.trainid,jdbcType=VARCHAR},
+      staffid = #{record.staffid,jdbcType=VARCHAR},
+      traintype = #{record.traintype,jdbcType=VARCHAR},
       starttime = #{record.starttime,jdbcType=TIMESTAMP},
       endtime = #{record.endtime,jdbcType=TIMESTAMP},
-      train_grade = #{record.trainGrade,jdbcType=VARCHAR},
+      traingrade = #{record.traingrade,jdbcType=VARCHAR},
       remark = #{record.remark,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -209,11 +209,11 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.zouhuachao.pojo.StaffTrain" >
     update staff_train
     <set >
-      <if test="staffId != null" >
-        staff_id = #{staffId,jdbcType=VARCHAR},
+      <if test="staffid != null" >
+        staffid = #{staffid,jdbcType=VARCHAR},
       </if>
-      <if test="trainType != null" >
-        train_type = #{trainType,jdbcType=VARCHAR},
+      <if test="traintype != null" >
+        traintype = #{traintype,jdbcType=VARCHAR},
       </if>
       <if test="starttime != null" >
         starttime = #{starttime,jdbcType=TIMESTAMP},
@@ -221,23 +221,23 @@
       <if test="endtime != null" >
         endtime = #{endtime,jdbcType=TIMESTAMP},
       </if>
-      <if test="trainGrade != null" >
-        train_grade = #{trainGrade,jdbcType=VARCHAR},
+      <if test="traingrade != null" >
+        traingrade = #{traingrade,jdbcType=VARCHAR},
       </if>
       <if test="remark != null" >
         remark = #{remark,jdbcType=VARCHAR},
       </if>
     </set>
-    where train_id = #{trainId,jdbcType=VARCHAR}
+    where trainid = #{trainid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.zouhuachao.pojo.StaffTrain" >
     update staff_train
-    set staff_id = #{staffId,jdbcType=VARCHAR},
-      train_type = #{trainType,jdbcType=VARCHAR},
+    set staffid = #{staffid,jdbcType=VARCHAR},
+      traintype = #{traintype,jdbcType=VARCHAR},
       starttime = #{starttime,jdbcType=TIMESTAMP},
       endtime = #{endtime,jdbcType=TIMESTAMP},
-      train_grade = #{trainGrade,jdbcType=VARCHAR},
+      traingrade = #{traingrade,jdbcType=VARCHAR},
       remark = #{remark,jdbcType=VARCHAR}
-    where train_id = #{trainId,jdbcType=VARCHAR}
+    where trainid = #{trainid,jdbcType=VARCHAR}
   </update>
 </mapper>

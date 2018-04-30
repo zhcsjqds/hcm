@@ -10,7 +10,7 @@ public interface StaffTrainMapper {
 
     int deleteByExample(StaffTrainExample example);
 
-    int deleteByPrimaryKey(String trainId);
+    int deleteByPrimaryKey(String trainid);
 
     int insert(StaffTrain record);
 
@@ -18,7 +18,7 @@ public interface StaffTrainMapper {
 
     List<StaffTrain> selectByExample(StaffTrainExample example);
 
-    StaffTrain selectByPrimaryKey(String trainId);
+    StaffTrain selectByPrimaryKey(String trainid);
 
     int updateByExampleSelective(@Param("record") StaffTrain record, @Param("example") StaffTrainExample example);
 

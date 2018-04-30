@@ -2,14 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.zouhuachao.mapper.PaygradeMapper" >
   <resultMap id="BaseResultMap" type="cn.zouhuachao.pojo.Paygrade" >
-    <id column="paygrade_id" property="paygradeId" jdbcType="VARCHAR" />
-    <result column="paygrade_no" property="paygradeNo" jdbcType="VARCHAR" />
+    <id column="paygradeid" property="paygradeid" jdbcType="VARCHAR" />
+    <result column="paygradeno" property="paygradeno" jdbcType="VARCHAR" />
     <result column="headship" property="headship" jdbcType="VARCHAR" />
-    <result column="headship_pay" property="headshipPay" jdbcType="DECIMAL" />
+    <result column="headshippay" property="headshippay" jdbcType="DECIMAL" />
     <result column="title" property="title" jdbcType="VARCHAR" />
-    <result column="title_wage" property="titleWage" jdbcType="DECIMAL" />
+    <result column="titlewage" property="titlewage" jdbcType="DECIMAL" />
     <result column="allowance" property="allowance" jdbcType="DECIMAL" />
-    <result column="paygrade_describe" property="paygradeDescribe" jdbcType="VARCHAR" />
+    <result column="paygradedescribe" property="paygradedescribe" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -70,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    paygrade_id, paygrade_no, headship, headship_pay, title, title_wage, allowance, paygrade_describe
+    paygradeid, paygradeno, headship, headshippay, title, titlewage, allowance, paygradedescribe
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zouhuachao.pojo.PaygradeExample" >
     select
@@ -90,11 +90,11 @@
     select 
     <include refid="Base_Column_List" />
     from paygrade
-    where paygrade_id = #{paygradeId,jdbcType=VARCHAR}
+    where paygradeid = #{paygradeid,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from paygrade
-    where paygrade_id = #{paygradeId,jdbcType=VARCHAR}
+    where paygradeid = #{paygradeid,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="cn.zouhuachao.pojo.PaygradeExample" >
     delete from paygrade
@@ -103,65 +103,65 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.zouhuachao.pojo.Paygrade" >
-    insert into paygrade (paygrade_id, paygrade_no, headship, 
-      headship_pay, title, title_wage, 
-      allowance, paygrade_describe)
-    values (#{paygradeId,jdbcType=VARCHAR}, #{paygradeNo,jdbcType=VARCHAR}, #{headship,jdbcType=VARCHAR}, 
-      #{headshipPay,jdbcType=DECIMAL}, #{title,jdbcType=VARCHAR}, #{titleWage,jdbcType=DECIMAL}, 
-      #{allowance,jdbcType=DECIMAL}, #{paygradeDescribe,jdbcType=VARCHAR})
+    insert into paygrade (paygradeid, paygradeno, headship, 
+      headshippay, title, titlewage, 
+      allowance, paygradedescribe)
+    values (#{paygradeid,jdbcType=VARCHAR}, #{paygradeno,jdbcType=VARCHAR}, #{headship,jdbcType=VARCHAR}, 
+      #{headshippay,jdbcType=DECIMAL}, #{title,jdbcType=VARCHAR}, #{titlewage,jdbcType=DECIMAL}, 
+      #{allowance,jdbcType=DECIMAL}, #{paygradedescribe,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.zouhuachao.pojo.Paygrade" >
     insert into paygrade
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="paygradeId != null" >
-        paygrade_id,
+      <if test="paygradeid != null" >
+        paygradeid,
       </if>
-      <if test="paygradeNo != null" >
-        paygrade_no,
+      <if test="paygradeno != null" >
+        paygradeno,
       </if>
       <if test="headship != null" >
         headship,
       </if>
-      <if test="headshipPay != null" >
-        headship_pay,
+      <if test="headshippay != null" >
+        headshippay,
       </if>
       <if test="title != null" >
         title,
       </if>
-      <if test="titleWage != null" >
-        title_wage,
+      <if test="titlewage != null" >
+        titlewage,
       </if>
       <if test="allowance != null" >
         allowance,
       </if>
-      <if test="paygradeDescribe != null" >
-        paygrade_describe,
+      <if test="paygradedescribe != null" >
+        paygradedescribe,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="paygradeId != null" >
-        #{paygradeId,jdbcType=VARCHAR},
+      <if test="paygradeid != null" >
+        #{paygradeid,jdbcType=VARCHAR},
       </if>
-      <if test="paygradeNo != null" >
-        #{paygradeNo,jdbcType=VARCHAR},
+      <if test="paygradeno != null" >
+        #{paygradeno,jdbcType=VARCHAR},
       </if>
       <if test="headship != null" >
         #{headship,jdbcType=VARCHAR},
       </if>
-      <if test="headshipPay != null" >
-        #{headshipPay,jdbcType=DECIMAL},
+      <if test="headshippay != null" >
+        #{headshippay,jdbcType=DECIMAL},
       </if>
       <if test="title != null" >
         #{title,jdbcType=VARCHAR},
       </if>
-      <if test="titleWage != null" >
-        #{titleWage,jdbcType=DECIMAL},
+      <if test="titlewage != null" >
+        #{titlewage,jdbcType=DECIMAL},
       </if>
       <if test="allowance != null" >
         #{allowance,jdbcType=DECIMAL},
       </if>
-      <if test="paygradeDescribe != null" >
-        #{paygradeDescribe,jdbcType=VARCHAR},
+      <if test="paygradedescribe != null" >
+        #{paygradedescribe,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -174,29 +174,29 @@
   <update id="updateByExampleSelective" parameterType="map" >
     update paygrade
     <set >
-      <if test="record.paygradeId != null" >
-        paygrade_id = #{record.paygradeId,jdbcType=VARCHAR},
+      <if test="record.paygradeid != null" >
+        paygradeid = #{record.paygradeid,jdbcType=VARCHAR},
       </if>
-      <if test="record.paygradeNo != null" >
-        paygrade_no = #{record.paygradeNo,jdbcType=VARCHAR},
+      <if test="record.paygradeno != null" >
+        paygradeno = #{record.paygradeno,jdbcType=VARCHAR},
       </if>
       <if test="record.headship != null" >
         headship = #{record.headship,jdbcType=VARCHAR},
       </if>
-      <if test="record.headshipPay != null" >
-        headship_pay = #{record.headshipPay,jdbcType=DECIMAL},
+      <if test="record.headshippay != null" >
+        headshippay = #{record.headshippay,jdbcType=DECIMAL},
       </if>
       <if test="record.title != null" >
         title = #{record.title,jdbcType=VARCHAR},
       </if>
-      <if test="record.titleWage != null" >
-        title_wage = #{record.titleWage,jdbcType=DECIMAL},
+      <if test="record.titlewage != null" >
+        titlewage = #{record.titlewage,jdbcType=DECIMAL},
       </if>
       <if test="record.allowance != null" >
         allowance = #{record.allowance,jdbcType=DECIMAL},
       </if>
-      <if test="record.paygradeDescribe != null" >
-        paygrade_describe = #{record.paygradeDescribe,jdbcType=VARCHAR},
+      <if test="record.paygradedescribe != null" >
+        paygradedescribe = #{record.paygradedescribe,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -205,14 +205,14 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update paygrade
-    set paygrade_id = #{record.paygradeId,jdbcType=VARCHAR},
-      paygrade_no = #{record.paygradeNo,jdbcType=VARCHAR},
+    set paygradeid = #{record.paygradeid,jdbcType=VARCHAR},
+      paygradeno = #{record.paygradeno,jdbcType=VARCHAR},
       headship = #{record.headship,jdbcType=VARCHAR},
-      headship_pay = #{record.headshipPay,jdbcType=DECIMAL},
+      headshippay = #{record.headshippay,jdbcType=DECIMAL},
       title = #{record.title,jdbcType=VARCHAR},
-      title_wage = #{record.titleWage,jdbcType=DECIMAL},
+      titlewage = #{record.titlewage,jdbcType=DECIMAL},
       allowance = #{record.allowance,jdbcType=DECIMAL},
-      paygrade_describe = #{record.paygradeDescribe,jdbcType=VARCHAR}
+      paygradedescribe = #{record.paygradedescribe,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -220,39 +220,39 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.zouhuachao.pojo.Paygrade" >
     update paygrade
     <set >
-      <if test="paygradeNo != null" >
-        paygrade_no = #{paygradeNo,jdbcType=VARCHAR},
+      <if test="paygradeno != null" >
+        paygradeno = #{paygradeno,jdbcType=VARCHAR},
       </if>
       <if test="headship != null" >
         headship = #{headship,jdbcType=VARCHAR},
       </if>
-      <if test="headshipPay != null" >
-        headship_pay = #{headshipPay,jdbcType=DECIMAL},
+      <if test="headshippay != null" >
+        headshippay = #{headshippay,jdbcType=DECIMAL},
       </if>
       <if test="title != null" >
         title = #{title,jdbcType=VARCHAR},
       </if>
-      <if test="titleWage != null" >
-        title_wage = #{titleWage,jdbcType=DECIMAL},
+      <if test="titlewage != null" >
+        titlewage = #{titlewage,jdbcType=DECIMAL},
       </if>
       <if test="allowance != null" >
         allowance = #{allowance,jdbcType=DECIMAL},
       </if>
-      <if test="paygradeDescribe != null" >
-        paygrade_describe = #{paygradeDescribe,jdbcType=VARCHAR},
+      <if test="paygradedescribe != null" >
+        paygradedescribe = #{paygradedescribe,jdbcType=VARCHAR},
       </if>
     </set>
-    where paygrade_id = #{paygradeId,jdbcType=VARCHAR}
+    where paygradeid = #{paygradeid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.zouhuachao.pojo.Paygrade" >
     update paygrade
-    set paygrade_no = #{paygradeNo,jdbcType=VARCHAR},
+    set paygradeno = #{paygradeno,jdbcType=VARCHAR},
       headship = #{headship,jdbcType=VARCHAR},
-      headship_pay = #{headshipPay,jdbcType=DECIMAL},
+      headshippay = #{headshippay,jdbcType=DECIMAL},
       title = #{title,jdbcType=VARCHAR},
-      title_wage = #{titleWage,jdbcType=DECIMAL},
+      titlewage = #{titlewage,jdbcType=DECIMAL},
       allowance = #{allowance,jdbcType=DECIMAL},
-      paygrade_describe = #{paygradeDescribe,jdbcType=VARCHAR}
-    where paygrade_id = #{paygradeId,jdbcType=VARCHAR}
+      paygradedescribe = #{paygradedescribe,jdbcType=VARCHAR}
+    where paygradeid = #{paygradeid,jdbcType=VARCHAR}
   </update>
 </mapper>

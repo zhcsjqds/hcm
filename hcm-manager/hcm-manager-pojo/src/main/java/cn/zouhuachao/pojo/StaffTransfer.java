@@ -3,88 +3,86 @@ package cn.zouhuachao.pojo;
 import java.util.Date;
 
 public class StaffTransfer {
-    private String transId;
+    private String transid;
 
-    private String staffId;
+    private String staffid;
 
-    private String lastDepartment;
+    private String staffrealname;
 
-    private String lastJob;
+    private String lastdepartment;
 
-    private String transReason;
+    private String lastjob;
 
-    private Date transTime;
+    private String newdepartment;
 
-    private String newDepartment;
-
-    private String newJob;
+    private String newjob;
 
     private String applicant;
 
     private String approver;
 
-    public String getTransId() {
-        return transId;
+    private Date applicantiontime;
+
+    private Date transtime;
+
+    private String transreason;
+
+    private String transtatus;
+
+    public String getTransid() {
+        return transid;
     }
 
-    public void setTransId(String transId) {
-        this.transId = transId == null ? null : transId.trim();
+    public void setTransid(String transid) {
+        this.transid = transid == null ? null : transid.trim();
     }
 
-    public String getStaffId() {
-        return staffId;
+    public String getStaffid() {
+        return staffid;
     }
 
-    public void setStaffId(String staffId) {
-        this.staffId = staffId == null ? null : staffId.trim();
+    public void setStaffid(String staffid) {
+        this.staffid = staffid == null ? null : staffid.trim();
     }
 
-    public String getLastDepartment() {
-        return lastDepartment;
+    public String getStaffrealname() {
+        return staffrealname;
     }
 
-    public void setLastDepartment(String lastDepartment) {
-        this.lastDepartment = lastDepartment == null ? null : lastDepartment.trim();
+    public void setStaffrealname(String staffrealname) {
+        this.staffrealname = staffrealname == null ? null : staffrealname.trim();
     }
 
-    public String getLastJob() {
-        return lastJob;
+    public String getLastdepartment() {
+        return lastdepartment;
     }
 
-    public void setLastJob(String lastJob) {
-        this.lastJob = lastJob == null ? null : lastJob.trim();
+    public void setLastdepartment(String lastdepartment) {
+        this.lastdepartment = lastdepartment == null ? null : lastdepartment.trim();
     }
 
-    public String getTransReason() {
-        return transReason;
+    public String getLastjob() {
+        return lastjob;
     }
 
-    public void setTransReason(String transReason) {
-        this.transReason = transReason == null ? null : transReason.trim();
+    public void setLastjob(String lastjob) {
+        this.lastjob = lastjob == null ? null : lastjob.trim();
     }
 
-    public Date getTransTime() {
-        return transTime;
+    public String getNewdepartment() {
+        return newdepartment;
     }
 
-    public void setTransTime(Date transTime) {
-        this.transTime = transTime;
+    public void setNewdepartment(String newdepartment) {
+        this.newdepartment = newdepartment == null ? null : newdepartment.trim();
     }
 
-    public String getNewDepartment() {
-        return newDepartment;
+    public String getNewjob() {
+        return newjob;
     }
 
-    public void setNewDepartment(String newDepartment) {
-        this.newDepartment = newDepartment == null ? null : newDepartment.trim();
-    }
-
-    public String getNewJob() {
-        return newJob;
-    }
-
-    public void setNewJob(String newJob) {
-        this.newJob = newJob == null ? null : newJob.trim();
+    public void setNewjob(String newjob) {
+        this.newjob = newjob == null ? null : newjob.trim();
     }
 
     public String getApplicant() {
@@ -101,5 +99,37 @@ public class StaffTransfer {
 
     public void setApprover(String approver) {
         this.approver = approver == null ? null : approver.trim();
+    }
+
+    public Date getApplicantiontime() {
+        return applicantiontime;
+    }
+
+    public void setApplicantiontime(Date applicantiontime) {
+        this.applicantiontime = applicantiontime;
+    }
+
+    public Date getTranstime() {
+        return transtime;
+    }
+
+    public void setTranstime(Date transtime) {
+        this.transtime = transtime;
+    }
+
+    public String getTransreason() {
+        return transreason;
+    }
+
+    public void setTransreason(String transreason) {
+        this.transreason = transreason == null ? null : transreason.trim();
+    }
+
+    public String getTranstatus() {
+        return transtatus;
+    }
+
+    public void setTranstatus(String transtatus) {
+        this.transtatus = transtatus == null ? null : transtatus.trim();
     }
 }

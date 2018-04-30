@@ -4,9 +4,9 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class AttendanceStatistics {
-    private String statId;
+    private String statid;
 
-    private String staffId;
+    private String staffid;
 
     private Date date;
 
@@ -22,32 +22,32 @@ public class AttendanceStatistics {
 
     private Integer early;
 
-    private Integer holidayOt;
+    private Integer holidayot;
 
-    private Integer otherOt;
+    private Integer otherot;
 
     private Integer evection;
 
-    private BigDecimal otPay;
+    private BigDecimal otpay;
 
     private String other;
 
     private String remark;
 
-    public String getStatId() {
-        return statId;
+    public String getStatid() {
+        return statid;
     }
 
-    public void setStatId(String statId) {
-        this.statId = statId == null ? null : statId.trim();
+    public void setStatid(String statid) {
+        this.statid = statid == null ? null : statid.trim();
     }
 
-    public String getStaffId() {
-        return staffId;
+    public String getStaffid() {
+        return staffid;
     }
 
-    public void setStaffId(String staffId) {
-        this.staffId = staffId == null ? null : staffId.trim();
+    public void setStaffid(String staffid) {
+        this.staffid = staffid == null ? null : staffid.trim();
     }
 
     public Date getDate() {
@@ -106,20 +106,20 @@ public class AttendanceStatistics {
         this.early = early;
     }
 
-    public Integer getHolidayOt() {
-        return holidayOt;
+    public Integer getHolidayot() {
+        return holidayot;
     }
 
-    public void setHolidayOt(Integer holidayOt) {
-        this.holidayOt = holidayOt;
+    public void setHolidayot(Integer holidayot) {
+        this.holidayot = holidayot;
     }
 
-    public Integer getOtherOt() {
-        return otherOt;
+    public Integer getOtherot() {
+        return otherot;
     }
 
-    public void setOtherOt(Integer otherOt) {
-        this.otherOt = otherOt;
+    public void setOtherot(Integer otherot) {
+        this.otherot = otherot;
     }
 
     public Integer getEvection() {
@@ -130,12 +130,12 @@ public class AttendanceStatistics {
         this.evection = evection;
     }
 
-    public BigDecimal getOtPay() {
-        return otPay;
+    public BigDecimal getOtpay() {
+        return otpay;
     }
 
-    public void setOtPay(BigDecimal otPay) {
-        this.otPay = otPay;
+    public void setOtpay(BigDecimal otpay) {
+        this.otpay = otpay;
     }
 
     public String getOther() {

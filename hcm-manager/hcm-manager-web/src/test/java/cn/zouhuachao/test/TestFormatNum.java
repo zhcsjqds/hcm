@@ -12,6 +12,6 @@ public class TestFormatNum {
 	 */
 	@Test
 	public void tset() {
-		System.out.println(String.format("%04d", 20));
+		System.out.println(String.format("%02d", 9));
 	}
 }

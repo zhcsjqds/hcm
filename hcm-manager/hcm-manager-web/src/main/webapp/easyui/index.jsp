@@ -15,19 +15,40 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/ztree/zTreeStyle/zTreeStyle.css"
 	type="text/css">
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/js/ztree/jquery.ztree.all.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/ztree/jquery.ztree.all.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/function.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/load.js"></script>
 <title>企业人事管理系统</title>
 </head>
 <body class="easyui-layout">
-	<div style="height: 100px" data-options="region:'north'">
+	<!-- 北 -->
+	<div style="height: 100px" data-options="region:'north',noheader:true">
 		<img alt="标题" src="${pageContext.request.contextPath}/images/top.png" style="height:100%;margin-left:10%">
+		<a data-options="iconCls:'icon-help',menu:'#mm'" class="easyui-menubutton" style="position:absolute;right:40px;bottom:10px;">我的信息</a>
+		<div id="mm">
+			<div onclick="alert(111)">个人信息</div>
+			<div data-options="iconCls:'icon-edit'" onclick="changePassword();">修改密码</div>
+			<div class="menu-sep"></div>
+			<div onclick="logout();">退出系统</div>
+		</div>
+		<a href="${pageContext.request.contextPath}/logout" style="position:absolute;right:10px;bottom:12px;font-size:12px">退出</a>
 	</div>
+	<!-- 西 -->
 	<div title="系统菜单" style="width: 200px" data-options="region:'west'">
 		<div class="easyui-accordion" data-options="fit:true">
 			<div title="员工管理">
+			<ul id="navtree"></ul>
+				<!-- <ul class="easyui-tree">
+					<li>
+						<span>2</span>
+							<ul>
+								<li>12</li>
+								<li>23</li>
+							</ul>
+					</li>
+				</ul> -->
 				<!-- 使用简单json数据构造ztree -->
-				<ul id="ztree3" class="ztree"></ul>
+				<!-- <ul id="ztree3" class="ztree"></ul>
 				<script type="text/javascript">
 					$(function() {
 						//动态创建ztree
@@ -40,6 +61,10 @@
 							},
 							callback : {
 								onClick : function(event, treeId, treeNode) {
+									var content = '<div style="width:100%;height:100%;overflow:hidden;">'
+										+ '<iframe src="'
+										+ treeNode.page
+										+ '" scrolling="auto" style="width:100%;height:100%;border:0;" ></iframe></div>';
 									if (treeNode.page != undefined) {
 										var e = $("#mytabs").tabs("exists",
 												treeNode.name);
@@ -50,7 +75,7 @@
 											$("#mytabs").tabs("add", {
 												title : treeNode.name,
 												closable : true,
-												content : "m"
+												content:content
 											});
 										}
 									}
@@ -65,7 +90,7 @@
 							$.fn.zTree.init($("#ztree3"), setting3, data);
 						}, 'json');
 					});
-				</script>
+				</script> -->
 			</div>
 			<div title="薪资管理"></div>
 			<div title="培训管理"></div>
@@ -77,7 +102,7 @@
 		</div>
 	</div>
 	<!-- 	<div style="width: 100px" data-options="region:'east'">东</div> -->
-	<div style="height: 50px" data-options="region:'south'">南</div>
+	<div style="height: 50px;" data-options="region:'south',noheader:true,split:false">南</div>
 
 </body>
 </html>

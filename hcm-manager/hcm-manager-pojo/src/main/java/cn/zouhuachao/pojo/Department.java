@@ -1,28 +1,28 @@
 package cn.zouhuachao.pojo;
 
 public class Department {
-    private String departmentId;
+    private String departmentid;
 
-    private String departmentName;
+    private String departmentname;
 
     private String manager;
 
-    private String departmentNo;
+    private String departmentno;
 
-    public String getDepartmentId() {
-        return departmentId;
+    public String getDepartmentid() {
+        return departmentid;
     }
 
-    public void setDepartmentId(String departmentId) {
-        this.departmentId = departmentId == null ? null : departmentId.trim();
+    public void setDepartmentid(String departmentid) {
+        this.departmentid = departmentid == null ? null : departmentid.trim();
     }
 
-    public String getDepartmentName() {
-        return departmentName;
+    public String getDepartmentname() {
+        return departmentname;
     }
 
-    public void setDepartmentName(String departmentName) {
-        this.departmentName = departmentName == null ? null : departmentName.trim();
+    public void setDepartmentname(String departmentname) {
+        this.departmentname = departmentname == null ? null : departmentname.trim();
     }
 
     public String getManager() {
@@ -33,11 +33,11 @@ public class Department {
         this.manager = manager == null ? null : manager.trim();
     }
 
-    public String getDepartmentNo() {
-        return departmentNo;
+    public String getDepartmentno() {
+        return departmentno;
     }
 
-    public void setDepartmentNo(String departmentNo) {
-        this.departmentNo = departmentNo == null ? null : departmentNo.trim();
+    public void setDepartmentno(String departmentno) {
+        this.departmentno = departmentno == null ? null : departmentno.trim();
     }
 }

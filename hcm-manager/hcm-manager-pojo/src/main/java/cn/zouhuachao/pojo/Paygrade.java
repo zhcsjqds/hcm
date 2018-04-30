@@ -3,36 +3,36 @@ package cn.zouhuachao.pojo;
 import java.math.BigDecimal;
 
 public class Paygrade {
-    private String paygradeId;
+    private String paygradeid;
 
-    private String paygradeNo;
+    private String paygradeno;
 
     private String headship;
 
-    private BigDecimal headshipPay;
+    private BigDecimal headshippay;
 
     private String title;
 
-    private BigDecimal titleWage;
+    private BigDecimal titlewage;
 
     private BigDecimal allowance;
 
-    private String paygradeDescribe;
+    private String paygradedescribe;
 
-    public String getPaygradeId() {
-        return paygradeId;
+    public String getPaygradeid() {
+        return paygradeid;
     }
 
-    public void setPaygradeId(String paygradeId) {
-        this.paygradeId = paygradeId == null ? null : paygradeId.trim();
+    public void setPaygradeid(String paygradeid) {
+        this.paygradeid = paygradeid == null ? null : paygradeid.trim();
     }
 
-    public String getPaygradeNo() {
-        return paygradeNo;
+    public String getPaygradeno() {
+        return paygradeno;
     }
 
-    public void setPaygradeNo(String paygradeNo) {
-        this.paygradeNo = paygradeNo == null ? null : paygradeNo.trim();
+    public void setPaygradeno(String paygradeno) {
+        this.paygradeno = paygradeno == null ? null : paygradeno.trim();
     }
 
     public String getHeadship() {
@@ -43,12 +43,12 @@ public class Paygrade {
         this.headship = headship == null ? null : headship.trim();
     }
 
-    public BigDecimal getHeadshipPay() {
-        return headshipPay;
+    public BigDecimal getHeadshippay() {
+        return headshippay;
     }
 
-    public void setHeadshipPay(BigDecimal headshipPay) {
-        this.headshipPay = headshipPay;
+    public void setHeadshippay(BigDecimal headshippay) {
+        this.headshippay = headshippay;
     }
 
     public String getTitle() {
@@ -59,12 +59,12 @@ public class Paygrade {
         this.title = title == null ? null : title.trim();
     }
 
-    public BigDecimal getTitleWage() {
-        return titleWage;
+    public BigDecimal getTitlewage() {
+        return titlewage;
     }
 
-    public void setTitleWage(BigDecimal titleWage) {
-        this.titleWage = titleWage;
+    public void setTitlewage(BigDecimal titlewage) {
+        this.titlewage = titlewage;
     }
 
     public BigDecimal getAllowance() {
@@ -75,11 +75,11 @@ public class Paygrade {
         this.allowance = allowance;
     }
 
-    public String getPaygradeDescribe() {
-        return paygradeDescribe;
+    public String getPaygradedescribe() {
+        return paygradedescribe;
     }
 
-    public void setPaygradeDescribe(String paygradeDescribe) {
-        this.paygradeDescribe = paygradeDescribe == null ? null : paygradeDescribe.trim();
+    public void setPaygradedescribe(String paygradedescribe) {
+        this.paygradedescribe = paygradedescribe == null ? null : paygradedescribe.trim();
     }
 }

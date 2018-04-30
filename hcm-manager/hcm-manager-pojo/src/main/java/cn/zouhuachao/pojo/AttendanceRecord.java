@@ -3,33 +3,33 @@ package cn.zouhuachao.pojo;
 import java.util.Date;
 
 public class AttendanceRecord {
-    private String attenId;
+    private String attenid;
 
-    private String staffId;
+    private String staffid;
 
-    private Date attenTime;
+    private Date attentime;
 
-    public String getAttenId() {
-        return attenId;
+    public String getAttenid() {
+        return attenid;
     }
 
-    public void setAttenId(String attenId) {
-        this.attenId = attenId == null ? null : attenId.trim();
+    public void setAttenid(String attenid) {
+        this.attenid = attenid == null ? null : attenid.trim();
     }
 
-    public String getStaffId() {
-        return staffId;
+    public String getStaffid() {
+        return staffid;
     }
 
-    public void setStaffId(String staffId) {
-        this.staffId = staffId == null ? null : staffId.trim();
+    public void setStaffid(String staffid) {
+        this.staffid = staffid == null ? null : staffid.trim();
     }
 
-    public Date getAttenTime() {
-        return attenTime;
+    public Date getAttentime() {
+        return attentime;
     }
 
-    public void setAttenTime(Date attenTime) {
-        this.attenTime = attenTime;
+    public void setAttentime(Date attentime) {
+        this.attentime = attentime;
     }
 }

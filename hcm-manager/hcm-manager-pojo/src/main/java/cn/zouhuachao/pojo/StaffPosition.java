@@ -1,33 +1,43 @@
 package cn.zouhuachao.pojo;
 
 public class StaffPosition {
-    private String positionId;
+    private String positionid;
 
-    private String positionName;
+    private String positionname;
 
-    private String depatementId;
+    private String departmentid;
 
-    public String getPositionId() {
-        return positionId;
+    private String roleid;
+
+    public String getPositionid() {
+        return positionid;
     }
 
-    public void setPositionId(String positionId) {
-        this.positionId = positionId == null ? null : positionId.trim();
+    public void setPositionid(String positionid) {
+        this.positionid = positionid == null ? null : positionid.trim();
     }
 
-    public String getPositionName() {
-        return positionName;
+    public String getPositionname() {
+        return positionname;
     }
 
-    public void setPositionName(String positionName) {
-        this.positionName = positionName == null ? null : positionName.trim();
+    public void setPositionname(String positionname) {
+        this.positionname = positionname == null ? null : positionname.trim();
     }
 
-    public String getDepatementId() {
-        return depatementId;
+    public String getDepartmentid() {
+        return departmentid;
     }
 
-    public void setDepatementId(String depatementId) {
-        this.depatementId = depatementId == null ? null : depatementId.trim();
+    public void setDepartmentid(String departmentid) {
+        this.departmentid = departmentid == null ? null : departmentid.trim();
+    }
+
+    public String getRoleid() {
+        return roleid;
+    }
+
+    public void setRoleid(String roleid) {
+        this.roleid = roleid == null ? null : roleid.trim();
     }
 }

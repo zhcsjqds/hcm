@@ -4,11 +4,11 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class Payroll {
-    private String payId;
+    private String payid;
 
-    private String staffId;
+    private String staffid;
 
-    private String paygradeId;
+    private String paygradeid;
 
     private BigDecimal allowance;
 
@@ -18,13 +18,13 @@ public class Payroll {
 
     private BigDecimal attendance;
 
-    private BigDecimal endowmentIns;
+    private BigDecimal endowmentins;
 
-    private BigDecimal medicalIns;
+    private BigDecimal medicalins;
 
-    private BigDecimal unemploymentIns;
+    private BigDecimal unemploymentins;
 
-    private BigDecimal housingFund;
+    private BigDecimal housingfund;
 
     private BigDecimal incometax;
 
@@ -38,28 +38,28 @@ public class Payroll {
 
     private BigDecimal tsalary;
 
-    public String getPayId() {
-        return payId;
+    public String getPayid() {
+        return payid;
     }
 
-    public void setPayId(String payId) {
-        this.payId = payId == null ? null : payId.trim();
+    public void setPayid(String payid) {
+        this.payid = payid == null ? null : payid.trim();
     }
 
-    public String getStaffId() {
-        return staffId;
+    public String getStaffid() {
+        return staffid;
     }
 
-    public void setStaffId(String staffId) {
-        this.staffId = staffId == null ? null : staffId.trim();
+    public void setStaffid(String staffid) {
+        this.staffid = staffid == null ? null : staffid.trim();
     }
 
-    public String getPaygradeId() {
-        return paygradeId;
+    public String getPaygradeid() {
+        return paygradeid;
     }
 
-    public void setPaygradeId(String paygradeId) {
-        this.paygradeId = paygradeId == null ? null : paygradeId.trim();
+    public void setPaygradeid(String paygradeid) {
+        this.paygradeid = paygradeid == null ? null : paygradeid.trim();
     }
 
     public BigDecimal getAllowance() {
@@ -94,36 +94,36 @@ public class Payroll {
         this.attendance = attendance;
     }
 
-    public BigDecimal getEndowmentIns() {
-        return endowmentIns;
+    public BigDecimal getEndowmentins() {
+        return endowmentins;
     }
 
-    public void setEndowmentIns(BigDecimal endowmentIns) {
-        this.endowmentIns = endowmentIns;
+    public void setEndowmentins(BigDecimal endowmentins) {
+        this.endowmentins = endowmentins;
     }
 
-    public BigDecimal getMedicalIns() {
-        return medicalIns;
+    public BigDecimal getMedicalins() {
+        return medicalins;
     }
 
-    public void setMedicalIns(BigDecimal medicalIns) {
-        this.medicalIns = medicalIns;
+    public void setMedicalins(BigDecimal medicalins) {
+        this.medicalins = medicalins;
     }
 
-    public BigDecimal getUnemploymentIns() {
-        return unemploymentIns;
+    public BigDecimal getUnemploymentins() {
+        return unemploymentins;
     }
 
-    public void setUnemploymentIns(BigDecimal unemploymentIns) {
-        this.unemploymentIns = unemploymentIns;
+    public void setUnemploymentins(BigDecimal unemploymentins) {
+        this.unemploymentins = unemploymentins;
     }
 
-    public BigDecimal getHousingFund() {
-        return housingFund;
+    public BigDecimal getHousingfund() {
+        return housingfund;
     }
 
-    public void setHousingFund(BigDecimal housingFund) {
-        this.housingFund = housingFund;
+    public void setHousingfund(BigDecimal housingfund) {
+        this.housingfund = housingfund;
     }
 
     public BigDecimal getIncometax() {

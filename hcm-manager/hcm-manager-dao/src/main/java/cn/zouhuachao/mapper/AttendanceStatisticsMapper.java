@@ -10,7 +10,7 @@ public interface AttendanceStatisticsMapper {
 
     int deleteByExample(AttendanceStatisticsExample example);
 
-    int deleteByPrimaryKey(String statId);
+    int deleteByPrimaryKey(String statid);
 
     int insert(AttendanceStatistics record);
 
@@ -18,7 +18,7 @@ public interface AttendanceStatisticsMapper {
 
     List<AttendanceStatistics> selectByExample(AttendanceStatisticsExample example);
 
-    AttendanceStatistics selectByPrimaryKey(String statId);
+    AttendanceStatistics selectByPrimaryKey(String statid);
 
     int updateByExampleSelective(@Param("record") AttendanceStatistics record, @Param("example") AttendanceStatisticsExample example);
 

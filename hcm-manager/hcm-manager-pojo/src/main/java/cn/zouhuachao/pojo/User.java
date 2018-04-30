@@ -15,9 +15,9 @@ public class User {
 
     private String uicon;
 
-    private String email;
-
     private Date createdate;
+
+    private String staffid;
 
     public String getUserid() {
         return userid;
@@ -67,19 +67,19 @@ public class User {
         this.uicon = uicon == null ? null : uicon.trim();
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
-    }
-
     public Date getCreatedate() {
         return createdate;
     }
 
     public void setCreatedate(Date createdate) {
         this.createdate = createdate;
+    }
+
+    public String getStaffid() {
+        return staffid;
+    }
+
+    public void setStaffid(String staffid) {
+        this.staffid = staffid == null ? null : staffid.trim();
     }
 }

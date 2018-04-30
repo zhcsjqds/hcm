@@ -8,8 +8,8 @@
     <result column="roleid" property="roleid" jdbcType="VARCHAR" />
     <result column="locked" property="locked" jdbcType="TINYINT" />
     <result column="uicon" property="uicon" jdbcType="VARCHAR" />
-    <result column="email" property="email" jdbcType="VARCHAR" />
     <result column="createdate" property="createdate" jdbcType="TIMESTAMP" />
+    <result column="staffid" property="staffid" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -70,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    userid, username, password, roleid, locked, uicon, email, createdate
+    userid, username, password, roleid, locked, uicon, createdate, staffid
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zouhuachao.pojo.UserExample" >
     select
@@ -105,10 +105,10 @@
   <insert id="insert" parameterType="cn.zouhuachao.pojo.User" >
     insert into user (userid, username, password, 
       roleid, locked, uicon, 
-      email, createdate)
+      createdate, staffid)
     values (#{userid,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{roleid,jdbcType=VARCHAR}, #{locked,jdbcType=TINYINT}, #{uicon,jdbcType=VARCHAR}, 
-      #{email,jdbcType=VARCHAR}, #{createdate,jdbcType=TIMESTAMP})
+      #{createdate,jdbcType=TIMESTAMP}, #{staffid,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.zouhuachao.pojo.User" >
     insert into user
@@ -131,11 +131,11 @@
       <if test="uicon != null" >
         uicon,
       </if>
-      <if test="email != null" >
-        email,
-      </if>
       <if test="createdate != null" >
         createdate,
+      </if>
+      <if test="staffid != null" >
+        staffid,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -157,11 +157,11 @@
       <if test="uicon != null" >
         #{uicon,jdbcType=VARCHAR},
       </if>
-      <if test="email != null" >
-        #{email,jdbcType=VARCHAR},
-      </if>
       <if test="createdate != null" >
         #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="staffid != null" >
+        #{staffid,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -192,11 +192,11 @@
       <if test="record.uicon != null" >
         uicon = #{record.uicon,jdbcType=VARCHAR},
       </if>
-      <if test="record.email != null" >
-        email = #{record.email,jdbcType=VARCHAR},
-      </if>
       <if test="record.createdate != null" >
         createdate = #{record.createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.staffid != null" >
+        staffid = #{record.staffid,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -211,8 +211,8 @@
       roleid = #{record.roleid,jdbcType=VARCHAR},
       locked = #{record.locked,jdbcType=TINYINT},
       uicon = #{record.uicon,jdbcType=VARCHAR},
-      email = #{record.email,jdbcType=VARCHAR},
-      createdate = #{record.createdate,jdbcType=TIMESTAMP}
+      createdate = #{record.createdate,jdbcType=TIMESTAMP},
+      staffid = #{record.staffid,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -235,11 +235,11 @@
       <if test="uicon != null" >
         uicon = #{uicon,jdbcType=VARCHAR},
       </if>
-      <if test="email != null" >
-        email = #{email,jdbcType=VARCHAR},
-      </if>
       <if test="createdate != null" >
         createdate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="staffid != null" >
+        staffid = #{staffid,jdbcType=VARCHAR},
       </if>
     </set>
     where userid = #{userid,jdbcType=VARCHAR}
@@ -251,8 +251,8 @@
       roleid = #{roleid,jdbcType=VARCHAR},
       locked = #{locked,jdbcType=TINYINT},
       uicon = #{uicon,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR},
-      createdate = #{createdate,jdbcType=TIMESTAMP}
+      createdate = #{createdate,jdbcType=TIMESTAMP},
+      staffid = #{staffid,jdbcType=VARCHAR}
     where userid = #{userid,jdbcType=VARCHAR}
   </update>
 </mapper>

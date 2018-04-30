@@ -10,7 +10,7 @@ public interface StaffEvaluationMapper {
 
     int deleteByExample(StaffEvaluationExample example);
 
-    int deleteByPrimaryKey(String evaId);
+    int deleteByPrimaryKey(String evaid);
 
     int insert(StaffEvaluation record);
 
@@ -18,7 +18,7 @@ public interface StaffEvaluationMapper {
 
     List<StaffEvaluation> selectByExample(StaffEvaluationExample example);
 
-    StaffEvaluation selectByPrimaryKey(String evaId);
+    StaffEvaluation selectByPrimaryKey(String evaid);
 
     int updateByExampleSelective(@Param("record") StaffEvaluation record, @Param("example") StaffEvaluationExample example);
 

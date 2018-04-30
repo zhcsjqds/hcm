@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.zouhuachao.mapper.StaffEvaluationMapper" >
   <resultMap id="BaseResultMap" type="cn.zouhuachao.pojo.StaffEvaluation" >
-    <id column="eva_id" property="evaId" jdbcType="VARCHAR" />
-    <result column="staff_id" property="staffId" jdbcType="VARCHAR" />
-    <result column="eva_time" property="evaTime" jdbcType="TIMESTAMP" />
+    <id column="evaid" property="evaid" jdbcType="VARCHAR" />
+    <result column="staffid" property="staffid" jdbcType="VARCHAR" />
+    <result column="evatime" property="evatime" jdbcType="TIMESTAMP" />
     <result column="performance" property="performance" jdbcType="VARCHAR" />
     <result column="attitude" property="attitude" jdbcType="VARCHAR" />
     <result column="standard" property="standard" jdbcType="VARCHAR" />
@@ -69,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    eva_id, staff_id, eva_time, performance, attitude, standard, remark
+    evaid, staffid, evatime, performance, attitude, standard, remark
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zouhuachao.pojo.StaffEvaluationExample" >
     select
@@ -89,11 +89,11 @@
     select 
     <include refid="Base_Column_List" />
     from staff_evaluation
-    where eva_id = #{evaId,jdbcType=VARCHAR}
+    where evaid = #{evaid,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from staff_evaluation
-    where eva_id = #{evaId,jdbcType=VARCHAR}
+    where evaid = #{evaid,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="cn.zouhuachao.pojo.StaffEvaluationExample" >
     delete from staff_evaluation
@@ -102,24 +102,24 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.zouhuachao.pojo.StaffEvaluation" >
-    insert into staff_evaluation (eva_id, staff_id, eva_time, 
+    insert into staff_evaluation (evaid, staffid, evatime, 
       performance, attitude, standard, 
       remark)
-    values (#{evaId,jdbcType=VARCHAR}, #{staffId,jdbcType=VARCHAR}, #{evaTime,jdbcType=TIMESTAMP}, 
+    values (#{evaid,jdbcType=VARCHAR}, #{staffid,jdbcType=VARCHAR}, #{evatime,jdbcType=TIMESTAMP}, 
       #{performance,jdbcType=VARCHAR}, #{attitude,jdbcType=VARCHAR}, #{standard,jdbcType=VARCHAR}, 
       #{remark,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.zouhuachao.pojo.StaffEvaluation" >
     insert into staff_evaluation
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="evaId != null" >
-        eva_id,
+      <if test="evaid != null" >
+        evaid,
       </if>
-      <if test="staffId != null" >
-        staff_id,
+      <if test="staffid != null" >
+        staffid,
       </if>
-      <if test="evaTime != null" >
-        eva_time,
+      <if test="evatime != null" >
+        evatime,
       </if>
       <if test="performance != null" >
         performance,
@@ -135,14 +135,14 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="evaId != null" >
-        #{evaId,jdbcType=VARCHAR},
+      <if test="evaid != null" >
+        #{evaid,jdbcType=VARCHAR},
       </if>
-      <if test="staffId != null" >
-        #{staffId,jdbcType=VARCHAR},
+      <if test="staffid != null" >
+        #{staffid,jdbcType=VARCHAR},
       </if>
-      <if test="evaTime != null" >
-        #{evaTime,jdbcType=TIMESTAMP},
+      <if test="evatime != null" >
+        #{evatime,jdbcType=TIMESTAMP},
       </if>
       <if test="performance != null" >
         #{performance,jdbcType=VARCHAR},
@@ -167,14 +167,14 @@
   <update id="updateByExampleSelective" parameterType="map" >
     update staff_evaluation
     <set >
-      <if test="record.evaId != null" >
-        eva_id = #{record.evaId,jdbcType=VARCHAR},
+      <if test="record.evaid != null" >
+        evaid = #{record.evaid,jdbcType=VARCHAR},
       </if>
-      <if test="record.staffId != null" >
-        staff_id = #{record.staffId,jdbcType=VARCHAR},
+      <if test="record.staffid != null" >
+        staffid = #{record.staffid,jdbcType=VARCHAR},
       </if>
-      <if test="record.evaTime != null" >
-        eva_time = #{record.evaTime,jdbcType=TIMESTAMP},
+      <if test="record.evatime != null" >
+        evatime = #{record.evatime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.performance != null" >
         performance = #{record.performance,jdbcType=VARCHAR},
@@ -195,9 +195,9 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update staff_evaluation
-    set eva_id = #{record.evaId,jdbcType=VARCHAR},
-      staff_id = #{record.staffId,jdbcType=VARCHAR},
-      eva_time = #{record.evaTime,jdbcType=TIMESTAMP},
+    set evaid = #{record.evaid,jdbcType=VARCHAR},
+      staffid = #{record.staffid,jdbcType=VARCHAR},
+      evatime = #{record.evatime,jdbcType=TIMESTAMP},
       performance = #{record.performance,jdbcType=VARCHAR},
       attitude = #{record.attitude,jdbcType=VARCHAR},
       standard = #{record.standard,jdbcType=VARCHAR},
@@ -209,11 +209,11 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.zouhuachao.pojo.StaffEvaluation" >
     update staff_evaluation
     <set >
-      <if test="staffId != null" >
-        staff_id = #{staffId,jdbcType=VARCHAR},
+      <if test="staffid != null" >
+        staffid = #{staffid,jdbcType=VARCHAR},
       </if>
-      <if test="evaTime != null" >
-        eva_time = #{evaTime,jdbcType=TIMESTAMP},
+      <if test="evatime != null" >
+        evatime = #{evatime,jdbcType=TIMESTAMP},
       </if>
       <if test="performance != null" >
         performance = #{performance,jdbcType=VARCHAR},
@@ -228,16 +228,16 @@
         remark = #{remark,jdbcType=VARCHAR},
       </if>
     </set>
-    where eva_id = #{evaId,jdbcType=VARCHAR}
+    where evaid = #{evaid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.zouhuachao.pojo.StaffEvaluation" >
     update staff_evaluation
-    set staff_id = #{staffId,jdbcType=VARCHAR},
-      eva_time = #{evaTime,jdbcType=TIMESTAMP},
+    set staffid = #{staffid,jdbcType=VARCHAR},
+      evatime = #{evatime,jdbcType=TIMESTAMP},
       performance = #{performance,jdbcType=VARCHAR},
       attitude = #{attitude,jdbcType=VARCHAR},
       standard = #{standard,jdbcType=VARCHAR},
       remark = #{remark,jdbcType=VARCHAR}
-    where eva_id = #{evaId,jdbcType=VARCHAR}
+    where evaid = #{evaid,jdbcType=VARCHAR}
   </update>
 </mapper>

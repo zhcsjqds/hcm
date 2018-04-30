@@ -3,35 +3,35 @@ package cn.zouhuachao.pojo;
 import java.util.Date;
 
 public class Staff {
-    private String staffId;
+    private String staffid;
 
     private String realname;
 
-    private Byte gender;
-
-    private Integer age;
+    private String gender;
 
     private String education;
 
-    private String nativePlace;
+    private String province;
+
+    private String city;
 
     private String nation;
 
-    private String bloodtpye;
+    private String bloodtype;
 
-    private String positionId;
+    private String positionid;
 
-    private String departmentId;
+    private String departmentid;
 
-    private Date entryDate;
+    private Date entrydate;
 
-    private String politicsStatus;
+    private String politicsstatus;
 
     private Date birthday;
 
-    private String identityId;
+    private String identityid;
 
-    private Byte maritalStatus;
+    private String maritalstatus;
 
     private String phone;
 
@@ -39,20 +39,22 @@ public class Staff {
 
     private String status;
 
-    private String staffNo;
+    private String staffno;
 
     private Integer no;
 
-    private String bankCard;
+    private String bankcard;
 
     private String title;
 
-    public String getStaffId() {
-        return staffId;
+    private String email;
+
+    public String getStaffid() {
+        return staffid;
     }
 
-    public void setStaffId(String staffId) {
-        this.staffId = staffId == null ? null : staffId.trim();
+    public void setStaffid(String staffid) {
+        this.staffid = staffid == null ? null : staffid.trim();
     }
 
     public String getRealname() {
@@ -63,20 +65,12 @@ public class Staff {
         this.realname = realname == null ? null : realname.trim();
     }
 
-    public Byte getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Byte gender) {
-        this.gender = gender;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setGender(String gender) {
+        this.gender = gender == null ? null : gender.trim();
     }
 
     public String getEducation() {
@@ -87,12 +81,20 @@ public class Staff {
         this.education = education == null ? null : education.trim();
     }
 
-    public String getNativePlace() {
-        return nativePlace;
+    public String getProvince() {
+        return province;
     }
 
-    public void setNativePlace(String nativePlace) {
-        this.nativePlace = nativePlace == null ? null : nativePlace.trim();
+    public void setProvince(String province) {
+        this.province = province == null ? null : province.trim();
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city == null ? null : city.trim();
     }
 
     public String getNation() {
@@ -103,44 +105,44 @@ public class Staff {
         this.nation = nation == null ? null : nation.trim();
     }
 
-    public String getBloodtpye() {
-        return bloodtpye;
+    public String getBloodtype() {
+        return bloodtype;
     }
 
-    public void setBloodtpye(String bloodtpye) {
-        this.bloodtpye = bloodtpye == null ? null : bloodtpye.trim();
+    public void setBloodtype(String bloodtype) {
+        this.bloodtype = bloodtype == null ? null : bloodtype.trim();
     }
 
-    public String getPositionId() {
-        return positionId;
+    public String getPositionid() {
+        return positionid;
     }
 
-    public void setPositionId(String positionId) {
-        this.positionId = positionId == null ? null : positionId.trim();
+    public void setPositionid(String positionid) {
+        this.positionid = positionid == null ? null : positionid.trim();
     }
 
-    public String getDepartmentId() {
-        return departmentId;
+    public String getDepartmentid() {
+        return departmentid;
     }
 
-    public void setDepartmentId(String departmentId) {
-        this.departmentId = departmentId == null ? null : departmentId.trim();
+    public void setDepartmentid(String departmentid) {
+        this.departmentid = departmentid == null ? null : departmentid.trim();
     }
 
-    public Date getEntryDate() {
-        return entryDate;
+    public Date getEntrydate() {
+        return entrydate;
     }
 
-    public void setEntryDate(Date entryDate) {
-        this.entryDate = entryDate;
+    public void setEntrydate(Date entrydate) {
+        this.entrydate = entrydate;
     }
 
-    public String getPoliticsStatus() {
-        return politicsStatus;
+    public String getPoliticsstatus() {
+        return politicsstatus;
     }
 
-    public void setPoliticsStatus(String politicsStatus) {
-        this.politicsStatus = politicsStatus == null ? null : politicsStatus.trim();
+    public void setPoliticsstatus(String politicsstatus) {
+        this.politicsstatus = politicsstatus == null ? null : politicsstatus.trim();
     }
 
     public Date getBirthday() {
@@ -151,20 +153,20 @@ public class Staff {
         this.birthday = birthday;
     }
 
-    public String getIdentityId() {
-        return identityId;
+    public String getIdentityid() {
+        return identityid;
     }
 
-    public void setIdentityId(String identityId) {
-        this.identityId = identityId == null ? null : identityId.trim();
+    public void setIdentityid(String identityid) {
+        this.identityid = identityid == null ? null : identityid.trim();
     }
 
-    public Byte getMaritalStatus() {
-        return maritalStatus;
+    public String getMaritalstatus() {
+        return maritalstatus;
     }
 
-    public void setMaritalStatus(Byte maritalStatus) {
-        this.maritalStatus = maritalStatus;
+    public void setMaritalstatus(String maritalstatus) {
+        this.maritalstatus = maritalstatus == null ? null : maritalstatus.trim();
     }
 
     public String getPhone() {
@@ -191,12 +193,12 @@ public class Staff {
         this.status = status == null ? null : status.trim();
     }
 
-    public String getStaffNo() {
-        return staffNo;
+    public String getStaffno() {
+        return staffno;
     }
 
-    public void setStaffNo(String staffNo) {
-        this.staffNo = staffNo == null ? null : staffNo.trim();
+    public void setStaffno(String staffno) {
+        this.staffno = staffno == null ? null : staffno.trim();
     }
 
     public Integer getNo() {
@@ -207,12 +209,12 @@ public class Staff {
         this.no = no;
     }
 
-    public String getBankCard() {
-        return bankCard;
+    public String getBankcard() {
+        return bankcard;
     }
 
-    public void setBankCard(String bankCard) {
-        this.bankCard = bankCard == null ? null : bankCard.trim();
+    public void setBankcard(String bankcard) {
+        this.bankcard = bankcard == null ? null : bankcard.trim();
     }
 
     public String getTitle() {
@@ -221,5 +223,13 @@ public class Staff {
 
     public void setTitle(String title) {
         this.title = title == null ? null : title.trim();
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
     }
 }

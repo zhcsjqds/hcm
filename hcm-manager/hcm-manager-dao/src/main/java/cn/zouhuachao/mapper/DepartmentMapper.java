@@ -10,7 +10,7 @@ public interface DepartmentMapper {
 
     int deleteByExample(DepartmentExample example);
 
-    int deleteByPrimaryKey(String departmentId);
+    int deleteByPrimaryKey(String departmentid);
 
     int insert(Department record);
 
@@ -18,7 +18,7 @@ public interface DepartmentMapper {
 
     List<Department> selectByExample(DepartmentExample example);
 
-    Department selectByPrimaryKey(String departmentId);
+    Department selectByPrimaryKey(String departmentid);
 
     int updateByExampleSelective(@Param("record") Department record, @Param("example") DepartmentExample example);
 

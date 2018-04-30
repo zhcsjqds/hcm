@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.zouhuachao.mapper.DepartmentMapper" >
   <resultMap id="BaseResultMap" type="cn.zouhuachao.pojo.Department" >
-    <id column="department_id" property="departmentId" jdbcType="VARCHAR" />
-    <result column="department_name" property="departmentName" jdbcType="VARCHAR" />
+    <id column="departmentid" property="departmentid" jdbcType="VARCHAR" />
+    <result column="departmentname" property="departmentname" jdbcType="VARCHAR" />
     <result column="manager" property="manager" jdbcType="VARCHAR" />
-    <result column="department_no" property="departmentNo" jdbcType="VARCHAR" />
+    <result column="departmentno" property="departmentno" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -66,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    department_id, department_name, manager, department_no
+    departmentid, departmentname, manager, departmentno
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zouhuachao.pojo.DepartmentExample" >
     select
@@ -86,11 +86,11 @@
     select 
     <include refid="Base_Column_List" />
     from department
-    where department_id = #{departmentId,jdbcType=VARCHAR}
+    where departmentid = #{departmentid,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from department
-    where department_id = #{departmentId,jdbcType=VARCHAR}
+    where departmentid = #{departmentid,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="cn.zouhuachao.pojo.DepartmentExample" >
     delete from department
@@ -99,39 +99,39 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.zouhuachao.pojo.Department" >
-    insert into department (department_id, department_name, manager, 
-      department_no)
-    values (#{departmentId,jdbcType=VARCHAR}, #{departmentName,jdbcType=VARCHAR}, #{manager,jdbcType=VARCHAR}, 
-      #{departmentNo,jdbcType=VARCHAR})
+    insert into department (departmentid, departmentname, manager, 
+      departmentno)
+    values (#{departmentid,jdbcType=VARCHAR}, #{departmentname,jdbcType=VARCHAR}, #{manager,jdbcType=VARCHAR}, 
+      #{departmentno,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.zouhuachao.pojo.Department" >
     insert into department
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="departmentId != null" >
-        department_id,
+      <if test="departmentid != null" >
+        departmentid,
       </if>
-      <if test="departmentName != null" >
-        department_name,
+      <if test="departmentname != null" >
+        departmentname,
       </if>
       <if test="manager != null" >
         manager,
       </if>
-      <if test="departmentNo != null" >
-        department_no,
+      <if test="departmentno != null" >
+        departmentno,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="departmentId != null" >
-        #{departmentId,jdbcType=VARCHAR},
+      <if test="departmentid != null" >
+        #{departmentid,jdbcType=VARCHAR},
       </if>
-      <if test="departmentName != null" >
-        #{departmentName,jdbcType=VARCHAR},
+      <if test="departmentname != null" >
+        #{departmentname,jdbcType=VARCHAR},
       </if>
       <if test="manager != null" >
         #{manager,jdbcType=VARCHAR},
       </if>
-      <if test="departmentNo != null" >
-        #{departmentNo,jdbcType=VARCHAR},
+      <if test="departmentno != null" >
+        #{departmentno,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -144,17 +144,17 @@
   <update id="updateByExampleSelective" parameterType="map" >
     update department
     <set >
-      <if test="record.departmentId != null" >
-        department_id = #{record.departmentId,jdbcType=VARCHAR},
+      <if test="record.departmentid != null" >
+        departmentid = #{record.departmentid,jdbcType=VARCHAR},
       </if>
-      <if test="record.departmentName != null" >
-        department_name = #{record.departmentName,jdbcType=VARCHAR},
+      <if test="record.departmentname != null" >
+        departmentname = #{record.departmentname,jdbcType=VARCHAR},
       </if>
       <if test="record.manager != null" >
         manager = #{record.manager,jdbcType=VARCHAR},
       </if>
-      <if test="record.departmentNo != null" >
-        department_no = #{record.departmentNo,jdbcType=VARCHAR},
+      <if test="record.departmentno != null" >
+        departmentno = #{record.departmentno,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -163,10 +163,10 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update department
-    set department_id = #{record.departmentId,jdbcType=VARCHAR},
-      department_name = #{record.departmentName,jdbcType=VARCHAR},
+    set departmentid = #{record.departmentid,jdbcType=VARCHAR},
+      departmentname = #{record.departmentname,jdbcType=VARCHAR},
       manager = #{record.manager,jdbcType=VARCHAR},
-      department_no = #{record.departmentNo,jdbcType=VARCHAR}
+      departmentno = #{record.departmentno,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -174,23 +174,23 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.zouhuachao.pojo.Department" >
     update department
     <set >
-      <if test="departmentName != null" >
-        department_name = #{departmentName,jdbcType=VARCHAR},
+      <if test="departmentname != null" >
+        departmentname = #{departmentname,jdbcType=VARCHAR},
       </if>
       <if test="manager != null" >
         manager = #{manager,jdbcType=VARCHAR},
       </if>
-      <if test="departmentNo != null" >
-        department_no = #{departmentNo,jdbcType=VARCHAR},
+      <if test="departmentno != null" >
+        departmentno = #{departmentno,jdbcType=VARCHAR},
       </if>
     </set>
-    where department_id = #{departmentId,jdbcType=VARCHAR}
+    where departmentid = #{departmentid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.zouhuachao.pojo.Department" >
     update department
-    set department_name = #{departmentName,jdbcType=VARCHAR},
+    set departmentname = #{departmentname,jdbcType=VARCHAR},
       manager = #{manager,jdbcType=VARCHAR},
-      department_no = #{departmentNo,jdbcType=VARCHAR}
-    where department_id = #{departmentId,jdbcType=VARCHAR}
+      departmentno = #{departmentno,jdbcType=VARCHAR}
+    where departmentid = #{departmentid,jdbcType=VARCHAR}
   </update>
 </mapper>

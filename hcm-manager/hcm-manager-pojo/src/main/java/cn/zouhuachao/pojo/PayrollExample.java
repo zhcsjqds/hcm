@@ -106,213 +106,213 @@ public class PayrollExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andPayIdIsNull() {
-            addCriterion("pay_id is null");
+        public Criteria andPayidIsNull() {
+            addCriterion("payid is null");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdIsNotNull() {
-            addCriterion("pay_id is not null");
+        public Criteria andPayidIsNotNull() {
+            addCriterion("payid is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdEqualTo(String value) {
-            addCriterion("pay_id =", value, "payId");
+        public Criteria andPayidEqualTo(String value) {
+            addCriterion("payid =", value, "payid");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdNotEqualTo(String value) {
-            addCriterion("pay_id <>", value, "payId");
+        public Criteria andPayidNotEqualTo(String value) {
+            addCriterion("payid <>", value, "payid");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdGreaterThan(String value) {
-            addCriterion("pay_id >", value, "payId");
+        public Criteria andPayidGreaterThan(String value) {
+            addCriterion("payid >", value, "payid");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdGreaterThanOrEqualTo(String value) {
-            addCriterion("pay_id >=", value, "payId");
+        public Criteria andPayidGreaterThanOrEqualTo(String value) {
+            addCriterion("payid >=", value, "payid");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdLessThan(String value) {
-            addCriterion("pay_id <", value, "payId");
+        public Criteria andPayidLessThan(String value) {
+            addCriterion("payid <", value, "payid");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdLessThanOrEqualTo(String value) {
-            addCriterion("pay_id <=", value, "payId");
+        public Criteria andPayidLessThanOrEqualTo(String value) {
+            addCriterion("payid <=", value, "payid");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdLike(String value) {
-            addCriterion("pay_id like", value, "payId");
+        public Criteria andPayidLike(String value) {
+            addCriterion("payid like", value, "payid");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdNotLike(String value) {
-            addCriterion("pay_id not like", value, "payId");
+        public Criteria andPayidNotLike(String value) {
+            addCriterion("payid not like", value, "payid");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdIn(List<String> values) {
-            addCriterion("pay_id in", values, "payId");
+        public Criteria andPayidIn(List<String> values) {
+            addCriterion("payid in", values, "payid");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdNotIn(List<String> values) {
-            addCriterion("pay_id not in", values, "payId");
+        public Criteria andPayidNotIn(List<String> values) {
+            addCriterion("payid not in", values, "payid");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdBetween(String value1, String value2) {
-            addCriterion("pay_id between", value1, value2, "payId");
+        public Criteria andPayidBetween(String value1, String value2) {
+            addCriterion("payid between", value1, value2, "payid");
             return (Criteria) this;
         }
 
-        public Criteria andPayIdNotBetween(String value1, String value2) {
-            addCriterion("pay_id not between", value1, value2, "payId");
+        public Criteria andPayidNotBetween(String value1, String value2) {
+            addCriterion("payid not between", value1, value2, "payid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdIsNull() {
-            addCriterion("staff_id is null");
+        public Criteria andStaffidIsNull() {
+            addCriterion("staffid is null");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdIsNotNull() {
-            addCriterion("staff_id is not null");
+        public Criteria andStaffidIsNotNull() {
+            addCriterion("staffid is not null");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdEqualTo(String value) {
-            addCriterion("staff_id =", value, "staffId");
+        public Criteria andStaffidEqualTo(String value) {
+            addCriterion("staffid =", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdNotEqualTo(String value) {
-            addCriterion("staff_id <>", value, "staffId");
+        public Criteria andStaffidNotEqualTo(String value) {
+            addCriterion("staffid <>", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdGreaterThan(String value) {
-            addCriterion("staff_id >", value, "staffId");
+        public Criteria andStaffidGreaterThan(String value) {
+            addCriterion("staffid >", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdGreaterThanOrEqualTo(String value) {
-            addCriterion("staff_id >=", value, "staffId");
+        public Criteria andStaffidGreaterThanOrEqualTo(String value) {
+            addCriterion("staffid >=", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdLessThan(String value) {
-            addCriterion("staff_id <", value, "staffId");
+        public Criteria andStaffidLessThan(String value) {
+            addCriterion("staffid <", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdLessThanOrEqualTo(String value) {
-            addCriterion("staff_id <=", value, "staffId");
+        public Criteria andStaffidLessThanOrEqualTo(String value) {
+            addCriterion("staffid <=", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdLike(String value) {
-            addCriterion("staff_id like", value, "staffId");
+        public Criteria andStaffidLike(String value) {
+            addCriterion("staffid like", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdNotLike(String value) {
-            addCriterion("staff_id not like", value, "staffId");
+        public Criteria andStaffidNotLike(String value) {
+            addCriterion("staffid not like", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdIn(List<String> values) {
-            addCriterion("staff_id in", values, "staffId");
+        public Criteria andStaffidIn(List<String> values) {
+            addCriterion("staffid in", values, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdNotIn(List<String> values) {
-            addCriterion("staff_id not in", values, "staffId");
+        public Criteria andStaffidNotIn(List<String> values) {
+            addCriterion("staffid not in", values, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdBetween(String value1, String value2) {
-            addCriterion("staff_id between", value1, value2, "staffId");
+        public Criteria andStaffidBetween(String value1, String value2) {
+            addCriterion("staffid between", value1, value2, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdNotBetween(String value1, String value2) {
-            addCriterion("staff_id not between", value1, value2, "staffId");
+        public Criteria andStaffidNotBetween(String value1, String value2) {
+            addCriterion("staffid not between", value1, value2, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeIdIsNull() {
-            addCriterion("paygrade_id is null");
+        public Criteria andPaygradeidIsNull() {
+            addCriterion("paygradeid is null");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeIdIsNotNull() {
-            addCriterion("paygrade_id is not null");
+        public Criteria andPaygradeidIsNotNull() {
+            addCriterion("paygradeid is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeIdEqualTo(String value) {
-            addCriterion("paygrade_id =", value, "paygradeId");
+        public Criteria andPaygradeidEqualTo(String value) {
+            addCriterion("paygradeid =", value, "paygradeid");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeIdNotEqualTo(String value) {
-            addCriterion("paygrade_id <>", value, "paygradeId");
+        public Criteria andPaygradeidNotEqualTo(String value) {
+            addCriterion("paygradeid <>", value, "paygradeid");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeIdGreaterThan(String value) {
-            addCriterion("paygrade_id >", value, "paygradeId");
+        public Criteria andPaygradeidGreaterThan(String value) {
+            addCriterion("paygradeid >", value, "paygradeid");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeIdGreaterThanOrEqualTo(String value) {
-            addCriterion("paygrade_id >=", value, "paygradeId");
+        public Criteria andPaygradeidGreaterThanOrEqualTo(String value) {
+            addCriterion("paygradeid >=", value, "paygradeid");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeIdLessThan(String value) {
-            addCriterion("paygrade_id <", value, "paygradeId");
+        public Criteria andPaygradeidLessThan(String value) {
+            addCriterion("paygradeid <", value, "paygradeid");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeIdLessThanOrEqualTo(String value) {
-            addCriterion("paygrade_id <=", value, "paygradeId");
+        public Criteria andPaygradeidLessThanOrEqualTo(String value) {
+            addCriterion("paygradeid <=", value, "paygradeid");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeIdLike(String value) {
-            addCriterion("paygrade_id like", value, "paygradeId");
+        public Criteria andPaygradeidLike(String value) {
+            addCriterion("paygradeid like", value, "paygradeid");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeIdNotLike(String value) {
-            addCriterion("paygrade_id not like", value, "paygradeId");
+        public Criteria andPaygradeidNotLike(String value) {
+            addCriterion("paygradeid not like", value, "paygradeid");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeIdIn(List<String> values) {
-            addCriterion("paygrade_id in", values, "paygradeId");
+        public Criteria andPaygradeidIn(List<String> values) {
+            addCriterion("paygradeid in", values, "paygradeid");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeIdNotIn(List<String> values) {
-            addCriterion("paygrade_id not in", values, "paygradeId");
+        public Criteria andPaygradeidNotIn(List<String> values) {
+            addCriterion("paygradeid not in", values, "paygradeid");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeIdBetween(String value1, String value2) {
-            addCriterion("paygrade_id between", value1, value2, "paygradeId");
+        public Criteria andPaygradeidBetween(String value1, String value2) {
+            addCriterion("paygradeid between", value1, value2, "paygradeid");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeIdNotBetween(String value1, String value2) {
-            addCriterion("paygrade_id not between", value1, value2, "paygradeId");
+        public Criteria andPaygradeidNotBetween(String value1, String value2) {
+            addCriterion("paygradeid not between", value1, value2, "paygradeid");
             return (Criteria) this;
         }
 
@@ -556,243 +556,243 @@ public class PayrollExample {
             return (Criteria) this;
         }
 
-        public Criteria andEndowmentInsIsNull() {
-            addCriterion("endowment_ins is null");
+        public Criteria andEndowmentinsIsNull() {
+            addCriterion("endowmentins is null");
             return (Criteria) this;
         }
 
-        public Criteria andEndowmentInsIsNotNull() {
-            addCriterion("endowment_ins is not null");
+        public Criteria andEndowmentinsIsNotNull() {
+            addCriterion("endowmentins is not null");
             return (Criteria) this;
         }
 
-        public Criteria andEndowmentInsEqualTo(BigDecimal value) {
-            addCriterion("endowment_ins =", value, "endowmentIns");
+        public Criteria andEndowmentinsEqualTo(BigDecimal value) {
+            addCriterion("endowmentins =", value, "endowmentins");
             return (Criteria) this;
         }
 
-        public Criteria andEndowmentInsNotEqualTo(BigDecimal value) {
-            addCriterion("endowment_ins <>", value, "endowmentIns");
+        public Criteria andEndowmentinsNotEqualTo(BigDecimal value) {
+            addCriterion("endowmentins <>", value, "endowmentins");
             return (Criteria) this;
         }
 
-        public Criteria andEndowmentInsGreaterThan(BigDecimal value) {
-            addCriterion("endowment_ins >", value, "endowmentIns");
+        public Criteria andEndowmentinsGreaterThan(BigDecimal value) {
+            addCriterion("endowmentins >", value, "endowmentins");
             return (Criteria) this;
         }
 
-        public Criteria andEndowmentInsGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("endowment_ins >=", value, "endowmentIns");
+        public Criteria andEndowmentinsGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("endowmentins >=", value, "endowmentins");
             return (Criteria) this;
         }
 
-        public Criteria andEndowmentInsLessThan(BigDecimal value) {
-            addCriterion("endowment_ins <", value, "endowmentIns");
+        public Criteria andEndowmentinsLessThan(BigDecimal value) {
+            addCriterion("endowmentins <", value, "endowmentins");
             return (Criteria) this;
         }
 
-        public Criteria andEndowmentInsLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("endowment_ins <=", value, "endowmentIns");
+        public Criteria andEndowmentinsLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("endowmentins <=", value, "endowmentins");
             return (Criteria) this;
         }
 
-        public Criteria andEndowmentInsIn(List<BigDecimal> values) {
-            addCriterion("endowment_ins in", values, "endowmentIns");
+        public Criteria andEndowmentinsIn(List<BigDecimal> values) {
+            addCriterion("endowmentins in", values, "endowmentins");
             return (Criteria) this;
         }
 
-        public Criteria andEndowmentInsNotIn(List<BigDecimal> values) {
-            addCriterion("endowment_ins not in", values, "endowmentIns");
+        public Criteria andEndowmentinsNotIn(List<BigDecimal> values) {
+            addCriterion("endowmentins not in", values, "endowmentins");
             return (Criteria) this;
         }
 
-        public Criteria andEndowmentInsBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("endowment_ins between", value1, value2, "endowmentIns");
+        public Criteria andEndowmentinsBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("endowmentins between", value1, value2, "endowmentins");
             return (Criteria) this;
         }
 
-        public Criteria andEndowmentInsNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("endowment_ins not between", value1, value2, "endowmentIns");
+        public Criteria andEndowmentinsNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("endowmentins not between", value1, value2, "endowmentins");
             return (Criteria) this;
         }
 
-        public Criteria andMedicalInsIsNull() {
-            addCriterion("medical_ins is null");
+        public Criteria andMedicalinsIsNull() {
+            addCriterion("medicalins is null");
             return (Criteria) this;
         }
 
-        public Criteria andMedicalInsIsNotNull() {
-            addCriterion("medical_ins is not null");
+        public Criteria andMedicalinsIsNotNull() {
+            addCriterion("medicalins is not null");
             return (Criteria) this;
         }
 
-        public Criteria andMedicalInsEqualTo(BigDecimal value) {
-            addCriterion("medical_ins =", value, "medicalIns");
+        public Criteria andMedicalinsEqualTo(BigDecimal value) {
+            addCriterion("medicalins =", value, "medicalins");
             return (Criteria) this;
         }
 
-        public Criteria andMedicalInsNotEqualTo(BigDecimal value) {
-            addCriterion("medical_ins <>", value, "medicalIns");
+        public Criteria andMedicalinsNotEqualTo(BigDecimal value) {
+            addCriterion("medicalins <>", value, "medicalins");
             return (Criteria) this;
         }
 
-        public Criteria andMedicalInsGreaterThan(BigDecimal value) {
-            addCriterion("medical_ins >", value, "medicalIns");
+        public Criteria andMedicalinsGreaterThan(BigDecimal value) {
+            addCriterion("medicalins >", value, "medicalins");
             return (Criteria) this;
         }
 
-        public Criteria andMedicalInsGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("medical_ins >=", value, "medicalIns");
+        public Criteria andMedicalinsGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("medicalins >=", value, "medicalins");
             return (Criteria) this;
         }
 
-        public Criteria andMedicalInsLessThan(BigDecimal value) {
-            addCriterion("medical_ins <", value, "medicalIns");
+        public Criteria andMedicalinsLessThan(BigDecimal value) {
+            addCriterion("medicalins <", value, "medicalins");
             return (Criteria) this;
         }
 
-        public Criteria andMedicalInsLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("medical_ins <=", value, "medicalIns");
+        public Criteria andMedicalinsLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("medicalins <=", value, "medicalins");
             return (Criteria) this;
         }
 
-        public Criteria andMedicalInsIn(List<BigDecimal> values) {
-            addCriterion("medical_ins in", values, "medicalIns");
+        public Criteria andMedicalinsIn(List<BigDecimal> values) {
+            addCriterion("medicalins in", values, "medicalins");
             return (Criteria) this;
         }
 
-        public Criteria andMedicalInsNotIn(List<BigDecimal> values) {
-            addCriterion("medical_ins not in", values, "medicalIns");
+        public Criteria andMedicalinsNotIn(List<BigDecimal> values) {
+            addCriterion("medicalins not in", values, "medicalins");
             return (Criteria) this;
         }
 
-        public Criteria andMedicalInsBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("medical_ins between", value1, value2, "medicalIns");
+        public Criteria andMedicalinsBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("medicalins between", value1, value2, "medicalins");
             return (Criteria) this;
         }
 
-        public Criteria andMedicalInsNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("medical_ins not between", value1, value2, "medicalIns");
+        public Criteria andMedicalinsNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("medicalins not between", value1, value2, "medicalins");
             return (Criteria) this;
         }
 
-        public Criteria andUnemploymentInsIsNull() {
-            addCriterion("unemployment_ins is null");
+        public Criteria andUnemploymentinsIsNull() {
+            addCriterion("unemploymentins is null");
             return (Criteria) this;
         }
 
-        public Criteria andUnemploymentInsIsNotNull() {
-            addCriterion("unemployment_ins is not null");
+        public Criteria andUnemploymentinsIsNotNull() {
+            addCriterion("unemploymentins is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUnemploymentInsEqualTo(BigDecimal value) {
-            addCriterion("unemployment_ins =", value, "unemploymentIns");
+        public Criteria andUnemploymentinsEqualTo(BigDecimal value) {
+            addCriterion("unemploymentins =", value, "unemploymentins");
             return (Criteria) this;
         }
 
-        public Criteria andUnemploymentInsNotEqualTo(BigDecimal value) {
-            addCriterion("unemployment_ins <>", value, "unemploymentIns");
+        public Criteria andUnemploymentinsNotEqualTo(BigDecimal value) {
+            addCriterion("unemploymentins <>", value, "unemploymentins");
             return (Criteria) this;
         }
 
-        public Criteria andUnemploymentInsGreaterThan(BigDecimal value) {
-            addCriterion("unemployment_ins >", value, "unemploymentIns");
+        public Criteria andUnemploymentinsGreaterThan(BigDecimal value) {
+            addCriterion("unemploymentins >", value, "unemploymentins");
             return (Criteria) this;
         }
 
-        public Criteria andUnemploymentInsGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("unemployment_ins >=", value, "unemploymentIns");
+        public Criteria andUnemploymentinsGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("unemploymentins >=", value, "unemploymentins");
             return (Criteria) this;
         }
 
-        public Criteria andUnemploymentInsLessThan(BigDecimal value) {
-            addCriterion("unemployment_ins <", value, "unemploymentIns");
+        public Criteria andUnemploymentinsLessThan(BigDecimal value) {
+            addCriterion("unemploymentins <", value, "unemploymentins");
             return (Criteria) this;
         }
 
-        public Criteria andUnemploymentInsLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("unemployment_ins <=", value, "unemploymentIns");
+        public Criteria andUnemploymentinsLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("unemploymentins <=", value, "unemploymentins");
             return (Criteria) this;
         }
 
-        public Criteria andUnemploymentInsIn(List<BigDecimal> values) {
-            addCriterion("unemployment_ins in", values, "unemploymentIns");
+        public Criteria andUnemploymentinsIn(List<BigDecimal> values) {
+            addCriterion("unemploymentins in", values, "unemploymentins");
             return (Criteria) this;
         }
 
-        public Criteria andUnemploymentInsNotIn(List<BigDecimal> values) {
-            addCriterion("unemployment_ins not in", values, "unemploymentIns");
+        public Criteria andUnemploymentinsNotIn(List<BigDecimal> values) {
+            addCriterion("unemploymentins not in", values, "unemploymentins");
             return (Criteria) this;
         }
 
-        public Criteria andUnemploymentInsBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("unemployment_ins between", value1, value2, "unemploymentIns");
+        public Criteria andUnemploymentinsBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("unemploymentins between", value1, value2, "unemploymentins");
             return (Criteria) this;
         }
 
-        public Criteria andUnemploymentInsNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("unemployment_ins not between", value1, value2, "unemploymentIns");
+        public Criteria andUnemploymentinsNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("unemploymentins not between", value1, value2, "unemploymentins");
             return (Criteria) this;
         }
 
-        public Criteria andHousingFundIsNull() {
-            addCriterion("housing_fund is null");
+        public Criteria andHousingfundIsNull() {
+            addCriterion("housingfund is null");
             return (Criteria) this;
         }
 
-        public Criteria andHousingFundIsNotNull() {
-            addCriterion("housing_fund is not null");
+        public Criteria andHousingfundIsNotNull() {
+            addCriterion("housingfund is not null");
             return (Criteria) this;
         }
 
-        public Criteria andHousingFundEqualTo(BigDecimal value) {
-            addCriterion("housing_fund =", value, "housingFund");
+        public Criteria andHousingfundEqualTo(BigDecimal value) {
+            addCriterion("housingfund =", value, "housingfund");
             return (Criteria) this;
         }
 
-        public Criteria andHousingFundNotEqualTo(BigDecimal value) {
-            addCriterion("housing_fund <>", value, "housingFund");
+        public Criteria andHousingfundNotEqualTo(BigDecimal value) {
+            addCriterion("housingfund <>", value, "housingfund");
             return (Criteria) this;
         }
 
-        public Criteria andHousingFundGreaterThan(BigDecimal value) {
-            addCriterion("housing_fund >", value, "housingFund");
+        public Criteria andHousingfundGreaterThan(BigDecimal value) {
+            addCriterion("housingfund >", value, "housingfund");
             return (Criteria) this;
         }
 
-        public Criteria andHousingFundGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("housing_fund >=", value, "housingFund");
+        public Criteria andHousingfundGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("housingfund >=", value, "housingfund");
             return (Criteria) this;
         }
 
-        public Criteria andHousingFundLessThan(BigDecimal value) {
-            addCriterion("housing_fund <", value, "housingFund");
+        public Criteria andHousingfundLessThan(BigDecimal value) {
+            addCriterion("housingfund <", value, "housingfund");
             return (Criteria) this;
         }
 
-        public Criteria andHousingFundLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("housing_fund <=", value, "housingFund");
+        public Criteria andHousingfundLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("housingfund <=", value, "housingfund");
             return (Criteria) this;
         }
 
-        public Criteria andHousingFundIn(List<BigDecimal> values) {
-            addCriterion("housing_fund in", values, "housingFund");
+        public Criteria andHousingfundIn(List<BigDecimal> values) {
+            addCriterion("housingfund in", values, "housingfund");
             return (Criteria) this;
         }
 
-        public Criteria andHousingFundNotIn(List<BigDecimal> values) {
-            addCriterion("housing_fund not in", values, "housingFund");
+        public Criteria andHousingfundNotIn(List<BigDecimal> values) {
+            addCriterion("housingfund not in", values, "housingfund");
             return (Criteria) this;
         }
 
-        public Criteria andHousingFundBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("housing_fund between", value1, value2, "housingFund");
+        public Criteria andHousingfundBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("housingfund between", value1, value2, "housingfund");
             return (Criteria) this;
         }
 
-        public Criteria andHousingFundNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("housing_fund not between", value1, value2, "housingFund");
+        public Criteria andHousingfundNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("housingfund not between", value1, value2, "housingfund");
             return (Criteria) this;
         }
 

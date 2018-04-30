@@ -2,12 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.zouhuachao.mapper.StaffRewardMapper" >
   <resultMap id="BaseResultMap" type="cn.zouhuachao.pojo.StaffReward" >
-    <id column="award_id" property="awardId" jdbcType="VARCHAR" />
-    <result column="staff_id" property="staffId" jdbcType="VARCHAR" />
-    <result column="award_type" property="awardType" jdbcType="VARCHAR" />
-    <result column="award_reason" property="awardReason" jdbcType="VARCHAR" />
-    <result column="award_result" property="awardResult" jdbcType="VARCHAR" />
-    <result column="award_amount" property="awardAmount" jdbcType="DECIMAL" />
+    <id column="awardid" property="awardid" jdbcType="VARCHAR" />
+    <result column="staffid" property="staffid" jdbcType="VARCHAR" />
+    <result column="awardtype" property="awardtype" jdbcType="VARCHAR" />
+    <result column="awardreason" property="awardreason" jdbcType="VARCHAR" />
+    <result column="awardresult" property="awardresult" jdbcType="VARCHAR" />
+    <result column="awardamount" property="awardamount" jdbcType="DECIMAL" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -69,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    award_id, staff_id, award_type, award_reason, award_result, award_amount, remark
+    awardid, staffid, awardtype, awardreason, awardresult, awardamount, remark
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zouhuachao.pojo.StaffRewardExample" >
     select
@@ -89,11 +89,11 @@
     select 
     <include refid="Base_Column_List" />
     from staff_reward
-    where award_id = #{awardId,jdbcType=VARCHAR}
+    where awardid = #{awardid,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from staff_reward
-    where award_id = #{awardId,jdbcType=VARCHAR}
+    where awardid = #{awardid,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="cn.zouhuachao.pojo.StaffRewardExample" >
     delete from staff_reward
@@ -102,56 +102,56 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.zouhuachao.pojo.StaffReward" >
-    insert into staff_reward (award_id, staff_id, award_type, 
-      award_reason, award_result, award_amount, 
+    insert into staff_reward (awardid, staffid, awardtype, 
+      awardreason, awardresult, awardamount, 
       remark)
-    values (#{awardId,jdbcType=VARCHAR}, #{staffId,jdbcType=VARCHAR}, #{awardType,jdbcType=VARCHAR}, 
-      #{awardReason,jdbcType=VARCHAR}, #{awardResult,jdbcType=VARCHAR}, #{awardAmount,jdbcType=DECIMAL}, 
+    values (#{awardid,jdbcType=VARCHAR}, #{staffid,jdbcType=VARCHAR}, #{awardtype,jdbcType=VARCHAR}, 
+      #{awardreason,jdbcType=VARCHAR}, #{awardresult,jdbcType=VARCHAR}, #{awardamount,jdbcType=DECIMAL}, 
       #{remark,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.zouhuachao.pojo.StaffReward" >
     insert into staff_reward
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="awardId != null" >
-        award_id,
+      <if test="awardid != null" >
+        awardid,
       </if>
-      <if test="staffId != null" >
-        staff_id,
+      <if test="staffid != null" >
+        staffid,
       </if>
-      <if test="awardType != null" >
-        award_type,
+      <if test="awardtype != null" >
+        awardtype,
       </if>
-      <if test="awardReason != null" >
-        award_reason,
+      <if test="awardreason != null" >
+        awardreason,
       </if>
-      <if test="awardResult != null" >
-        award_result,
+      <if test="awardresult != null" >
+        awardresult,
       </if>
-      <if test="awardAmount != null" >
-        award_amount,
+      <if test="awardamount != null" >
+        awardamount,
       </if>
       <if test="remark != null" >
         remark,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="awardId != null" >
-        #{awardId,jdbcType=VARCHAR},
+      <if test="awardid != null" >
+        #{awardid,jdbcType=VARCHAR},
       </if>
-      <if test="staffId != null" >
-        #{staffId,jdbcType=VARCHAR},
+      <if test="staffid != null" >
+        #{staffid,jdbcType=VARCHAR},
       </if>
-      <if test="awardType != null" >
-        #{awardType,jdbcType=VARCHAR},
+      <if test="awardtype != null" >
+        #{awardtype,jdbcType=VARCHAR},
       </if>
-      <if test="awardReason != null" >
-        #{awardReason,jdbcType=VARCHAR},
+      <if test="awardreason != null" >
+        #{awardreason,jdbcType=VARCHAR},
       </if>
-      <if test="awardResult != null" >
-        #{awardResult,jdbcType=VARCHAR},
+      <if test="awardresult != null" >
+        #{awardresult,jdbcType=VARCHAR},
       </if>
-      <if test="awardAmount != null" >
-        #{awardAmount,jdbcType=DECIMAL},
+      <if test="awardamount != null" >
+        #{awardamount,jdbcType=DECIMAL},
       </if>
       <if test="remark != null" >
         #{remark,jdbcType=VARCHAR},
@@ -167,23 +167,23 @@
   <update id="updateByExampleSelective" parameterType="map" >
     update staff_reward
     <set >
-      <if test="record.awardId != null" >
-        award_id = #{record.awardId,jdbcType=VARCHAR},
+      <if test="record.awardid != null" >
+        awardid = #{record.awardid,jdbcType=VARCHAR},
       </if>
-      <if test="record.staffId != null" >
-        staff_id = #{record.staffId,jdbcType=VARCHAR},
+      <if test="record.staffid != null" >
+        staffid = #{record.staffid,jdbcType=VARCHAR},
       </if>
-      <if test="record.awardType != null" >
-        award_type = #{record.awardType,jdbcType=VARCHAR},
+      <if test="record.awardtype != null" >
+        awardtype = #{record.awardtype,jdbcType=VARCHAR},
       </if>
-      <if test="record.awardReason != null" >
-        award_reason = #{record.awardReason,jdbcType=VARCHAR},
+      <if test="record.awardreason != null" >
+        awardreason = #{record.awardreason,jdbcType=VARCHAR},
       </if>
-      <if test="record.awardResult != null" >
-        award_result = #{record.awardResult,jdbcType=VARCHAR},
+      <if test="record.awardresult != null" >
+        awardresult = #{record.awardresult,jdbcType=VARCHAR},
       </if>
-      <if test="record.awardAmount != null" >
-        award_amount = #{record.awardAmount,jdbcType=DECIMAL},
+      <if test="record.awardamount != null" >
+        awardamount = #{record.awardamount,jdbcType=DECIMAL},
       </if>
       <if test="record.remark != null" >
         remark = #{record.remark,jdbcType=VARCHAR},
@@ -195,12 +195,12 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update staff_reward
-    set award_id = #{record.awardId,jdbcType=VARCHAR},
-      staff_id = #{record.staffId,jdbcType=VARCHAR},
-      award_type = #{record.awardType,jdbcType=VARCHAR},
-      award_reason = #{record.awardReason,jdbcType=VARCHAR},
-      award_result = #{record.awardResult,jdbcType=VARCHAR},
-      award_amount = #{record.awardAmount,jdbcType=DECIMAL},
+    set awardid = #{record.awardid,jdbcType=VARCHAR},
+      staffid = #{record.staffid,jdbcType=VARCHAR},
+      awardtype = #{record.awardtype,jdbcType=VARCHAR},
+      awardreason = #{record.awardreason,jdbcType=VARCHAR},
+      awardresult = #{record.awardresult,jdbcType=VARCHAR},
+      awardamount = #{record.awardamount,jdbcType=DECIMAL},
       remark = #{record.remark,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -209,35 +209,35 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.zouhuachao.pojo.StaffReward" >
     update staff_reward
     <set >
-      <if test="staffId != null" >
-        staff_id = #{staffId,jdbcType=VARCHAR},
+      <if test="staffid != null" >
+        staffid = #{staffid,jdbcType=VARCHAR},
       </if>
-      <if test="awardType != null" >
-        award_type = #{awardType,jdbcType=VARCHAR},
+      <if test="awardtype != null" >
+        awardtype = #{awardtype,jdbcType=VARCHAR},
       </if>
-      <if test="awardReason != null" >
-        award_reason = #{awardReason,jdbcType=VARCHAR},
+      <if test="awardreason != null" >
+        awardreason = #{awardreason,jdbcType=VARCHAR},
       </if>
-      <if test="awardResult != null" >
-        award_result = #{awardResult,jdbcType=VARCHAR},
+      <if test="awardresult != null" >
+        awardresult = #{awardresult,jdbcType=VARCHAR},
       </if>
-      <if test="awardAmount != null" >
-        award_amount = #{awardAmount,jdbcType=DECIMAL},
+      <if test="awardamount != null" >
+        awardamount = #{awardamount,jdbcType=DECIMAL},
       </if>
       <if test="remark != null" >
         remark = #{remark,jdbcType=VARCHAR},
       </if>
     </set>
-    where award_id = #{awardId,jdbcType=VARCHAR}
+    where awardid = #{awardid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.zouhuachao.pojo.StaffReward" >
     update staff_reward
-    set staff_id = #{staffId,jdbcType=VARCHAR},
-      award_type = #{awardType,jdbcType=VARCHAR},
-      award_reason = #{awardReason,jdbcType=VARCHAR},
-      award_result = #{awardResult,jdbcType=VARCHAR},
-      award_amount = #{awardAmount,jdbcType=DECIMAL},
+    set staffid = #{staffid,jdbcType=VARCHAR},
+      awardtype = #{awardtype,jdbcType=VARCHAR},
+      awardreason = #{awardreason,jdbcType=VARCHAR},
+      awardresult = #{awardresult,jdbcType=VARCHAR},
+      awardamount = #{awardamount,jdbcType=DECIMAL},
       remark = #{remark,jdbcType=VARCHAR}
-    where award_id = #{awardId,jdbcType=VARCHAR}
+    where awardid = #{awardid,jdbcType=VARCHAR}
   </update>
 </mapper>

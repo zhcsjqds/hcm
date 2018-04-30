@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.zouhuachao.mapper.AttendanceRecordMapper" >
   <resultMap id="BaseResultMap" type="cn.zouhuachao.pojo.AttendanceRecord" >
-    <id column="atten_id" property="attenId" jdbcType="VARCHAR" />
-    <result column="staff_id" property="staffId" jdbcType="VARCHAR" />
-    <result column="atten_time" property="attenTime" jdbcType="TIMESTAMP" />
+    <id column="attenid" property="attenid" jdbcType="VARCHAR" />
+    <result column="staffid" property="staffid" jdbcType="VARCHAR" />
+    <result column="attentime" property="attentime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -65,7 +65,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    atten_id, staff_id, atten_time
+    attenid, staffid, attentime
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zouhuachao.pojo.AttendanceRecordExample" >
     select
@@ -85,11 +85,11 @@
     select 
     <include refid="Base_Column_List" />
     from attendance_record
-    where atten_id = #{attenId,jdbcType=VARCHAR}
+    where attenid = #{attenid,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from attendance_record
-    where atten_id = #{attenId,jdbcType=VARCHAR}
+    where attenid = #{attenid,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="cn.zouhuachao.pojo.AttendanceRecordExample" >
     delete from attendance_record
@@ -98,33 +98,33 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.zouhuachao.pojo.AttendanceRecord" >
-    insert into attendance_record (atten_id, staff_id, atten_time
+    insert into attendance_record (attenid, staffid, attentime
       )
-    values (#{attenId,jdbcType=VARCHAR}, #{staffId,jdbcType=VARCHAR}, #{attenTime,jdbcType=TIMESTAMP}
+    values (#{attenid,jdbcType=VARCHAR}, #{staffid,jdbcType=VARCHAR}, #{attentime,jdbcType=TIMESTAMP}
       )
   </insert>
   <insert id="insertSelective" parameterType="cn.zouhuachao.pojo.AttendanceRecord" >
     insert into attendance_record
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="attenId != null" >
-        atten_id,
+      <if test="attenid != null" >
+        attenid,
       </if>
-      <if test="staffId != null" >
-        staff_id,
+      <if test="staffid != null" >
+        staffid,
       </if>
-      <if test="attenTime != null" >
-        atten_time,
+      <if test="attentime != null" >
+        attentime,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="attenId != null" >
-        #{attenId,jdbcType=VARCHAR},
+      <if test="attenid != null" >
+        #{attenid,jdbcType=VARCHAR},
       </if>
-      <if test="staffId != null" >
-        #{staffId,jdbcType=VARCHAR},
+      <if test="staffid != null" >
+        #{staffid,jdbcType=VARCHAR},
       </if>
-      <if test="attenTime != null" >
-        #{attenTime,jdbcType=TIMESTAMP},
+      <if test="attentime != null" >
+        #{attentime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -137,14 +137,14 @@
   <update id="updateByExampleSelective" parameterType="map" >
     update attendance_record
     <set >
-      <if test="record.attenId != null" >
-        atten_id = #{record.attenId,jdbcType=VARCHAR},
+      <if test="record.attenid != null" >
+        attenid = #{record.attenid,jdbcType=VARCHAR},
       </if>
-      <if test="record.staffId != null" >
-        staff_id = #{record.staffId,jdbcType=VARCHAR},
+      <if test="record.staffid != null" >
+        staffid = #{record.staffid,jdbcType=VARCHAR},
       </if>
-      <if test="record.attenTime != null" >
-        atten_time = #{record.attenTime,jdbcType=TIMESTAMP},
+      <if test="record.attentime != null" >
+        attentime = #{record.attentime,jdbcType=TIMESTAMP},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -153,9 +153,9 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update attendance_record
-    set atten_id = #{record.attenId,jdbcType=VARCHAR},
-      staff_id = #{record.staffId,jdbcType=VARCHAR},
-      atten_time = #{record.attenTime,jdbcType=TIMESTAMP}
+    set attenid = #{record.attenid,jdbcType=VARCHAR},
+      staffid = #{record.staffid,jdbcType=VARCHAR},
+      attentime = #{record.attentime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -163,19 +163,19 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.zouhuachao.pojo.AttendanceRecord" >
     update attendance_record
     <set >
-      <if test="staffId != null" >
-        staff_id = #{staffId,jdbcType=VARCHAR},
+      <if test="staffid != null" >
+        staffid = #{staffid,jdbcType=VARCHAR},
       </if>
-      <if test="attenTime != null" >
-        atten_time = #{attenTime,jdbcType=TIMESTAMP},
+      <if test="attentime != null" >
+        attentime = #{attentime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where atten_id = #{attenId,jdbcType=VARCHAR}
+    where attenid = #{attenid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.zouhuachao.pojo.AttendanceRecord" >
     update attendance_record
-    set staff_id = #{staffId,jdbcType=VARCHAR},
-      atten_time = #{attenTime,jdbcType=TIMESTAMP}
-    where atten_id = #{attenId,jdbcType=VARCHAR}
+    set staffid = #{staffid,jdbcType=VARCHAR},
+      attentime = #{attentime,jdbcType=TIMESTAMP}
+    where attenid = #{attenid,jdbcType=VARCHAR}
   </update>
 </mapper>

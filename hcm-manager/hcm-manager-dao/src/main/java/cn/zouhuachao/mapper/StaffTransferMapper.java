@@ -10,7 +10,7 @@ public interface StaffTransferMapper {
 
     int deleteByExample(StaffTransferExample example);
 
-    int deleteByPrimaryKey(String transId);
+    int deleteByPrimaryKey(String transid);
 
     int insert(StaffTransfer record);
 
@@ -18,7 +18,7 @@ public interface StaffTransferMapper {
 
     List<StaffTransfer> selectByExample(StaffTransferExample example);
 
-    StaffTransfer selectByPrimaryKey(String transId);
+    StaffTransfer selectByPrimaryKey(String transid);
 
     int updateByExampleSelective(@Param("record") StaffTransfer record, @Param("example") StaffTransferExample example);
 

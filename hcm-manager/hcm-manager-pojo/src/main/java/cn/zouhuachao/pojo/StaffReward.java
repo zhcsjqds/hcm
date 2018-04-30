@@ -3,66 +3,66 @@ package cn.zouhuachao.pojo;
 import java.math.BigDecimal;
 
 public class StaffReward {
-    private String awardId;
+    private String awardid;
 
-    private String staffId;
+    private String staffid;
 
-    private String awardType;
+    private String awardtype;
 
-    private String awardReason;
+    private String awardreason;
 
-    private String awardResult;
+    private String awardresult;
 
-    private BigDecimal awardAmount;
+    private BigDecimal awardamount;
 
     private String remark;
 
-    public String getAwardId() {
-        return awardId;
+    public String getAwardid() {
+        return awardid;
     }
 
-    public void setAwardId(String awardId) {
-        this.awardId = awardId == null ? null : awardId.trim();
+    public void setAwardid(String awardid) {
+        this.awardid = awardid == null ? null : awardid.trim();
     }
 
-    public String getStaffId() {
-        return staffId;
+    public String getStaffid() {
+        return staffid;
     }
 
-    public void setStaffId(String staffId) {
-        this.staffId = staffId == null ? null : staffId.trim();
+    public void setStaffid(String staffid) {
+        this.staffid = staffid == null ? null : staffid.trim();
     }
 
-    public String getAwardType() {
-        return awardType;
+    public String getAwardtype() {
+        return awardtype;
     }
 
-    public void setAwardType(String awardType) {
-        this.awardType = awardType == null ? null : awardType.trim();
+    public void setAwardtype(String awardtype) {
+        this.awardtype = awardtype == null ? null : awardtype.trim();
     }
 
-    public String getAwardReason() {
-        return awardReason;
+    public String getAwardreason() {
+        return awardreason;
     }
 
-    public void setAwardReason(String awardReason) {
-        this.awardReason = awardReason == null ? null : awardReason.trim();
+    public void setAwardreason(String awardreason) {
+        this.awardreason = awardreason == null ? null : awardreason.trim();
     }
 
-    public String getAwardResult() {
-        return awardResult;
+    public String getAwardresult() {
+        return awardresult;
     }
 
-    public void setAwardResult(String awardResult) {
-        this.awardResult = awardResult == null ? null : awardResult.trim();
+    public void setAwardresult(String awardresult) {
+        this.awardresult = awardresult == null ? null : awardresult.trim();
     }
 
-    public BigDecimal getAwardAmount() {
-        return awardAmount;
+    public BigDecimal getAwardamount() {
+        return awardamount;
     }
 
-    public void setAwardAmount(BigDecimal awardAmount) {
-        this.awardAmount = awardAmount;
+    public void setAwardamount(BigDecimal awardamount) {
+        this.awardamount = awardamount;
     }
 
     public String getRemark() {

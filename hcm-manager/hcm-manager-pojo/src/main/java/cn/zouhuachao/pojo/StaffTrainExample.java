@@ -105,213 +105,213 @@ public class StaffTrainExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andTrainIdIsNull() {
-            addCriterion("train_id is null");
+        public Criteria andTrainidIsNull() {
+            addCriterion("trainid is null");
             return (Criteria) this;
         }
 
-        public Criteria andTrainIdIsNotNull() {
-            addCriterion("train_id is not null");
+        public Criteria andTrainidIsNotNull() {
+            addCriterion("trainid is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTrainIdEqualTo(String value) {
-            addCriterion("train_id =", value, "trainId");
+        public Criteria andTrainidEqualTo(String value) {
+            addCriterion("trainid =", value, "trainid");
             return (Criteria) this;
         }
 
-        public Criteria andTrainIdNotEqualTo(String value) {
-            addCriterion("train_id <>", value, "trainId");
+        public Criteria andTrainidNotEqualTo(String value) {
+            addCriterion("trainid <>", value, "trainid");
             return (Criteria) this;
         }
 
-        public Criteria andTrainIdGreaterThan(String value) {
-            addCriterion("train_id >", value, "trainId");
+        public Criteria andTrainidGreaterThan(String value) {
+            addCriterion("trainid >", value, "trainid");
             return (Criteria) this;
         }
 
-        public Criteria andTrainIdGreaterThanOrEqualTo(String value) {
-            addCriterion("train_id >=", value, "trainId");
+        public Criteria andTrainidGreaterThanOrEqualTo(String value) {
+            addCriterion("trainid >=", value, "trainid");
             return (Criteria) this;
         }
 
-        public Criteria andTrainIdLessThan(String value) {
-            addCriterion("train_id <", value, "trainId");
+        public Criteria andTrainidLessThan(String value) {
+            addCriterion("trainid <", value, "trainid");
             return (Criteria) this;
         }
 
-        public Criteria andTrainIdLessThanOrEqualTo(String value) {
-            addCriterion("train_id <=", value, "trainId");
+        public Criteria andTrainidLessThanOrEqualTo(String value) {
+            addCriterion("trainid <=", value, "trainid");
             return (Criteria) this;
         }
 
-        public Criteria andTrainIdLike(String value) {
-            addCriterion("train_id like", value, "trainId");
+        public Criteria andTrainidLike(String value) {
+            addCriterion("trainid like", value, "trainid");
             return (Criteria) this;
         }
 
-        public Criteria andTrainIdNotLike(String value) {
-            addCriterion("train_id not like", value, "trainId");
+        public Criteria andTrainidNotLike(String value) {
+            addCriterion("trainid not like", value, "trainid");
             return (Criteria) this;
         }
 
-        public Criteria andTrainIdIn(List<String> values) {
-            addCriterion("train_id in", values, "trainId");
+        public Criteria andTrainidIn(List<String> values) {
+            addCriterion("trainid in", values, "trainid");
             return (Criteria) this;
         }
 
-        public Criteria andTrainIdNotIn(List<String> values) {
-            addCriterion("train_id not in", values, "trainId");
+        public Criteria andTrainidNotIn(List<String> values) {
+            addCriterion("trainid not in", values, "trainid");
             return (Criteria) this;
         }
 
-        public Criteria andTrainIdBetween(String value1, String value2) {
-            addCriterion("train_id between", value1, value2, "trainId");
+        public Criteria andTrainidBetween(String value1, String value2) {
+            addCriterion("trainid between", value1, value2, "trainid");
             return (Criteria) this;
         }
 
-        public Criteria andTrainIdNotBetween(String value1, String value2) {
-            addCriterion("train_id not between", value1, value2, "trainId");
+        public Criteria andTrainidNotBetween(String value1, String value2) {
+            addCriterion("trainid not between", value1, value2, "trainid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdIsNull() {
-            addCriterion("staff_id is null");
+        public Criteria andStaffidIsNull() {
+            addCriterion("staffid is null");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdIsNotNull() {
-            addCriterion("staff_id is not null");
+        public Criteria andStaffidIsNotNull() {
+            addCriterion("staffid is not null");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdEqualTo(String value) {
-            addCriterion("staff_id =", value, "staffId");
+        public Criteria andStaffidEqualTo(String value) {
+            addCriterion("staffid =", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdNotEqualTo(String value) {
-            addCriterion("staff_id <>", value, "staffId");
+        public Criteria andStaffidNotEqualTo(String value) {
+            addCriterion("staffid <>", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdGreaterThan(String value) {
-            addCriterion("staff_id >", value, "staffId");
+        public Criteria andStaffidGreaterThan(String value) {
+            addCriterion("staffid >", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdGreaterThanOrEqualTo(String value) {
-            addCriterion("staff_id >=", value, "staffId");
+        public Criteria andStaffidGreaterThanOrEqualTo(String value) {
+            addCriterion("staffid >=", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdLessThan(String value) {
-            addCriterion("staff_id <", value, "staffId");
+        public Criteria andStaffidLessThan(String value) {
+            addCriterion("staffid <", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdLessThanOrEqualTo(String value) {
-            addCriterion("staff_id <=", value, "staffId");
+        public Criteria andStaffidLessThanOrEqualTo(String value) {
+            addCriterion("staffid <=", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdLike(String value) {
-            addCriterion("staff_id like", value, "staffId");
+        public Criteria andStaffidLike(String value) {
+            addCriterion("staffid like", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdNotLike(String value) {
-            addCriterion("staff_id not like", value, "staffId");
+        public Criteria andStaffidNotLike(String value) {
+            addCriterion("staffid not like", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdIn(List<String> values) {
-            addCriterion("staff_id in", values, "staffId");
+        public Criteria andStaffidIn(List<String> values) {
+            addCriterion("staffid in", values, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdNotIn(List<String> values) {
-            addCriterion("staff_id not in", values, "staffId");
+        public Criteria andStaffidNotIn(List<String> values) {
+            addCriterion("staffid not in", values, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdBetween(String value1, String value2) {
-            addCriterion("staff_id between", value1, value2, "staffId");
+        public Criteria andStaffidBetween(String value1, String value2) {
+            addCriterion("staffid between", value1, value2, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdNotBetween(String value1, String value2) {
-            addCriterion("staff_id not between", value1, value2, "staffId");
+        public Criteria andStaffidNotBetween(String value1, String value2) {
+            addCriterion("staffid not between", value1, value2, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andTrainTypeIsNull() {
-            addCriterion("train_type is null");
+        public Criteria andTraintypeIsNull() {
+            addCriterion("traintype is null");
             return (Criteria) this;
         }
 
-        public Criteria andTrainTypeIsNotNull() {
-            addCriterion("train_type is not null");
+        public Criteria andTraintypeIsNotNull() {
+            addCriterion("traintype is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTrainTypeEqualTo(String value) {
-            addCriterion("train_type =", value, "trainType");
+        public Criteria andTraintypeEqualTo(String value) {
+            addCriterion("traintype =", value, "traintype");
             return (Criteria) this;
         }
 
-        public Criteria andTrainTypeNotEqualTo(String value) {
-            addCriterion("train_type <>", value, "trainType");
+        public Criteria andTraintypeNotEqualTo(String value) {
+            addCriterion("traintype <>", value, "traintype");
             return (Criteria) this;
         }
 
-        public Criteria andTrainTypeGreaterThan(String value) {
-            addCriterion("train_type >", value, "trainType");
+        public Criteria andTraintypeGreaterThan(String value) {
+            addCriterion("traintype >", value, "traintype");
             return (Criteria) this;
         }
 
-        public Criteria andTrainTypeGreaterThanOrEqualTo(String value) {
-            addCriterion("train_type >=", value, "trainType");
+        public Criteria andTraintypeGreaterThanOrEqualTo(String value) {
+            addCriterion("traintype >=", value, "traintype");
             return (Criteria) this;
         }
 
-        public Criteria andTrainTypeLessThan(String value) {
-            addCriterion("train_type <", value, "trainType");
+        public Criteria andTraintypeLessThan(String value) {
+            addCriterion("traintype <", value, "traintype");
             return (Criteria) this;
         }
 
-        public Criteria andTrainTypeLessThanOrEqualTo(String value) {
-            addCriterion("train_type <=", value, "trainType");
+        public Criteria andTraintypeLessThanOrEqualTo(String value) {
+            addCriterion("traintype <=", value, "traintype");
             return (Criteria) this;
         }
 
-        public Criteria andTrainTypeLike(String value) {
-            addCriterion("train_type like", value, "trainType");
+        public Criteria andTraintypeLike(String value) {
+            addCriterion("traintype like", value, "traintype");
             return (Criteria) this;
         }
 
-        public Criteria andTrainTypeNotLike(String value) {
-            addCriterion("train_type not like", value, "trainType");
+        public Criteria andTraintypeNotLike(String value) {
+            addCriterion("traintype not like", value, "traintype");
             return (Criteria) this;
         }
 
-        public Criteria andTrainTypeIn(List<String> values) {
-            addCriterion("train_type in", values, "trainType");
+        public Criteria andTraintypeIn(List<String> values) {
+            addCriterion("traintype in", values, "traintype");
             return (Criteria) this;
         }
 
-        public Criteria andTrainTypeNotIn(List<String> values) {
-            addCriterion("train_type not in", values, "trainType");
+        public Criteria andTraintypeNotIn(List<String> values) {
+            addCriterion("traintype not in", values, "traintype");
             return (Criteria) this;
         }
 
-        public Criteria andTrainTypeBetween(String value1, String value2) {
-            addCriterion("train_type between", value1, value2, "trainType");
+        public Criteria andTraintypeBetween(String value1, String value2) {
+            addCriterion("traintype between", value1, value2, "traintype");
             return (Criteria) this;
         }
 
-        public Criteria andTrainTypeNotBetween(String value1, String value2) {
-            addCriterion("train_type not between", value1, value2, "trainType");
+        public Criteria andTraintypeNotBetween(String value1, String value2) {
+            addCriterion("traintype not between", value1, value2, "traintype");
             return (Criteria) this;
         }
 
@@ -435,73 +435,73 @@ public class StaffTrainExample {
             return (Criteria) this;
         }
 
-        public Criteria andTrainGradeIsNull() {
-            addCriterion("train_grade is null");
+        public Criteria andTraingradeIsNull() {
+            addCriterion("traingrade is null");
             return (Criteria) this;
         }
 
-        public Criteria andTrainGradeIsNotNull() {
-            addCriterion("train_grade is not null");
+        public Criteria andTraingradeIsNotNull() {
+            addCriterion("traingrade is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTrainGradeEqualTo(String value) {
-            addCriterion("train_grade =", value, "trainGrade");
+        public Criteria andTraingradeEqualTo(String value) {
+            addCriterion("traingrade =", value, "traingrade");
             return (Criteria) this;
         }
 
-        public Criteria andTrainGradeNotEqualTo(String value) {
-            addCriterion("train_grade <>", value, "trainGrade");
+        public Criteria andTraingradeNotEqualTo(String value) {
+            addCriterion("traingrade <>", value, "traingrade");
             return (Criteria) this;
         }
 
-        public Criteria andTrainGradeGreaterThan(String value) {
-            addCriterion("train_grade >", value, "trainGrade");
+        public Criteria andTraingradeGreaterThan(String value) {
+            addCriterion("traingrade >", value, "traingrade");
             return (Criteria) this;
         }
 
-        public Criteria andTrainGradeGreaterThanOrEqualTo(String value) {
-            addCriterion("train_grade >=", value, "trainGrade");
+        public Criteria andTraingradeGreaterThanOrEqualTo(String value) {
+            addCriterion("traingrade >=", value, "traingrade");
             return (Criteria) this;
         }
 
-        public Criteria andTrainGradeLessThan(String value) {
-            addCriterion("train_grade <", value, "trainGrade");
+        public Criteria andTraingradeLessThan(String value) {
+            addCriterion("traingrade <", value, "traingrade");
             return (Criteria) this;
         }
 
-        public Criteria andTrainGradeLessThanOrEqualTo(String value) {
-            addCriterion("train_grade <=", value, "trainGrade");
+        public Criteria andTraingradeLessThanOrEqualTo(String value) {
+            addCriterion("traingrade <=", value, "traingrade");
             return (Criteria) this;
         }
 
-        public Criteria andTrainGradeLike(String value) {
-            addCriterion("train_grade like", value, "trainGrade");
+        public Criteria andTraingradeLike(String value) {
+            addCriterion("traingrade like", value, "traingrade");
             return (Criteria) this;
         }
 
-        public Criteria andTrainGradeNotLike(String value) {
-            addCriterion("train_grade not like", value, "trainGrade");
+        public Criteria andTraingradeNotLike(String value) {
+            addCriterion("traingrade not like", value, "traingrade");
             return (Criteria) this;
         }
 
-        public Criteria andTrainGradeIn(List<String> values) {
-            addCriterion("train_grade in", values, "trainGrade");
+        public Criteria andTraingradeIn(List<String> values) {
+            addCriterion("traingrade in", values, "traingrade");
             return (Criteria) this;
         }
 
-        public Criteria andTrainGradeNotIn(List<String> values) {
-            addCriterion("train_grade not in", values, "trainGrade");
+        public Criteria andTraingradeNotIn(List<String> values) {
+            addCriterion("traingrade not in", values, "traingrade");
             return (Criteria) this;
         }
 
-        public Criteria andTrainGradeBetween(String value1, String value2) {
-            addCriterion("train_grade between", value1, value2, "trainGrade");
+        public Criteria andTraingradeBetween(String value1, String value2) {
+            addCriterion("traingrade between", value1, value2, "traingrade");
             return (Criteria) this;
         }
 
-        public Criteria andTrainGradeNotBetween(String value1, String value2) {
-            addCriterion("train_grade not between", value1, value2, "trainGrade");
+        public Criteria andTraingradeNotBetween(String value1, String value2) {
+            addCriterion("traingrade not between", value1, value2, "traingrade");
             return (Criteria) this;
         }
 

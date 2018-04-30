@@ -105,413 +105,413 @@ public class StaffRewardExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andAwardIdIsNull() {
-            addCriterion("award_id is null");
+        public Criteria andAwardidIsNull() {
+            addCriterion("awardid is null");
             return (Criteria) this;
         }
 
-        public Criteria andAwardIdIsNotNull() {
-            addCriterion("award_id is not null");
+        public Criteria andAwardidIsNotNull() {
+            addCriterion("awardid is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAwardIdEqualTo(String value) {
-            addCriterion("award_id =", value, "awardId");
+        public Criteria andAwardidEqualTo(String value) {
+            addCriterion("awardid =", value, "awardid");
             return (Criteria) this;
         }
 
-        public Criteria andAwardIdNotEqualTo(String value) {
-            addCriterion("award_id <>", value, "awardId");
+        public Criteria andAwardidNotEqualTo(String value) {
+            addCriterion("awardid <>", value, "awardid");
             return (Criteria) this;
         }
 
-        public Criteria andAwardIdGreaterThan(String value) {
-            addCriterion("award_id >", value, "awardId");
+        public Criteria andAwardidGreaterThan(String value) {
+            addCriterion("awardid >", value, "awardid");
             return (Criteria) this;
         }
 
-        public Criteria andAwardIdGreaterThanOrEqualTo(String value) {
-            addCriterion("award_id >=", value, "awardId");
+        public Criteria andAwardidGreaterThanOrEqualTo(String value) {
+            addCriterion("awardid >=", value, "awardid");
             return (Criteria) this;
         }
 
-        public Criteria andAwardIdLessThan(String value) {
-            addCriterion("award_id <", value, "awardId");
+        public Criteria andAwardidLessThan(String value) {
+            addCriterion("awardid <", value, "awardid");
             return (Criteria) this;
         }
 
-        public Criteria andAwardIdLessThanOrEqualTo(String value) {
-            addCriterion("award_id <=", value, "awardId");
+        public Criteria andAwardidLessThanOrEqualTo(String value) {
+            addCriterion("awardid <=", value, "awardid");
             return (Criteria) this;
         }
 
-        public Criteria andAwardIdLike(String value) {
-            addCriterion("award_id like", value, "awardId");
+        public Criteria andAwardidLike(String value) {
+            addCriterion("awardid like", value, "awardid");
             return (Criteria) this;
         }
 
-        public Criteria andAwardIdNotLike(String value) {
-            addCriterion("award_id not like", value, "awardId");
+        public Criteria andAwardidNotLike(String value) {
+            addCriterion("awardid not like", value, "awardid");
             return (Criteria) this;
         }
 
-        public Criteria andAwardIdIn(List<String> values) {
-            addCriterion("award_id in", values, "awardId");
+        public Criteria andAwardidIn(List<String> values) {
+            addCriterion("awardid in", values, "awardid");
             return (Criteria) this;
         }
 
-        public Criteria andAwardIdNotIn(List<String> values) {
-            addCriterion("award_id not in", values, "awardId");
+        public Criteria andAwardidNotIn(List<String> values) {
+            addCriterion("awardid not in", values, "awardid");
             return (Criteria) this;
         }
 
-        public Criteria andAwardIdBetween(String value1, String value2) {
-            addCriterion("award_id between", value1, value2, "awardId");
+        public Criteria andAwardidBetween(String value1, String value2) {
+            addCriterion("awardid between", value1, value2, "awardid");
             return (Criteria) this;
         }
 
-        public Criteria andAwardIdNotBetween(String value1, String value2) {
-            addCriterion("award_id not between", value1, value2, "awardId");
+        public Criteria andAwardidNotBetween(String value1, String value2) {
+            addCriterion("awardid not between", value1, value2, "awardid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdIsNull() {
-            addCriterion("staff_id is null");
+        public Criteria andStaffidIsNull() {
+            addCriterion("staffid is null");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdIsNotNull() {
-            addCriterion("staff_id is not null");
+        public Criteria andStaffidIsNotNull() {
+            addCriterion("staffid is not null");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdEqualTo(String value) {
-            addCriterion("staff_id =", value, "staffId");
+        public Criteria andStaffidEqualTo(String value) {
+            addCriterion("staffid =", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdNotEqualTo(String value) {
-            addCriterion("staff_id <>", value, "staffId");
+        public Criteria andStaffidNotEqualTo(String value) {
+            addCriterion("staffid <>", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdGreaterThan(String value) {
-            addCriterion("staff_id >", value, "staffId");
+        public Criteria andStaffidGreaterThan(String value) {
+            addCriterion("staffid >", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdGreaterThanOrEqualTo(String value) {
-            addCriterion("staff_id >=", value, "staffId");
+        public Criteria andStaffidGreaterThanOrEqualTo(String value) {
+            addCriterion("staffid >=", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdLessThan(String value) {
-            addCriterion("staff_id <", value, "staffId");
+        public Criteria andStaffidLessThan(String value) {
+            addCriterion("staffid <", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdLessThanOrEqualTo(String value) {
-            addCriterion("staff_id <=", value, "staffId");
+        public Criteria andStaffidLessThanOrEqualTo(String value) {
+            addCriterion("staffid <=", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdLike(String value) {
-            addCriterion("staff_id like", value, "staffId");
+        public Criteria andStaffidLike(String value) {
+            addCriterion("staffid like", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdNotLike(String value) {
-            addCriterion("staff_id not like", value, "staffId");
+        public Criteria andStaffidNotLike(String value) {
+            addCriterion("staffid not like", value, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdIn(List<String> values) {
-            addCriterion("staff_id in", values, "staffId");
+        public Criteria andStaffidIn(List<String> values) {
+            addCriterion("staffid in", values, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdNotIn(List<String> values) {
-            addCriterion("staff_id not in", values, "staffId");
+        public Criteria andStaffidNotIn(List<String> values) {
+            addCriterion("staffid not in", values, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdBetween(String value1, String value2) {
-            addCriterion("staff_id between", value1, value2, "staffId");
+        public Criteria andStaffidBetween(String value1, String value2) {
+            addCriterion("staffid between", value1, value2, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andStaffIdNotBetween(String value1, String value2) {
-            addCriterion("staff_id not between", value1, value2, "staffId");
+        public Criteria andStaffidNotBetween(String value1, String value2) {
+            addCriterion("staffid not between", value1, value2, "staffid");
             return (Criteria) this;
         }
 
-        public Criteria andAwardTypeIsNull() {
-            addCriterion("award_type is null");
+        public Criteria andAwardtypeIsNull() {
+            addCriterion("awardtype is null");
             return (Criteria) this;
         }
 
-        public Criteria andAwardTypeIsNotNull() {
-            addCriterion("award_type is not null");
+        public Criteria andAwardtypeIsNotNull() {
+            addCriterion("awardtype is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAwardTypeEqualTo(String value) {
-            addCriterion("award_type =", value, "awardType");
+        public Criteria andAwardtypeEqualTo(String value) {
+            addCriterion("awardtype =", value, "awardtype");
             return (Criteria) this;
         }
 
-        public Criteria andAwardTypeNotEqualTo(String value) {
-            addCriterion("award_type <>", value, "awardType");
+        public Criteria andAwardtypeNotEqualTo(String value) {
+            addCriterion("awardtype <>", value, "awardtype");
             return (Criteria) this;
         }
 
-        public Criteria andAwardTypeGreaterThan(String value) {
-            addCriterion("award_type >", value, "awardType");
+        public Criteria andAwardtypeGreaterThan(String value) {
+            addCriterion("awardtype >", value, "awardtype");
             return (Criteria) this;
         }
 
-        public Criteria andAwardTypeGreaterThanOrEqualTo(String value) {
-            addCriterion("award_type >=", value, "awardType");
+        public Criteria andAwardtypeGreaterThanOrEqualTo(String value) {
+            addCriterion("awardtype >=", value, "awardtype");
             return (Criteria) this;
         }
 
-        public Criteria andAwardTypeLessThan(String value) {
-            addCriterion("award_type <", value, "awardType");
+        public Criteria andAwardtypeLessThan(String value) {
+            addCriterion("awardtype <", value, "awardtype");
             return (Criteria) this;
         }
 
-        public Criteria andAwardTypeLessThanOrEqualTo(String value) {
-            addCriterion("award_type <=", value, "awardType");
+        public Criteria andAwardtypeLessThanOrEqualTo(String value) {
+            addCriterion("awardtype <=", value, "awardtype");
             return (Criteria) this;
         }
 
-        public Criteria andAwardTypeLike(String value) {
-            addCriterion("award_type like", value, "awardType");
+        public Criteria andAwardtypeLike(String value) {
+            addCriterion("awardtype like", value, "awardtype");
             return (Criteria) this;
         }
 
-        public Criteria andAwardTypeNotLike(String value) {
-            addCriterion("award_type not like", value, "awardType");
+        public Criteria andAwardtypeNotLike(String value) {
+            addCriterion("awardtype not like", value, "awardtype");
             return (Criteria) this;
         }
 
-        public Criteria andAwardTypeIn(List<String> values) {
-            addCriterion("award_type in", values, "awardType");
+        public Criteria andAwardtypeIn(List<String> values) {
+            addCriterion("awardtype in", values, "awardtype");
             return (Criteria) this;
         }
 
-        public Criteria andAwardTypeNotIn(List<String> values) {
-            addCriterion("award_type not in", values, "awardType");
+        public Criteria andAwardtypeNotIn(List<String> values) {
+            addCriterion("awardtype not in", values, "awardtype");
             return (Criteria) this;
         }
 
-        public Criteria andAwardTypeBetween(String value1, String value2) {
-            addCriterion("award_type between", value1, value2, "awardType");
+        public Criteria andAwardtypeBetween(String value1, String value2) {
+            addCriterion("awardtype between", value1, value2, "awardtype");
             return (Criteria) this;
         }
 
-        public Criteria andAwardTypeNotBetween(String value1, String value2) {
-            addCriterion("award_type not between", value1, value2, "awardType");
+        public Criteria andAwardtypeNotBetween(String value1, String value2) {
+            addCriterion("awardtype not between", value1, value2, "awardtype");
             return (Criteria) this;
         }
 
-        public Criteria andAwardReasonIsNull() {
-            addCriterion("award_reason is null");
+        public Criteria andAwardreasonIsNull() {
+            addCriterion("awardreason is null");
             return (Criteria) this;
         }
 
-        public Criteria andAwardReasonIsNotNull() {
-            addCriterion("award_reason is not null");
+        public Criteria andAwardreasonIsNotNull() {
+            addCriterion("awardreason is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAwardReasonEqualTo(String value) {
-            addCriterion("award_reason =", value, "awardReason");
+        public Criteria andAwardreasonEqualTo(String value) {
+            addCriterion("awardreason =", value, "awardreason");
             return (Criteria) this;
         }
 
-        public Criteria andAwardReasonNotEqualTo(String value) {
-            addCriterion("award_reason <>", value, "awardReason");
+        public Criteria andAwardreasonNotEqualTo(String value) {
+            addCriterion("awardreason <>", value, "awardreason");
             return (Criteria) this;
         }
 
-        public Criteria andAwardReasonGreaterThan(String value) {
-            addCriterion("award_reason >", value, "awardReason");
+        public Criteria andAwardreasonGreaterThan(String value) {
+            addCriterion("awardreason >", value, "awardreason");
             return (Criteria) this;
         }
 
-        public Criteria andAwardReasonGreaterThanOrEqualTo(String value) {
-            addCriterion("award_reason >=", value, "awardReason");
+        public Criteria andAwardreasonGreaterThanOrEqualTo(String value) {
+            addCriterion("awardreason >=", value, "awardreason");
             return (Criteria) this;
         }
 
-        public Criteria andAwardReasonLessThan(String value) {
-            addCriterion("award_reason <", value, "awardReason");
+        public Criteria andAwardreasonLessThan(String value) {
+            addCriterion("awardreason <", value, "awardreason");
             return (Criteria) this;
         }
 
-        public Criteria andAwardReasonLessThanOrEqualTo(String value) {
-            addCriterion("award_reason <=", value, "awardReason");
+        public Criteria andAwardreasonLessThanOrEqualTo(String value) {
+            addCriterion("awardreason <=", value, "awardreason");
             return (Criteria) this;
         }
 
-        public Criteria andAwardReasonLike(String value) {
-            addCriterion("award_reason like", value, "awardReason");
+        public Criteria andAwardreasonLike(String value) {
+            addCriterion("awardreason like", value, "awardreason");
             return (Criteria) this;
         }
 
-        public Criteria andAwardReasonNotLike(String value) {
-            addCriterion("award_reason not like", value, "awardReason");
+        public Criteria andAwardreasonNotLike(String value) {
+            addCriterion("awardreason not like", value, "awardreason");
             return (Criteria) this;
         }
 
-        public Criteria andAwardReasonIn(List<String> values) {
-            addCriterion("award_reason in", values, "awardReason");
+        public Criteria andAwardreasonIn(List<String> values) {
+            addCriterion("awardreason in", values, "awardreason");
             return (Criteria) this;
         }
 
-        public Criteria andAwardReasonNotIn(List<String> values) {
-            addCriterion("award_reason not in", values, "awardReason");
+        public Criteria andAwardreasonNotIn(List<String> values) {
+            addCriterion("awardreason not in", values, "awardreason");
             return (Criteria) this;
         }
 
-        public Criteria andAwardReasonBetween(String value1, String value2) {
-            addCriterion("award_reason between", value1, value2, "awardReason");
+        public Criteria andAwardreasonBetween(String value1, String value2) {
+            addCriterion("awardreason between", value1, value2, "awardreason");
             return (Criteria) this;
         }
 
-        public Criteria andAwardReasonNotBetween(String value1, String value2) {
-            addCriterion("award_reason not between", value1, value2, "awardReason");
+        public Criteria andAwardreasonNotBetween(String value1, String value2) {
+            addCriterion("awardreason not between", value1, value2, "awardreason");
             return (Criteria) this;
         }
 
-        public Criteria andAwardResultIsNull() {
-            addCriterion("award_result is null");
+        public Criteria andAwardresultIsNull() {
+            addCriterion("awardresult is null");
             return (Criteria) this;
         }
 
-        public Criteria andAwardResultIsNotNull() {
-            addCriterion("award_result is not null");
+        public Criteria andAwardresultIsNotNull() {
+            addCriterion("awardresult is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAwardResultEqualTo(String value) {
-            addCriterion("award_result =", value, "awardResult");
+        public Criteria andAwardresultEqualTo(String value) {
+            addCriterion("awardresult =", value, "awardresult");
             return (Criteria) this;
         }
 
-        public Criteria andAwardResultNotEqualTo(String value) {
-            addCriterion("award_result <>", value, "awardResult");
+        public Criteria andAwardresultNotEqualTo(String value) {
+            addCriterion("awardresult <>", value, "awardresult");
             return (Criteria) this;
         }
 
-        public Criteria andAwardResultGreaterThan(String value) {
-            addCriterion("award_result >", value, "awardResult");
+        public Criteria andAwardresultGreaterThan(String value) {
+            addCriterion("awardresult >", value, "awardresult");
             return (Criteria) this;
         }
 
-        public Criteria andAwardResultGreaterThanOrEqualTo(String value) {
-            addCriterion("award_result >=", value, "awardResult");
+        public Criteria andAwardresultGreaterThanOrEqualTo(String value) {
+            addCriterion("awardresult >=", value, "awardresult");
             return (Criteria) this;
         }
 
-        public Criteria andAwardResultLessThan(String value) {
-            addCriterion("award_result <", value, "awardResult");
+        public Criteria andAwardresultLessThan(String value) {
+            addCriterion("awardresult <", value, "awardresult");
             return (Criteria) this;
         }
 
-        public Criteria andAwardResultLessThanOrEqualTo(String value) {
-            addCriterion("award_result <=", value, "awardResult");
+        public Criteria andAwardresultLessThanOrEqualTo(String value) {
+            addCriterion("awardresult <=", value, "awardresult");
             return (Criteria) this;
         }
 
-        public Criteria andAwardResultLike(String value) {
-            addCriterion("award_result like", value, "awardResult");
+        public Criteria andAwardresultLike(String value) {
+            addCriterion("awardresult like", value, "awardresult");
             return (Criteria) this;
         }
 
-        public Criteria andAwardResultNotLike(String value) {
-            addCriterion("award_result not like", value, "awardResult");
+        public Criteria andAwardresultNotLike(String value) {
+            addCriterion("awardresult not like", value, "awardresult");
             return (Criteria) this;
         }
 
-        public Criteria andAwardResultIn(List<String> values) {
-            addCriterion("award_result in", values, "awardResult");
+        public Criteria andAwardresultIn(List<String> values) {
+            addCriterion("awardresult in", values, "awardresult");
             return (Criteria) this;
         }
 
-        public Criteria andAwardResultNotIn(List<String> values) {
-            addCriterion("award_result not in", values, "awardResult");
+        public Criteria andAwardresultNotIn(List<String> values) {
+            addCriterion("awardresult not in", values, "awardresult");
             return (Criteria) this;
         }
 
-        public Criteria andAwardResultBetween(String value1, String value2) {
-            addCriterion("award_result between", value1, value2, "awardResult");
+        public Criteria andAwardresultBetween(String value1, String value2) {
+            addCriterion("awardresult between", value1, value2, "awardresult");
             return (Criteria) this;
         }
 
-        public Criteria andAwardResultNotBetween(String value1, String value2) {
-            addCriterion("award_result not between", value1, value2, "awardResult");
+        public Criteria andAwardresultNotBetween(String value1, String value2) {
+            addCriterion("awardresult not between", value1, value2, "awardresult");
             return (Criteria) this;
         }
 
-        public Criteria andAwardAmountIsNull() {
-            addCriterion("award_amount is null");
+        public Criteria andAwardamountIsNull() {
+            addCriterion("awardamount is null");
             return (Criteria) this;
         }
 
-        public Criteria andAwardAmountIsNotNull() {
-            addCriterion("award_amount is not null");
+        public Criteria andAwardamountIsNotNull() {
+            addCriterion("awardamount is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAwardAmountEqualTo(BigDecimal value) {
-            addCriterion("award_amount =", value, "awardAmount");
+        public Criteria andAwardamountEqualTo(BigDecimal value) {
+            addCriterion("awardamount =", value, "awardamount");
             return (Criteria) this;
         }
 
-        public Criteria andAwardAmountNotEqualTo(BigDecimal value) {
-            addCriterion("award_amount <>", value, "awardAmount");
+        public Criteria andAwardamountNotEqualTo(BigDecimal value) {
+            addCriterion("awardamount <>", value, "awardamount");
             return (Criteria) this;
         }
 
-        public Criteria andAwardAmountGreaterThan(BigDecimal value) {
-            addCriterion("award_amount >", value, "awardAmount");
+        public Criteria andAwardamountGreaterThan(BigDecimal value) {
+            addCriterion("awardamount >", value, "awardamount");
             return (Criteria) this;
         }
 
-        public Criteria andAwardAmountGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("award_amount >=", value, "awardAmount");
+        public Criteria andAwardamountGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("awardamount >=", value, "awardamount");
             return (Criteria) this;
         }
 
-        public Criteria andAwardAmountLessThan(BigDecimal value) {
-            addCriterion("award_amount <", value, "awardAmount");
+        public Criteria andAwardamountLessThan(BigDecimal value) {
+            addCriterion("awardamount <", value, "awardamount");
             return (Criteria) this;
         }
 
-        public Criteria andAwardAmountLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("award_amount <=", value, "awardAmount");
+        public Criteria andAwardamountLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("awardamount <=", value, "awardamount");
             return (Criteria) this;
         }
 
-        public Criteria andAwardAmountIn(List<BigDecimal> values) {
-            addCriterion("award_amount in", values, "awardAmount");
+        public Criteria andAwardamountIn(List<BigDecimal> values) {
+            addCriterion("awardamount in", values, "awardamount");
             return (Criteria) this;
         }
 
-        public Criteria andAwardAmountNotIn(List<BigDecimal> values) {
-            addCriterion("award_amount not in", values, "awardAmount");
+        public Criteria andAwardamountNotIn(List<BigDecimal> values) {
+            addCriterion("awardamount not in", values, "awardamount");
             return (Criteria) this;
         }
 
-        public Criteria andAwardAmountBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("award_amount between", value1, value2, "awardAmount");
+        public Criteria andAwardamountBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("awardamount between", value1, value2, "awardamount");
             return (Criteria) this;
         }
 
-        public Criteria andAwardAmountNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("award_amount not between", value1, value2, "awardAmount");
+        public Criteria andAwardamountNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("awardamount not between", value1, value2, "awardamount");
             return (Criteria) this;
         }
 

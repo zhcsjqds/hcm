@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.zouhuachao.mapper.AttendanceStatisticsMapper" >
   <resultMap id="BaseResultMap" type="cn.zouhuachao.pojo.AttendanceStatistics" >
-    <id column="stat_id" property="statId" jdbcType="VARCHAR" />
-    <result column="staff_id" property="staffId" jdbcType="VARCHAR" />
+    <id column="statid" property="statid" jdbcType="VARCHAR" />
+    <result column="staffid" property="staffid" jdbcType="VARCHAR" />
     <result column="date" property="date" jdbcType="TIMESTAMP" />
     <result column="hday" property="hday" jdbcType="INTEGER" />
     <result column="sday" property="sday" jdbcType="INTEGER" />
@@ -11,10 +11,10 @@
     <result column="leave" property="leave" jdbcType="REAL" />
     <result column="late" property="late" jdbcType="INTEGER" />
     <result column="early" property="early" jdbcType="INTEGER" />
-    <result column="holiday_ot" property="holidayOt" jdbcType="INTEGER" />
-    <result column="other_ot" property="otherOt" jdbcType="INTEGER" />
+    <result column="holidayot" property="holidayot" jdbcType="INTEGER" />
+    <result column="otherot" property="otherot" jdbcType="INTEGER" />
     <result column="evection" property="evection" jdbcType="INTEGER" />
-    <result column="ot_pay" property="otPay" jdbcType="DECIMAL" />
+    <result column="otpay" property="otpay" jdbcType="DECIMAL" />
     <result column="other" property="other" jdbcType="VARCHAR" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
   </resultMap>
@@ -77,8 +77,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    stat_id, staff_id, date, hday, sday, oday, leave, late, early, holiday_ot, other_ot, 
-    evection, ot_pay, other, remark
+    statid, staffid, date, hday, sday, oday, leave, late, early, holidayot, otherot, 
+    evection, otpay, other, remark
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zouhuachao.pojo.AttendanceStatisticsExample" >
     select
@@ -98,11 +98,11 @@
     select 
     <include refid="Base_Column_List" />
     from attendance_statistics
-    where stat_id = #{statId,jdbcType=VARCHAR}
+    where statid = #{statid,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from attendance_statistics
-    where stat_id = #{statId,jdbcType=VARCHAR}
+    where statid = #{statid,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="cn.zouhuachao.pojo.AttendanceStatisticsExample" >
     delete from attendance_statistics
@@ -111,25 +111,25 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.zouhuachao.pojo.AttendanceStatistics" >
-    insert into attendance_statistics (stat_id, staff_id, date, 
+    insert into attendance_statistics (statid, staffid, date, 
       hday, sday, oday, leave, 
-      late, early, holiday_ot, 
-      other_ot, evection, ot_pay, 
+      late, early, holidayot, 
+      otherot, evection, otpay, 
       other, remark)
-    values (#{statId,jdbcType=VARCHAR}, #{staffId,jdbcType=VARCHAR}, #{date,jdbcType=TIMESTAMP}, 
+    values (#{statid,jdbcType=VARCHAR}, #{staffid,jdbcType=VARCHAR}, #{date,jdbcType=TIMESTAMP}, 
       #{hday,jdbcType=INTEGER}, #{sday,jdbcType=INTEGER}, #{oday,jdbcType=INTEGER}, #{leave,jdbcType=REAL}, 
-      #{late,jdbcType=INTEGER}, #{early,jdbcType=INTEGER}, #{holidayOt,jdbcType=INTEGER}, 
-      #{otherOt,jdbcType=INTEGER}, #{evection,jdbcType=INTEGER}, #{otPay,jdbcType=DECIMAL}, 
+      #{late,jdbcType=INTEGER}, #{early,jdbcType=INTEGER}, #{holidayot,jdbcType=INTEGER}, 
+      #{otherot,jdbcType=INTEGER}, #{evection,jdbcType=INTEGER}, #{otpay,jdbcType=DECIMAL}, 
       #{other,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.zouhuachao.pojo.AttendanceStatistics" >
     insert into attendance_statistics
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="statId != null" >
-        stat_id,
+      <if test="statid != null" >
+        statid,
       </if>
-      <if test="staffId != null" >
-        staff_id,
+      <if test="staffid != null" >
+        staffid,
       </if>
       <if test="date != null" >
         date,
@@ -152,17 +152,17 @@
       <if test="early != null" >
         early,
       </if>
-      <if test="holidayOt != null" >
-        holiday_ot,
+      <if test="holidayot != null" >
+        holidayot,
       </if>
-      <if test="otherOt != null" >
-        other_ot,
+      <if test="otherot != null" >
+        otherot,
       </if>
       <if test="evection != null" >
         evection,
       </if>
-      <if test="otPay != null" >
-        ot_pay,
+      <if test="otpay != null" >
+        otpay,
       </if>
       <if test="other != null" >
         other,
@@ -172,11 +172,11 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="statId != null" >
-        #{statId,jdbcType=VARCHAR},
+      <if test="statid != null" >
+        #{statid,jdbcType=VARCHAR},
       </if>
-      <if test="staffId != null" >
-        #{staffId,jdbcType=VARCHAR},
+      <if test="staffid != null" >
+        #{staffid,jdbcType=VARCHAR},
       </if>
       <if test="date != null" >
         #{date,jdbcType=TIMESTAMP},
@@ -199,17 +199,17 @@
       <if test="early != null" >
         #{early,jdbcType=INTEGER},
       </if>
-      <if test="holidayOt != null" >
-        #{holidayOt,jdbcType=INTEGER},
+      <if test="holidayot != null" >
+        #{holidayot,jdbcType=INTEGER},
       </if>
-      <if test="otherOt != null" >
-        #{otherOt,jdbcType=INTEGER},
+      <if test="otherot != null" >
+        #{otherot,jdbcType=INTEGER},
       </if>
       <if test="evection != null" >
         #{evection,jdbcType=INTEGER},
       </if>
-      <if test="otPay != null" >
-        #{otPay,jdbcType=DECIMAL},
+      <if test="otpay != null" >
+        #{otpay,jdbcType=DECIMAL},
       </if>
       <if test="other != null" >
         #{other,jdbcType=VARCHAR},
@@ -228,11 +228,11 @@
   <update id="updateByExampleSelective" parameterType="map" >
     update attendance_statistics
     <set >
-      <if test="record.statId != null" >
-        stat_id = #{record.statId,jdbcType=VARCHAR},
+      <if test="record.statid != null" >
+        statid = #{record.statid,jdbcType=VARCHAR},
       </if>
-      <if test="record.staffId != null" >
-        staff_id = #{record.staffId,jdbcType=VARCHAR},
+      <if test="record.staffid != null" >
+        staffid = #{record.staffid,jdbcType=VARCHAR},
       </if>
       <if test="record.date != null" >
         date = #{record.date,jdbcType=TIMESTAMP},
@@ -255,17 +255,17 @@
       <if test="record.early != null" >
         early = #{record.early,jdbcType=INTEGER},
       </if>
-      <if test="record.holidayOt != null" >
-        holiday_ot = #{record.holidayOt,jdbcType=INTEGER},
+      <if test="record.holidayot != null" >
+        holidayot = #{record.holidayot,jdbcType=INTEGER},
       </if>
-      <if test="record.otherOt != null" >
-        other_ot = #{record.otherOt,jdbcType=INTEGER},
+      <if test="record.otherot != null" >
+        otherot = #{record.otherot,jdbcType=INTEGER},
       </if>
       <if test="record.evection != null" >
         evection = #{record.evection,jdbcType=INTEGER},
       </if>
-      <if test="record.otPay != null" >
-        ot_pay = #{record.otPay,jdbcType=DECIMAL},
+      <if test="record.otpay != null" >
+        otpay = #{record.otpay,jdbcType=DECIMAL},
       </if>
       <if test="record.other != null" >
         other = #{record.other,jdbcType=VARCHAR},
@@ -280,8 +280,8 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update attendance_statistics
-    set stat_id = #{record.statId,jdbcType=VARCHAR},
-      staff_id = #{record.staffId,jdbcType=VARCHAR},
+    set statid = #{record.statid,jdbcType=VARCHAR},
+      staffid = #{record.staffid,jdbcType=VARCHAR},
       date = #{record.date,jdbcType=TIMESTAMP},
       hday = #{record.hday,jdbcType=INTEGER},
       sday = #{record.sday,jdbcType=INTEGER},
@@ -289,10 +289,10 @@
       leave = #{record.leave,jdbcType=REAL},
       late = #{record.late,jdbcType=INTEGER},
       early = #{record.early,jdbcType=INTEGER},
-      holiday_ot = #{record.holidayOt,jdbcType=INTEGER},
-      other_ot = #{record.otherOt,jdbcType=INTEGER},
+      holidayot = #{record.holidayot,jdbcType=INTEGER},
+      otherot = #{record.otherot,jdbcType=INTEGER},
       evection = #{record.evection,jdbcType=INTEGER},
-      ot_pay = #{record.otPay,jdbcType=DECIMAL},
+      otpay = #{record.otpay,jdbcType=DECIMAL},
       other = #{record.other,jdbcType=VARCHAR},
       remark = #{record.remark,jdbcType=VARCHAR}
     <if test="_parameter != null" >
@@ -302,8 +302,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.zouhuachao.pojo.AttendanceStatistics" >
     update attendance_statistics
     <set >
-      <if test="staffId != null" >
-        staff_id = #{staffId,jdbcType=VARCHAR},
+      <if test="staffid != null" >
+        staffid = #{staffid,jdbcType=VARCHAR},
       </if>
       <if test="date != null" >
         date = #{date,jdbcType=TIMESTAMP},
@@ -326,17 +326,17 @@
       <if test="early != null" >
         early = #{early,jdbcType=INTEGER},
       </if>
-      <if test="holidayOt != null" >
-        holiday_ot = #{holidayOt,jdbcType=INTEGER},
+      <if test="holidayot != null" >
+        holidayot = #{holidayot,jdbcType=INTEGER},
       </if>
-      <if test="otherOt != null" >
-        other_ot = #{otherOt,jdbcType=INTEGER},
+      <if test="otherot != null" >
+        otherot = #{otherot,jdbcType=INTEGER},
       </if>
       <if test="evection != null" >
         evection = #{evection,jdbcType=INTEGER},
       </if>
-      <if test="otPay != null" >
-        ot_pay = #{otPay,jdbcType=DECIMAL},
+      <if test="otpay != null" >
+        otpay = #{otpay,jdbcType=DECIMAL},
       </if>
       <if test="other != null" >
         other = #{other,jdbcType=VARCHAR},
@@ -345,11 +345,11 @@
         remark = #{remark,jdbcType=VARCHAR},
       </if>
     </set>
-    where stat_id = #{statId,jdbcType=VARCHAR}
+    where statid = #{statid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.zouhuachao.pojo.AttendanceStatistics" >
     update attendance_statistics
-    set staff_id = #{staffId,jdbcType=VARCHAR},
+    set staffid = #{staffid,jdbcType=VARCHAR},
       date = #{date,jdbcType=TIMESTAMP},
       hday = #{hday,jdbcType=INTEGER},
       sday = #{sday,jdbcType=INTEGER},
@@ -357,12 +357,12 @@
       leave = #{leave,jdbcType=REAL},
       late = #{late,jdbcType=INTEGER},
       early = #{early,jdbcType=INTEGER},
-      holiday_ot = #{holidayOt,jdbcType=INTEGER},
-      other_ot = #{otherOt,jdbcType=INTEGER},
+      holidayot = #{holidayot,jdbcType=INTEGER},
+      otherot = #{otherot,jdbcType=INTEGER},
       evection = #{evection,jdbcType=INTEGER},
-      ot_pay = #{otPay,jdbcType=DECIMAL},
+      otpay = #{otpay,jdbcType=DECIMAL},
       other = #{other,jdbcType=VARCHAR},
       remark = #{remark,jdbcType=VARCHAR}
-    where stat_id = #{statId,jdbcType=VARCHAR}
+    where statid = #{statid,jdbcType=VARCHAR}
   </update>
 </mapper>

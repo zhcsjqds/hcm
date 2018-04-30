@@ -3,11 +3,11 @@ package cn.zouhuachao.pojo;
 import java.util.Date;
 
 public class StaffEvaluation {
-    private String evaId;
+    private String evaid;
 
-    private String staffId;
+    private String staffid;
 
-    private Date evaTime;
+    private Date evatime;
 
     private String performance;
 
@@ -17,28 +17,28 @@ public class StaffEvaluation {
 
     private String remark;
 
-    public String getEvaId() {
-        return evaId;
+    public String getEvaid() {
+        return evaid;
     }
 
-    public void setEvaId(String evaId) {
-        this.evaId = evaId == null ? null : evaId.trim();
+    public void setEvaid(String evaid) {
+        this.evaid = evaid == null ? null : evaid.trim();
     }
 
-    public String getStaffId() {
-        return staffId;
+    public String getStaffid() {
+        return staffid;
     }
 
-    public void setStaffId(String staffId) {
-        this.staffId = staffId == null ? null : staffId.trim();
+    public void setStaffid(String staffid) {
+        this.staffid = staffid == null ? null : staffid.trim();
     }
 
-    public Date getEvaTime() {
-        return evaTime;
+    public Date getEvatime() {
+        return evatime;
     }
 
-    public void setEvaTime(Date evaTime) {
-        this.evaTime = evaTime;
+    public void setEvatime(Date evatime) {
+        this.evatime = evatime;
     }
 
     public String getPerformance() {
