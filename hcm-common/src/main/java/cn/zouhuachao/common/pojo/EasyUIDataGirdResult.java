@@ -2,6 +2,7 @@ package cn.zouhuachao.common.pojo;
 
 import java.util.List;
 
+@SuppressWarnings("rawtypes")
 public class EasyUIDataGirdResult{
 
 	private long total;

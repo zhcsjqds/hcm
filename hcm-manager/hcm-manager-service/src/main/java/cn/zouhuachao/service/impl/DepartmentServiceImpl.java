@@ -41,5 +41,5 @@ public class DepartmentServiceImpl implements IDepartmentService{
 		String departmentname = department.getDepartmentname();
 		return departmentname;
 	}
-	
+
 }

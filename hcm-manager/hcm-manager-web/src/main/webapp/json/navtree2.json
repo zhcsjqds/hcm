@@ -1,0 +1,8 @@
+[
+		{ "id":"11", "pId":"0", "text":"设置工资等级" ,"iconCls":"icon-user","url":"paygrade-list"},
+		{ "id":"12", "pId":"0", "text":"工资定级","url":"paygrade-set"},
+		{ "id":"13", "pId":"0", "text":"工资升级","url":"paygrade-update"},
+		{ "id":"14", "pId":"0", "text":"四金代扣比例","url":"insurance-rate"},
+		{ "id":"15", "pId":"0", "text":"工龄工资标准","url":""},
+		{ "id":"16", "pId":"0", "text":"工资发放","url":"pay"}
+]

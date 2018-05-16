@@ -5,7 +5,9 @@ import java.util.Date;
 public class StaffTrain {
     private String trainid;
 
-    private String staffid;
+    private String staffno;
+
+    private String trainname;
 
     private String traintype;
 
@@ -17,6 +19,8 @@ public class StaffTrain {
 
     private String remark;
 
+    private String trainstatus;
+
     public String getTrainid() {
         return trainid;
     }
@@ -25,12 +29,20 @@ public class StaffTrain {
         this.trainid = trainid == null ? null : trainid.trim();
     }
 
-    public String getStaffid() {
-        return staffid;
+    public String getStaffno() {
+        return staffno;
     }
 
-    public void setStaffid(String staffid) {
-        this.staffid = staffid == null ? null : staffid.trim();
+    public void setStaffno(String staffno) {
+        this.staffno = staffno == null ? null : staffno.trim();
+    }
+
+    public String getTrainname() {
+        return trainname;
+    }
+
+    public void setTrainname(String trainname) {
+        this.trainname = trainname == null ? null : trainname.trim();
     }
 
     public String getTraintype() {
@@ -71,5 +83,13 @@ public class StaffTrain {
 
     public void setRemark(String remark) {
         this.remark = remark == null ? null : remark.trim();
+    }
+
+    public String getTrainstatus() {
+        return trainstatus;
+    }
+
+    public void setTrainstatus(String trainstatus) {
+        this.trainstatus = trainstatus == null ? null : trainstatus.trim();
     }
 }

@@ -13,4 +13,6 @@ public interface IStaffPositionService {
 	String getPositionNameById(String positionid);
 
 	String findDepartmentByPositionid(String positionid);
+
+	List<StaffPosition> getAllPosition();
 }

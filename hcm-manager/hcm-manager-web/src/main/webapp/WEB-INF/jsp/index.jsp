@@ -91,7 +91,9 @@
 					});
 				</script> -->
 			</div>
-			<div title="薪资管理"></div>
+			<div title="薪资管理">
+				<ul id="navtree2"></ul>
+			</div>
 			<div title="培训管理"></div>
 			<div title="考勤管理"></div>
 		</div>

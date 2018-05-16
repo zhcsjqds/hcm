@@ -3,6 +3,7 @@ package cn.zouhuachao.pojo;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 public class PayrollExample {
@@ -106,6 +107,32 @@ public class PayrollExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
+        protected void addCriterionForJDBCDate(String condition, Date value, String property) {
+            if (value == null) {
+                throw new RuntimeException("Value for " + property + " cannot be null");
+            }
+            addCriterion(condition, new java.sql.Date(value.getTime()), property);
+        }
+
+        protected void addCriterionForJDBCDate(String condition, List<Date> values, String property) {
+            if (values == null || values.size() == 0) {
+                throw new RuntimeException("Value list for " + property + " cannot be null or empty");
+            }
+            List<java.sql.Date> dateList = new ArrayList<java.sql.Date>();
+            Iterator<Date> iter = values.iterator();
+            while (iter.hasNext()) {
+                dateList.add(new java.sql.Date(iter.next().getTime()));
+            }
+            addCriterion(condition, dateList, property);
+        }
+
+        protected void addCriterionForJDBCDate(String condition, Date value1, Date value2, String property) {
+            if (value1 == null || value2 == null) {
+                throw new RuntimeException("Between values for " + property + " cannot be null");
+            }
+            addCriterion(condition, new java.sql.Date(value1.getTime()), new java.sql.Date(value2.getTime()), property);
+        }
+
         public Criteria andPayidIsNull() {
             addCriterion("payid is null");
             return (Criteria) this;
@@ -176,143 +203,343 @@ public class PayrollExample {
             return (Criteria) this;
         }
 
-        public Criteria andStaffidIsNull() {
-            addCriterion("staffid is null");
+        public Criteria andStaffnoIsNull() {
+            addCriterion("staffno is null");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidIsNotNull() {
-            addCriterion("staffid is not null");
+        public Criteria andStaffnoIsNotNull() {
+            addCriterion("staffno is not null");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidEqualTo(String value) {
-            addCriterion("staffid =", value, "staffid");
+        public Criteria andStaffnoEqualTo(String value) {
+            addCriterion("staffno =", value, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidNotEqualTo(String value) {
-            addCriterion("staffid <>", value, "staffid");
+        public Criteria andStaffnoNotEqualTo(String value) {
+            addCriterion("staffno <>", value, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidGreaterThan(String value) {
-            addCriterion("staffid >", value, "staffid");
+        public Criteria andStaffnoGreaterThan(String value) {
+            addCriterion("staffno >", value, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidGreaterThanOrEqualTo(String value) {
-            addCriterion("staffid >=", value, "staffid");
+        public Criteria andStaffnoGreaterThanOrEqualTo(String value) {
+            addCriterion("staffno >=", value, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidLessThan(String value) {
-            addCriterion("staffid <", value, "staffid");
+        public Criteria andStaffnoLessThan(String value) {
+            addCriterion("staffno <", value, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidLessThanOrEqualTo(String value) {
-            addCriterion("staffid <=", value, "staffid");
+        public Criteria andStaffnoLessThanOrEqualTo(String value) {
+            addCriterion("staffno <=", value, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidLike(String value) {
-            addCriterion("staffid like", value, "staffid");
+        public Criteria andStaffnoLike(String value) {
+            addCriterion("staffno like", value, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidNotLike(String value) {
-            addCriterion("staffid not like", value, "staffid");
+        public Criteria andStaffnoNotLike(String value) {
+            addCriterion("staffno not like", value, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidIn(List<String> values) {
-            addCriterion("staffid in", values, "staffid");
+        public Criteria andStaffnoIn(List<String> values) {
+            addCriterion("staffno in", values, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidNotIn(List<String> values) {
-            addCriterion("staffid not in", values, "staffid");
+        public Criteria andStaffnoNotIn(List<String> values) {
+            addCriterion("staffno not in", values, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidBetween(String value1, String value2) {
-            addCriterion("staffid between", value1, value2, "staffid");
+        public Criteria andStaffnoBetween(String value1, String value2) {
+            addCriterion("staffno between", value1, value2, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidNotBetween(String value1, String value2) {
-            addCriterion("staffid not between", value1, value2, "staffid");
+        public Criteria andStaffnoNotBetween(String value1, String value2) {
+            addCriterion("staffno not between", value1, value2, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeidIsNull() {
-            addCriterion("paygradeid is null");
+        public Criteria andRealnameIsNull() {
+            addCriterion("realname is null");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeidIsNotNull() {
-            addCriterion("paygradeid is not null");
+        public Criteria andRealnameIsNotNull() {
+            addCriterion("realname is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeidEqualTo(String value) {
-            addCriterion("paygradeid =", value, "paygradeid");
+        public Criteria andRealnameEqualTo(String value) {
+            addCriterion("realname =", value, "realname");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeidNotEqualTo(String value) {
-            addCriterion("paygradeid <>", value, "paygradeid");
+        public Criteria andRealnameNotEqualTo(String value) {
+            addCriterion("realname <>", value, "realname");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeidGreaterThan(String value) {
-            addCriterion("paygradeid >", value, "paygradeid");
+        public Criteria andRealnameGreaterThan(String value) {
+            addCriterion("realname >", value, "realname");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeidGreaterThanOrEqualTo(String value) {
-            addCriterion("paygradeid >=", value, "paygradeid");
+        public Criteria andRealnameGreaterThanOrEqualTo(String value) {
+            addCriterion("realname >=", value, "realname");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeidLessThan(String value) {
-            addCriterion("paygradeid <", value, "paygradeid");
+        public Criteria andRealnameLessThan(String value) {
+            addCriterion("realname <", value, "realname");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeidLessThanOrEqualTo(String value) {
-            addCriterion("paygradeid <=", value, "paygradeid");
+        public Criteria andRealnameLessThanOrEqualTo(String value) {
+            addCriterion("realname <=", value, "realname");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeidLike(String value) {
-            addCriterion("paygradeid like", value, "paygradeid");
+        public Criteria andRealnameLike(String value) {
+            addCriterion("realname like", value, "realname");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeidNotLike(String value) {
-            addCriterion("paygradeid not like", value, "paygradeid");
+        public Criteria andRealnameNotLike(String value) {
+            addCriterion("realname not like", value, "realname");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeidIn(List<String> values) {
-            addCriterion("paygradeid in", values, "paygradeid");
+        public Criteria andRealnameIn(List<String> values) {
+            addCriterion("realname in", values, "realname");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeidNotIn(List<String> values) {
-            addCriterion("paygradeid not in", values, "paygradeid");
+        public Criteria andRealnameNotIn(List<String> values) {
+            addCriterion("realname not in", values, "realname");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeidBetween(String value1, String value2) {
-            addCriterion("paygradeid between", value1, value2, "paygradeid");
+        public Criteria andRealnameBetween(String value1, String value2) {
+            addCriterion("realname between", value1, value2, "realname");
             return (Criteria) this;
         }
 
-        public Criteria andPaygradeidNotBetween(String value1, String value2) {
-            addCriterion("paygradeid not between", value1, value2, "paygradeid");
+        public Criteria andRealnameNotBetween(String value1, String value2) {
+            addCriterion("realname not between", value1, value2, "realname");
+            return (Criteria) this;
+        }
+
+        public Criteria andPositionIsNull() {
+            addCriterion("position is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPositionIsNotNull() {
+            addCriterion("position is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPositionEqualTo(String value) {
+            addCriterion("position =", value, "position");
+            return (Criteria) this;
+        }
+
+        public Criteria andPositionNotEqualTo(String value) {
+            addCriterion("position <>", value, "position");
+            return (Criteria) this;
+        }
+
+        public Criteria andPositionGreaterThan(String value) {
+            addCriterion("position >", value, "position");
+            return (Criteria) this;
+        }
+
+        public Criteria andPositionGreaterThanOrEqualTo(String value) {
+            addCriterion("position >=", value, "position");
+            return (Criteria) this;
+        }
+
+        public Criteria andPositionLessThan(String value) {
+            addCriterion("position <", value, "position");
+            return (Criteria) this;
+        }
+
+        public Criteria andPositionLessThanOrEqualTo(String value) {
+            addCriterion("position <=", value, "position");
+            return (Criteria) this;
+        }
+
+        public Criteria andPositionLike(String value) {
+            addCriterion("position like", value, "position");
+            return (Criteria) this;
+        }
+
+        public Criteria andPositionNotLike(String value) {
+            addCriterion("position not like", value, "position");
+            return (Criteria) this;
+        }
+
+        public Criteria andPositionIn(List<String> values) {
+            addCriterion("position in", values, "position");
+            return (Criteria) this;
+        }
+
+        public Criteria andPositionNotIn(List<String> values) {
+            addCriterion("position not in", values, "position");
+            return (Criteria) this;
+        }
+
+        public Criteria andPositionBetween(String value1, String value2) {
+            addCriterion("position between", value1, value2, "position");
+            return (Criteria) this;
+        }
+
+        public Criteria andPositionNotBetween(String value1, String value2) {
+            addCriterion("position not between", value1, value2, "position");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeIsNull() {
+            addCriterion("paygrade is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeIsNotNull() {
+            addCriterion("paygrade is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeEqualTo(String value) {
+            addCriterion("paygrade =", value, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeNotEqualTo(String value) {
+            addCriterion("paygrade <>", value, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeGreaterThan(String value) {
+            addCriterion("paygrade >", value, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeGreaterThanOrEqualTo(String value) {
+            addCriterion("paygrade >=", value, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeLessThan(String value) {
+            addCriterion("paygrade <", value, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeLessThanOrEqualTo(String value) {
+            addCriterion("paygrade <=", value, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeLike(String value) {
+            addCriterion("paygrade like", value, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeNotLike(String value) {
+            addCriterion("paygrade not like", value, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeIn(List<String> values) {
+            addCriterion("paygrade in", values, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeNotIn(List<String> values) {
+            addCriterion("paygrade not in", values, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeBetween(String value1, String value2) {
+            addCriterion("paygrade between", value1, value2, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeNotBetween(String value1, String value2) {
+            addCriterion("paygrade not between", value1, value2, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayIsNull() {
+            addCriterion("pay is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayIsNotNull() {
+            addCriterion("pay is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayEqualTo(BigDecimal value) {
+            addCriterion("pay =", value, "pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayNotEqualTo(BigDecimal value) {
+            addCriterion("pay <>", value, "pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayGreaterThan(BigDecimal value) {
+            addCriterion("pay >", value, "pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("pay >=", value, "pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayLessThan(BigDecimal value) {
+            addCriterion("pay <", value, "pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("pay <=", value, "pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayIn(List<BigDecimal> values) {
+            addCriterion("pay in", values, "pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayNotIn(List<BigDecimal> values) {
+            addCriterion("pay not in", values, "pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("pay between", value1, value2, "pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("pay not between", value1, value2, "pay");
             return (Criteria) this;
         }
 
@@ -796,63 +1023,123 @@ public class PayrollExample {
             return (Criteria) this;
         }
 
-        public Criteria andIncometaxIsNull() {
-            addCriterion("incometax is null");
+        public Criteria andWorkagepayIsNull() {
+            addCriterion("workagepay is null");
             return (Criteria) this;
         }
 
-        public Criteria andIncometaxIsNotNull() {
-            addCriterion("incometax is not null");
+        public Criteria andWorkagepayIsNotNull() {
+            addCriterion("workagepay is not null");
             return (Criteria) this;
         }
 
-        public Criteria andIncometaxEqualTo(BigDecimal value) {
-            addCriterion("incometax =", value, "incometax");
+        public Criteria andWorkagepayEqualTo(BigDecimal value) {
+            addCriterion("workagepay =", value, "workagepay");
             return (Criteria) this;
         }
 
-        public Criteria andIncometaxNotEqualTo(BigDecimal value) {
-            addCriterion("incometax <>", value, "incometax");
+        public Criteria andWorkagepayNotEqualTo(BigDecimal value) {
+            addCriterion("workagepay <>", value, "workagepay");
             return (Criteria) this;
         }
 
-        public Criteria andIncometaxGreaterThan(BigDecimal value) {
-            addCriterion("incometax >", value, "incometax");
+        public Criteria andWorkagepayGreaterThan(BigDecimal value) {
+            addCriterion("workagepay >", value, "workagepay");
             return (Criteria) this;
         }
 
-        public Criteria andIncometaxGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("incometax >=", value, "incometax");
+        public Criteria andWorkagepayGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("workagepay >=", value, "workagepay");
             return (Criteria) this;
         }
 
-        public Criteria andIncometaxLessThan(BigDecimal value) {
-            addCriterion("incometax <", value, "incometax");
+        public Criteria andWorkagepayLessThan(BigDecimal value) {
+            addCriterion("workagepay <", value, "workagepay");
             return (Criteria) this;
         }
 
-        public Criteria andIncometaxLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("incometax <=", value, "incometax");
+        public Criteria andWorkagepayLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("workagepay <=", value, "workagepay");
             return (Criteria) this;
         }
 
-        public Criteria andIncometaxIn(List<BigDecimal> values) {
-            addCriterion("incometax in", values, "incometax");
+        public Criteria andWorkagepayIn(List<BigDecimal> values) {
+            addCriterion("workagepay in", values, "workagepay");
             return (Criteria) this;
         }
 
-        public Criteria andIncometaxNotIn(List<BigDecimal> values) {
-            addCriterion("incometax not in", values, "incometax");
+        public Criteria andWorkagepayNotIn(List<BigDecimal> values) {
+            addCriterion("workagepay not in", values, "workagepay");
             return (Criteria) this;
         }
 
-        public Criteria andIncometaxBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("incometax between", value1, value2, "incometax");
+        public Criteria andWorkagepayBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("workagepay between", value1, value2, "workagepay");
             return (Criteria) this;
         }
 
-        public Criteria andIncometaxNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("incometax not between", value1, value2, "incometax");
+        public Criteria andWorkagepayNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("workagepay not between", value1, value2, "workagepay");
+            return (Criteria) this;
+        }
+
+        public Criteria andTsalaryIsNull() {
+            addCriterion("tsalary is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTsalaryIsNotNull() {
+            addCriterion("tsalary is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTsalaryEqualTo(BigDecimal value) {
+            addCriterion("tsalary =", value, "tsalary");
+            return (Criteria) this;
+        }
+
+        public Criteria andTsalaryNotEqualTo(BigDecimal value) {
+            addCriterion("tsalary <>", value, "tsalary");
+            return (Criteria) this;
+        }
+
+        public Criteria andTsalaryGreaterThan(BigDecimal value) {
+            addCriterion("tsalary >", value, "tsalary");
+            return (Criteria) this;
+        }
+
+        public Criteria andTsalaryGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("tsalary >=", value, "tsalary");
+            return (Criteria) this;
+        }
+
+        public Criteria andTsalaryLessThan(BigDecimal value) {
+            addCriterion("tsalary <", value, "tsalary");
+            return (Criteria) this;
+        }
+
+        public Criteria andTsalaryLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("tsalary <=", value, "tsalary");
+            return (Criteria) this;
+        }
+
+        public Criteria andTsalaryIn(List<BigDecimal> values) {
+            addCriterion("tsalary in", values, "tsalary");
+            return (Criteria) this;
+        }
+
+        public Criteria andTsalaryNotIn(List<BigDecimal> values) {
+            addCriterion("tsalary not in", values, "tsalary");
+            return (Criteria) this;
+        }
+
+        public Criteria andTsalaryBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("tsalary between", value1, value2, "tsalary");
+            return (Criteria) this;
+        }
+
+        public Criteria andTsalaryNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("tsalary not between", value1, value2, "tsalary");
             return (Criteria) this;
         }
 
@@ -916,6 +1203,66 @@ public class PayrollExample {
             return (Criteria) this;
         }
 
+        public Criteria andIncometaxIsNull() {
+            addCriterion("incometax is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIncometaxIsNotNull() {
+            addCriterion("incometax is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIncometaxEqualTo(BigDecimal value) {
+            addCriterion("incometax =", value, "incometax");
+            return (Criteria) this;
+        }
+
+        public Criteria andIncometaxNotEqualTo(BigDecimal value) {
+            addCriterion("incometax <>", value, "incometax");
+            return (Criteria) this;
+        }
+
+        public Criteria andIncometaxGreaterThan(BigDecimal value) {
+            addCriterion("incometax >", value, "incometax");
+            return (Criteria) this;
+        }
+
+        public Criteria andIncometaxGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("incometax >=", value, "incometax");
+            return (Criteria) this;
+        }
+
+        public Criteria andIncometaxLessThan(BigDecimal value) {
+            addCriterion("incometax <", value, "incometax");
+            return (Criteria) this;
+        }
+
+        public Criteria andIncometaxLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("incometax <=", value, "incometax");
+            return (Criteria) this;
+        }
+
+        public Criteria andIncometaxIn(List<BigDecimal> values) {
+            addCriterion("incometax in", values, "incometax");
+            return (Criteria) this;
+        }
+
+        public Criteria andIncometaxNotIn(List<BigDecimal> values) {
+            addCriterion("incometax not in", values, "incometax");
+            return (Criteria) this;
+        }
+
+        public Criteria andIncometaxBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("incometax between", value1, value2, "incometax");
+            return (Criteria) this;
+        }
+
+        public Criteria andIncometaxNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("incometax not between", value1, value2, "incometax");
+            return (Criteria) this;
+        }
+
         public Criteria andPaytimeIsNull() {
             addCriterion("paytime is null");
             return (Criteria) this;
@@ -927,52 +1274,52 @@ public class PayrollExample {
         }
 
         public Criteria andPaytimeEqualTo(Date value) {
-            addCriterion("paytime =", value, "paytime");
+            addCriterionForJDBCDate("paytime =", value, "paytime");
             return (Criteria) this;
         }
 
         public Criteria andPaytimeNotEqualTo(Date value) {
-            addCriterion("paytime <>", value, "paytime");
+            addCriterionForJDBCDate("paytime <>", value, "paytime");
             return (Criteria) this;
         }
 
         public Criteria andPaytimeGreaterThan(Date value) {
-            addCriterion("paytime >", value, "paytime");
+            addCriterionForJDBCDate("paytime >", value, "paytime");
             return (Criteria) this;
         }
 
         public Criteria andPaytimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("paytime >=", value, "paytime");
+            addCriterionForJDBCDate("paytime >=", value, "paytime");
             return (Criteria) this;
         }
 
         public Criteria andPaytimeLessThan(Date value) {
-            addCriterion("paytime <", value, "paytime");
+            addCriterionForJDBCDate("paytime <", value, "paytime");
             return (Criteria) this;
         }
 
         public Criteria andPaytimeLessThanOrEqualTo(Date value) {
-            addCriterion("paytime <=", value, "paytime");
+            addCriterionForJDBCDate("paytime <=", value, "paytime");
             return (Criteria) this;
         }
 
         public Criteria andPaytimeIn(List<Date> values) {
-            addCriterion("paytime in", values, "paytime");
+            addCriterionForJDBCDate("paytime in", values, "paytime");
             return (Criteria) this;
         }
 
         public Criteria andPaytimeNotIn(List<Date> values) {
-            addCriterion("paytime not in", values, "paytime");
+            addCriterionForJDBCDate("paytime not in", values, "paytime");
             return (Criteria) this;
         }
 
         public Criteria andPaytimeBetween(Date value1, Date value2) {
-            addCriterion("paytime between", value1, value2, "paytime");
+            addCriterionForJDBCDate("paytime between", value1, value2, "paytime");
             return (Criteria) this;
         }
 
         public Criteria andPaytimeNotBetween(Date value1, Date value2) {
-            addCriterion("paytime not between", value1, value2, "paytime");
+            addCriterionForJDBCDate("paytime not between", value1, value2, "paytime");
             return (Criteria) this;
         }
 
@@ -1113,66 +1460,6 @@ public class PayrollExample {
 
         public Criteria andPaystatusNotBetween(String value1, String value2) {
             addCriterion("paystatus not between", value1, value2, "paystatus");
-            return (Criteria) this;
-        }
-
-        public Criteria andTsalaryIsNull() {
-            addCriterion("tsalary is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTsalaryIsNotNull() {
-            addCriterion("tsalary is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTsalaryEqualTo(BigDecimal value) {
-            addCriterion("tsalary =", value, "tsalary");
-            return (Criteria) this;
-        }
-
-        public Criteria andTsalaryNotEqualTo(BigDecimal value) {
-            addCriterion("tsalary <>", value, "tsalary");
-            return (Criteria) this;
-        }
-
-        public Criteria andTsalaryGreaterThan(BigDecimal value) {
-            addCriterion("tsalary >", value, "tsalary");
-            return (Criteria) this;
-        }
-
-        public Criteria andTsalaryGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("tsalary >=", value, "tsalary");
-            return (Criteria) this;
-        }
-
-        public Criteria andTsalaryLessThan(BigDecimal value) {
-            addCriterion("tsalary <", value, "tsalary");
-            return (Criteria) this;
-        }
-
-        public Criteria andTsalaryLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("tsalary <=", value, "tsalary");
-            return (Criteria) this;
-        }
-
-        public Criteria andTsalaryIn(List<BigDecimal> values) {
-            addCriterion("tsalary in", values, "tsalary");
-            return (Criteria) this;
-        }
-
-        public Criteria andTsalaryNotIn(List<BigDecimal> values) {
-            addCriterion("tsalary not in", values, "tsalary");
-            return (Criteria) this;
-        }
-
-        public Criteria andTsalaryBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("tsalary between", value1, value2, "tsalary");
-            return (Criteria) this;
-        }
-
-        public Criteria andTsalaryNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("tsalary not between", value1, value2, "tsalary");
             return (Criteria) this;
         }
     }

@@ -30,7 +30,7 @@ public class EasyUIDataGirdStaff {
 	private String maritalstatus;
 	private String province;
 	private String city;
-	
+	private String paygrade;
 	
 	public String getStaffno() {
 		return staffno;
@@ -193,5 +193,11 @@ public class EasyUIDataGirdStaff {
 	}
 	public void setDepartmentid(String departmentid) {
 		this.departmentid = departmentid;
+	}
+	public String getPaygrade() {
+		return paygrade;
+	}
+	public void setPaygrade(String paygrade) {
+		this.paygrade = paygrade;
 	}
 }

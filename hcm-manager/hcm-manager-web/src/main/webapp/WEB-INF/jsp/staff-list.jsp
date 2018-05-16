@@ -180,7 +180,7 @@
 						title:"入职时间",
 						width:100,//全一百，平分自
 						sortable:true,
-						formatter:formatDatebox
+						//formatter:formatDatebox
 					},
 					{
 						field:"workage",
@@ -337,11 +337,11 @@
 		//$("#staffEditForm").serialize()将表单序列号为key-value形式的字符串
 		$.post("${pageContext.request.contextPath}/staffEdit",$("#staffEditForm").serialize(), function(data){
 			if(data.status == 200){
+				//刷新页面
 				obj.searchzz();
 				$.messager.alert('提示','员工修改成功!',"info");
 				//关闭窗口
 				$("#staffEditWindow").window({}).window("closed");
-				//刷新页面
 			}else{
 				$.messager.alert('提示','员工修改失败!',"error");
 			}

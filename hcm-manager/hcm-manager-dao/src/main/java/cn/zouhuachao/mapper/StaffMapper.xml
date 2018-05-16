@@ -25,6 +25,7 @@
     <result column="bankcard" property="bankcard" jdbcType="VARCHAR" />
     <result column="title" property="title" jdbcType="VARCHAR" />
     <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="paygrade" property="paygrade" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -87,7 +88,7 @@
   <sql id="Base_Column_List" >
     staffid, realname, gender, education, province, city, nation, bloodtype, positionid, 
     departmentid, entrydate, politicsstatus, birthday, identityid, maritalstatus, phone, 
-    address, status, staffno, no, bankcard, title, email
+    address, status, staffno, no, bankcard, title, email, paygrade
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zouhuachao.pojo.StaffExample" >
     select
@@ -127,7 +128,8 @@
       birthday, identityid, maritalstatus, 
       phone, address, status, 
       staffno, no, bankcard, 
-      title, email)
+      title, email, paygrade
+      )
     values (#{staffid,jdbcType=VARCHAR}, #{realname,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, 
       #{education,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
       #{nation,jdbcType=VARCHAR}, #{bloodtype,jdbcType=VARCHAR}, #{positionid,jdbcType=VARCHAR}, 
@@ -135,7 +137,8 @@
       #{birthday,jdbcType=DATE}, #{identityid,jdbcType=VARCHAR}, #{maritalstatus,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
       #{staffno,jdbcType=VARCHAR}, #{no,jdbcType=INTEGER}, #{bankcard,jdbcType=VARCHAR}, 
-      #{title,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR})
+      #{title,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{paygrade,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="cn.zouhuachao.pojo.Staff" >
     insert into staff
@@ -209,6 +212,9 @@
       <if test="email != null" >
         email,
       </if>
+      <if test="paygrade != null" >
+        paygrade,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="staffid != null" >
@@ -279,6 +285,9 @@
       </if>
       <if test="email != null" >
         #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="paygrade != null" >
+        #{paygrade,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -360,6 +369,9 @@
       <if test="record.email != null" >
         email = #{record.email,jdbcType=VARCHAR},
       </if>
+      <if test="record.paygrade != null" >
+        paygrade = #{record.paygrade,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -389,7 +401,8 @@
       no = #{record.no,jdbcType=INTEGER},
       bankcard = #{record.bankcard,jdbcType=VARCHAR},
       title = #{record.title,jdbcType=VARCHAR},
-      email = #{record.email,jdbcType=VARCHAR}
+      email = #{record.email,jdbcType=VARCHAR},
+      paygrade = #{record.paygrade,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -463,6 +476,9 @@
       <if test="email != null" >
         email = #{email,jdbcType=VARCHAR},
       </if>
+      <if test="paygrade != null" >
+        paygrade = #{paygrade,jdbcType=VARCHAR},
+      </if>
     </set>
     where staffid = #{staffid,jdbcType=VARCHAR}
   </update>
@@ -489,7 +505,8 @@
       no = #{no,jdbcType=INTEGER},
       bankcard = #{bankcard,jdbcType=VARCHAR},
       title = #{title,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR}
+      email = #{email,jdbcType=VARCHAR},
+      paygrade = #{paygrade,jdbcType=VARCHAR}
     where staffid = #{staffid,jdbcType=VARCHAR}
   </update>
 </mapper>

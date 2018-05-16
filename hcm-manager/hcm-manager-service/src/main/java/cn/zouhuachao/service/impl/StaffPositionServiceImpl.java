@@ -58,4 +58,14 @@ public class StaffPositionServiceImpl implements IStaffPositionService {
 		return departmentid;
 	}
 
+	/**
+	 * 获得所以职位
+	 */
+	@Override
+	public List<StaffPosition> getAllPosition() {
+		StaffPositionExample example = new StaffPositionExample();
+		List<StaffPosition> list = staffPositionMapper.selectByExample(example);
+		return list;
+	}
+
 }

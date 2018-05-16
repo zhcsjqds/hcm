@@ -175,73 +175,143 @@ public class StaffTrainExample {
             return (Criteria) this;
         }
 
-        public Criteria andStaffidIsNull() {
-            addCriterion("staffid is null");
+        public Criteria andStaffnoIsNull() {
+            addCriterion("staffno is null");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidIsNotNull() {
-            addCriterion("staffid is not null");
+        public Criteria andStaffnoIsNotNull() {
+            addCriterion("staffno is not null");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidEqualTo(String value) {
-            addCriterion("staffid =", value, "staffid");
+        public Criteria andStaffnoEqualTo(String value) {
+            addCriterion("staffno =", value, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidNotEqualTo(String value) {
-            addCriterion("staffid <>", value, "staffid");
+        public Criteria andStaffnoNotEqualTo(String value) {
+            addCriterion("staffno <>", value, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidGreaterThan(String value) {
-            addCriterion("staffid >", value, "staffid");
+        public Criteria andStaffnoGreaterThan(String value) {
+            addCriterion("staffno >", value, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidGreaterThanOrEqualTo(String value) {
-            addCriterion("staffid >=", value, "staffid");
+        public Criteria andStaffnoGreaterThanOrEqualTo(String value) {
+            addCriterion("staffno >=", value, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidLessThan(String value) {
-            addCriterion("staffid <", value, "staffid");
+        public Criteria andStaffnoLessThan(String value) {
+            addCriterion("staffno <", value, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidLessThanOrEqualTo(String value) {
-            addCriterion("staffid <=", value, "staffid");
+        public Criteria andStaffnoLessThanOrEqualTo(String value) {
+            addCriterion("staffno <=", value, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidLike(String value) {
-            addCriterion("staffid like", value, "staffid");
+        public Criteria andStaffnoLike(String value) {
+            addCriterion("staffno like", value, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidNotLike(String value) {
-            addCriterion("staffid not like", value, "staffid");
+        public Criteria andStaffnoNotLike(String value) {
+            addCriterion("staffno not like", value, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidIn(List<String> values) {
-            addCriterion("staffid in", values, "staffid");
+        public Criteria andStaffnoIn(List<String> values) {
+            addCriterion("staffno in", values, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidNotIn(List<String> values) {
-            addCriterion("staffid not in", values, "staffid");
+        public Criteria andStaffnoNotIn(List<String> values) {
+            addCriterion("staffno not in", values, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidBetween(String value1, String value2) {
-            addCriterion("staffid between", value1, value2, "staffid");
+        public Criteria andStaffnoBetween(String value1, String value2) {
+            addCriterion("staffno between", value1, value2, "staffno");
             return (Criteria) this;
         }
 
-        public Criteria andStaffidNotBetween(String value1, String value2) {
-            addCriterion("staffid not between", value1, value2, "staffid");
+        public Criteria andStaffnoNotBetween(String value1, String value2) {
+            addCriterion("staffno not between", value1, value2, "staffno");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainnameIsNull() {
+            addCriterion("trainname is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainnameIsNotNull() {
+            addCriterion("trainname is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainnameEqualTo(String value) {
+            addCriterion("trainname =", value, "trainname");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainnameNotEqualTo(String value) {
+            addCriterion("trainname <>", value, "trainname");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainnameGreaterThan(String value) {
+            addCriterion("trainname >", value, "trainname");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainnameGreaterThanOrEqualTo(String value) {
+            addCriterion("trainname >=", value, "trainname");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainnameLessThan(String value) {
+            addCriterion("trainname <", value, "trainname");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainnameLessThanOrEqualTo(String value) {
+            addCriterion("trainname <=", value, "trainname");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainnameLike(String value) {
+            addCriterion("trainname like", value, "trainname");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainnameNotLike(String value) {
+            addCriterion("trainname not like", value, "trainname");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainnameIn(List<String> values) {
+            addCriterion("trainname in", values, "trainname");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainnameNotIn(List<String> values) {
+            addCriterion("trainname not in", values, "trainname");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainnameBetween(String value1, String value2) {
+            addCriterion("trainname between", value1, value2, "trainname");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainnameNotBetween(String value1, String value2) {
+            addCriterion("trainname not between", value1, value2, "trainname");
             return (Criteria) this;
         }
 
@@ -572,6 +642,76 @@ public class StaffTrainExample {
 
         public Criteria andRemarkNotBetween(String value1, String value2) {
             addCriterion("remark not between", value1, value2, "remark");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainstatusIsNull() {
+            addCriterion("trainstatus is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainstatusIsNotNull() {
+            addCriterion("trainstatus is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainstatusEqualTo(String value) {
+            addCriterion("trainstatus =", value, "trainstatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainstatusNotEqualTo(String value) {
+            addCriterion("trainstatus <>", value, "trainstatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainstatusGreaterThan(String value) {
+            addCriterion("trainstatus >", value, "trainstatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainstatusGreaterThanOrEqualTo(String value) {
+            addCriterion("trainstatus >=", value, "trainstatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainstatusLessThan(String value) {
+            addCriterion("trainstatus <", value, "trainstatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainstatusLessThanOrEqualTo(String value) {
+            addCriterion("trainstatus <=", value, "trainstatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainstatusLike(String value) {
+            addCriterion("trainstatus like", value, "trainstatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainstatusNotLike(String value) {
+            addCriterion("trainstatus not like", value, "trainstatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainstatusIn(List<String> values) {
+            addCriterion("trainstatus in", values, "trainstatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainstatusNotIn(List<String> values) {
+            addCriterion("trainstatus not in", values, "trainstatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainstatusBetween(String value1, String value2) {
+            addCriterion("trainstatus between", value1, value2, "trainstatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrainstatusNotBetween(String value1, String value2) {
+            addCriterion("trainstatus not between", value1, value2, "trainstatus");
             return (Criteria) this;
         }
     }

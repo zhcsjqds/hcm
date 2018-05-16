@@ -23,4 +23,11 @@ public class StaffPositionController {
 		List<StaffPosition> list = staffPositionService.getPosition(departmentid);
 		return list;
 	}
+	
+	@RequestMapping("/findAllPositionList")
+	@ResponseBody
+	public List<StaffPosition> findAllPosition() {
+		List<StaffPosition> list = staffPositionService.getAllPosition();
+		return list;
+	}
 }

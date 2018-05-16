@@ -49,6 +49,8 @@ public class Staff {
 
     private String email;
 
+    private String paygrade;
+
     public String getStaffid() {
         return staffid;
     }
@@ -231,5 +233,13 @@ public class Staff {
 
     public void setEmail(String email) {
         this.email = email == null ? null : email.trim();
+    }
+
+    public String getPaygrade() {
+        return paygrade;
+    }
+
+    public void setPaygrade(String paygrade) {
+        this.paygrade = paygrade == null ? null : paygrade.trim();
     }
 }

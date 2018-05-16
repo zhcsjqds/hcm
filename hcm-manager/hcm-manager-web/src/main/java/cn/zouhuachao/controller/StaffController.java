@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.zouhuachao.common.pojo.EasyUIDataGirdResult;
-import cn.zouhuachao.mapper.StaffMapper;
 import cn.zouhuachao.pojo.Staff;
 import cn.zouhuachao.pojo.StaffDimission;
 import cn.zouhuachao.pojo.StaffTransfer;
@@ -182,8 +181,8 @@ public class StaffController {
 	 */
 	@RequestMapping("/stafflist")
 	@ResponseBody
-	public EasyUIDataGirdResult findStaffList(Integer page, Integer rows,String realname,String status) {
-		EasyUIDataGirdResult staffList = staffService.getStaffList(page, rows, status, realname);
+	public EasyUIDataGirdResult findStaffList(Integer page, Integer rows,String paygrade,String realname,String status) {
+		EasyUIDataGirdResult staffList = staffService.getStaffList(page, rows,paygrade, status, realname);
 		return staffList;
 	}
 	
@@ -277,4 +276,37 @@ public class StaffController {
 			}
 		}
 	}
+	
+	/**
+	 * 工资定级
+	 */
+	@RequestMapping("/setPayGrade")
+	@ResponseBody
+	public void setPayGrade(String paygrade,String staffid,HttpServletResponse response) {
+		boolean isSuccess = staffService.updateStaffForPaygrade(paygrade,staffid);
+		if(isSuccess) {
+			try {
+				response.getWriter().write("{\"status\":200}");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 * 工资升级
+	 */
+	@RequestMapping("/updatePayGrade")
+	@ResponseBody
+	public void updatePayGrade(String newpaygrade,String staffid,HttpServletResponse response) {
+		boolean isSuccess = staffService.updateStaffForPaygrade(newpaygrade,staffid);
+		if(isSuccess) {
+			try {
+				response.getWriter().write("{\"status\":200}");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
 }

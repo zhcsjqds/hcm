@@ -1711,6 +1711,76 @@ public class StaffExample {
             addCriterion("email not between", value1, value2, "email");
             return (Criteria) this;
         }
+
+        public Criteria andPaygradeIsNull() {
+            addCriterion("paygrade is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeIsNotNull() {
+            addCriterion("paygrade is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeEqualTo(String value) {
+            addCriterion("paygrade =", value, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeNotEqualTo(String value) {
+            addCriterion("paygrade <>", value, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeGreaterThan(String value) {
+            addCriterion("paygrade >", value, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeGreaterThanOrEqualTo(String value) {
+            addCriterion("paygrade >=", value, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeLessThan(String value) {
+            addCriterion("paygrade <", value, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeLessThanOrEqualTo(String value) {
+            addCriterion("paygrade <=", value, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeLike(String value) {
+            addCriterion("paygrade like", value, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeNotLike(String value) {
+            addCriterion("paygrade not like", value, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeIn(List<String> values) {
+            addCriterion("paygrade in", values, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeNotIn(List<String> values) {
+            addCriterion("paygrade not in", values, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeBetween(String value1, String value2) {
+            addCriterion("paygrade between", value1, value2, "paygrade");
+            return (Criteria) this;
+        }
+
+        public Criteria andPaygradeNotBetween(String value1, String value2) {
+            addCriterion("paygrade not between", value1, value2, "paygrade");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

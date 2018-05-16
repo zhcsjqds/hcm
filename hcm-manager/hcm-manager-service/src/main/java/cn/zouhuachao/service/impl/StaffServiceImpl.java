@@ -1,6 +1,7 @@
 package cn.zouhuachao.service.impl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -47,13 +48,21 @@ public class StaffServiceImpl implements IStaffService{
 	 * 员工分页查询
 	 */
 	@Override
-	public EasyUIDataGirdResult getStaffList(int page, int rows, String status, String realname) {
+	public EasyUIDataGirdResult getStaffList(int page, int rows,String paygrade, String status, String realname) {
 		List<EasyUIDataGirdStaff> sl = new ArrayList<>();
 		// 设置分页信息
 		PageHelper.startPage(page, rows);
 		//查询(返回一页数据)
 		StaffExample example = new StaffExample();
-		if((status==null&&realname==null)||(status==""&&realname=="")) {
+		if(paygrade==""&&(realname==null||realname=="")) {
+			example.createCriteria().andStatusEqualTo("在职").andPaygradeIsNull();
+		} else if(paygrade==""&&realname!="") {
+			example.createCriteria().andStatusEqualTo("在职").andRealnameLike("%"+realname+"%").andPaygradeIsNull();
+		} else if("notnull".equals(paygrade)&&(realname==null||realname=="")) {
+			example.createCriteria().andStatusEqualTo("在职").andPaygradeIsNotNull();
+		} else if("notnull".equals(paygrade)&&realname!="") {
+			example.createCriteria().andStatusEqualTo("在职").andRealnameLike("%"+realname+"%").andPaygradeIsNotNull();
+		} else if((status==null&&realname==null)||(status==""&&realname=="")) {
 			example.createCriteria().andStatusBetween("在职", "离职");
 		} else if(status!=""&&realname=="") {
 			example.createCriteria().andStatusEqualTo(status);
@@ -103,6 +112,7 @@ public class StaffServiceImpl implements IStaffService{
 			s.setMaritalstatus(maritalstatus);
 			s.setProvince(staff.getProvince());
 			s.setCity(staff.getCity());
+			s.setPaygrade(staff.getPaygrade());
 			sl.add(s);
 		}
 		//创建一个返回值对象
@@ -207,5 +217,44 @@ public class StaffServiceImpl implements IStaffService{
 	public String getStaffNoById(String id) {
 		Staff staff = staffMapper.selectByPrimaryKey(id);
 		return staff.getStaffno();
+	}
+	
+	/**
+	 * 根据员工ids查询编号
+	 */
+	@Override
+	public List<String> getStaffNoByIds(String[] ids) {
+		List<String> staffnoList = new ArrayList<>();
+		List<String> idList = Arrays.asList(ids);
+		StaffExample example = new StaffExample();
+		example.createCriteria().andStaffidIn(idList);
+		List<Staff> stafflist = staffMapper.selectByExample(example);
+		for (Staff staff : stafflist) {
+			String staffno = staff.getStaffno();
+			staffnoList.add(staffno);
+		}
+		return staffnoList;
+	}
+
+	/**
+	 * 员工工资定级、升级
+	 */
+	@Override
+	public boolean updateStaffForPaygrade(String paygrade, String staffid) {
+		Staff staff = new Staff();
+		staff.setStaffid(staffid);
+		staff.setPaygrade(paygrade);
+		int update = staffMapper.updateByPrimaryKeySelective(staff);
+		return update>0?true:false;
+	}
+	
+	/**
+	 * 获取员工工龄
+	 */
+	@Override
+	public Integer getWorkage(String staffid) {
+		Staff staff = staffMapper.selectByPrimaryKey(staffid);
+		Integer workage = DateBetweenUtil.dayCompare(staff.getEntrydate(), new Date());
+		return workage;
 	}
 }

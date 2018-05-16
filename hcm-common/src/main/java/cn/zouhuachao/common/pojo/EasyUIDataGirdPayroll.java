@@ -1,20 +1,18 @@
-package cn.zouhuachao.pojo;
+package cn.zouhuachao.common.pojo;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class Payroll {
-    private String payid;
+public class EasyUIDataGirdPayroll {
+	private String payid;
 
     private String staffno;
-
+    
     private String realname;
-
+    
     private String position;
 
     private String paygrade;
-
-    private BigDecimal pay;
 
     private BigDecimal allowance;
 
@@ -32,13 +30,9 @@ public class Payroll {
 
     private BigDecimal housingfund;
 
-    private BigDecimal workagepay;
-
-    private BigDecimal tsalary;
+    private BigDecimal incometax;
 
     private BigDecimal fsalary;
-
-    private BigDecimal incometax;
 
     private Date paytime;
 
@@ -46,52 +40,14 @@ public class Payroll {
 
     private String paystatus;
 
+    private BigDecimal tsalary;
+
     public String getPayid() {
         return payid;
     }
 
     public void setPayid(String payid) {
         this.payid = payid == null ? null : payid.trim();
-    }
-
-    public String getStaffno() {
-        return staffno;
-    }
-
-    public void setStaffno(String staffno) {
-        this.staffno = staffno == null ? null : staffno.trim();
-    }
-
-    public String getRealname() {
-        return realname;
-    }
-
-    public void setRealname(String realname) {
-        this.realname = realname == null ? null : realname.trim();
-    }
-
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position == null ? null : position.trim();
-    }
-
-    public String getPaygrade() {
-        return paygrade;
-    }
-
-    public void setPaygrade(String paygrade) {
-        this.paygrade = paygrade == null ? null : paygrade.trim();
-    }
-
-    public BigDecimal getPay() {
-        return pay;
-    }
-
-    public void setPay(BigDecimal pay) {
-        this.pay = pay;
     }
 
     public BigDecimal getAllowance() {
@@ -158,20 +114,12 @@ public class Payroll {
         this.housingfund = housingfund;
     }
 
-    public BigDecimal getWorkagepay() {
-        return workagepay;
+    public BigDecimal getIncometax() {
+        return incometax;
     }
 
-    public void setWorkagepay(BigDecimal workagepay) {
-        this.workagepay = workagepay;
-    }
-
-    public BigDecimal getTsalary() {
-        return tsalary;
-    }
-
-    public void setTsalary(BigDecimal tsalary) {
-        this.tsalary = tsalary;
+    public void setIncometax(BigDecimal incometax) {
+        this.incometax = incometax;
     }
 
     public BigDecimal getFsalary() {
@@ -180,14 +128,6 @@ public class Payroll {
 
     public void setFsalary(BigDecimal fsalary) {
         this.fsalary = fsalary;
-    }
-
-    public BigDecimal getIncometax() {
-        return incometax;
-    }
-
-    public void setIncometax(BigDecimal incometax) {
-        this.incometax = incometax;
     }
 
     public Date getPaytime() {
@@ -213,4 +153,44 @@ public class Payroll {
     public void setPaystatus(String paystatus) {
         this.paystatus = paystatus == null ? null : paystatus.trim();
     }
+
+    public BigDecimal getTsalary() {
+        return tsalary;
+    }
+
+    public void setTsalary(BigDecimal tsalary) {
+        this.tsalary = tsalary;
+    }
+
+	public String getStaffno() {
+		return staffno;
+	}
+
+	public void setStaffno(String staffno) {
+		this.staffno = staffno;
+	}
+
+	public String getRealname() {
+		return realname;
+	}
+
+	public void setRealname(String realname) {
+		this.realname = realname;
+	}
+
+	public String getPaygrade() {
+		return paygrade;
+	}
+
+	public void setPaygrade(String paygrade) {
+		this.paygrade = paygrade;
+	}
+
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
 }
