@@ -206,6 +206,7 @@
 		            	<option></option>
 		            	<option value="已婚">已婚</option>
 		            	<option value="未婚">未婚</option>
+		            	<option value="其他">其他</option>
 		            </select>
 	            </td>
 	        </tr>

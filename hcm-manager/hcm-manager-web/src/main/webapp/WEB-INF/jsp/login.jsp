@@ -48,7 +48,7 @@ input[type=password] {
 <body>
 	<div class="main-inner" id="mainCnt"
 		style="width: 100%; height: 100%; overflow: hidden; position: absolute; left: 0%; top: 0%; margin-left: 0px; margin-top: 0px; background-image: url('${pageContext.request.contextPath }/images/login-back.jpg')">
-		<div id="loginBlock" class="login" style="margin-top: 180px; height: 255px;">
+		<div id="loginBlock" class="login" style="margin-top: 200px;margin-right: 41.6%; height: 255px;">
 			<div class="loginFunc">
 				<div id="lbNormal" class="loginFuncMobile">员工登录</div>
 			</div>
@@ -93,8 +93,8 @@ input[type=password] {
 		</div>
 	</div>
 	<div
-		style="width: 900px; height: 50px; position: absolute; text-align: left; left: 50%; top: 50%; margin-left: -450px;; margin-top: 220px;">
-		<span style="color: #488ED5;">Powered By www.itcast.cn</span><span
+		style="width: 900px; height: 50px; position: absolute; text-align: left; left: 50%; top: 50%; margin-left: -260px;; margin-top: 220px;">
+		<span style="color: #488ED5;">Powered By www.zouhuachao.cn</span><span
 			style="color: #488ED5;margin-left:10px;">推荐浏览器（右键链接-目标另存为）：<a
 			href="http://download.firefox.com.cn/releases/full/23.0/zh-CN/Firefox-full-latest.exe">Firefox</a>
 		</span>

@@ -1,0 +1,4 @@
+[
+		{ "id":"11", "pId":"0", "text":"添加培训" ,"iconCls":"icon-user","url":"train-add"},
+		{ "id":"12", "pId":"0", "text":"培训记录","url":"train-list"}
+]

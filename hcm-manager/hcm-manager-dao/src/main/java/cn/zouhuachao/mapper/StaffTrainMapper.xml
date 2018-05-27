@@ -4,6 +4,7 @@
   <resultMap id="BaseResultMap" type="cn.zouhuachao.pojo.StaffTrain" >
     <id column="trainid" property="trainid" jdbcType="VARCHAR" />
     <result column="staffno" property="staffno" jdbcType="VARCHAR" />
+    <result column="realname" property="realname" jdbcType="VARCHAR" />
     <result column="trainname" property="trainname" jdbcType="VARCHAR" />
     <result column="traintype" property="traintype" jdbcType="VARCHAR" />
     <result column="starttime" property="starttime" jdbcType="TIMESTAMP" />
@@ -71,7 +72,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    trainid, staffno, trainname, traintype, starttime, endtime, traingrade, remark, trainstatus
+    trainid, staffno, realname, trainname, traintype, starttime, endtime, traingrade, 
+    remark, trainstatus
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zouhuachao.pojo.StaffTrainExample" >
     select
@@ -104,14 +106,14 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.zouhuachao.pojo.StaffTrain" >
-    insert into staff_train (trainid, staffno, trainname, 
-      traintype, starttime, endtime, 
-      traingrade, remark, trainstatus
-      )
-    values (#{trainid,jdbcType=VARCHAR}, #{staffno,jdbcType=VARCHAR}, #{trainname,jdbcType=VARCHAR}, 
-      #{traintype,jdbcType=VARCHAR}, #{starttime,jdbcType=TIMESTAMP}, #{endtime,jdbcType=TIMESTAMP}, 
-      #{traingrade,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{trainstatus,jdbcType=VARCHAR}
-      )
+    insert into staff_train (trainid, staffno, realname, 
+      trainname, traintype, starttime, 
+      endtime, traingrade, remark, 
+      trainstatus)
+    values (#{trainid,jdbcType=VARCHAR}, #{staffno,jdbcType=VARCHAR}, #{realname,jdbcType=VARCHAR}, 
+      #{trainname,jdbcType=VARCHAR}, #{traintype,jdbcType=VARCHAR}, #{starttime,jdbcType=TIMESTAMP}, 
+      #{endtime,jdbcType=TIMESTAMP}, #{traingrade,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{trainstatus,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.zouhuachao.pojo.StaffTrain" >
     insert into staff_train
@@ -121,6 +123,9 @@
       </if>
       <if test="staffno != null" >
         staffno,
+      </if>
+      <if test="realname != null" >
+        realname,
       </if>
       <if test="trainname != null" >
         trainname,
@@ -150,6 +155,9 @@
       </if>
       <if test="staffno != null" >
         #{staffno,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null" >
+        #{realname,jdbcType=VARCHAR},
       </if>
       <if test="trainname != null" >
         #{trainname,jdbcType=VARCHAR},
@@ -189,6 +197,9 @@
       <if test="record.staffno != null" >
         staffno = #{record.staffno,jdbcType=VARCHAR},
       </if>
+      <if test="record.realname != null" >
+        realname = #{record.realname,jdbcType=VARCHAR},
+      </if>
       <if test="record.trainname != null" >
         trainname = #{record.trainname,jdbcType=VARCHAR},
       </if>
@@ -219,6 +230,7 @@
     update staff_train
     set trainid = #{record.trainid,jdbcType=VARCHAR},
       staffno = #{record.staffno,jdbcType=VARCHAR},
+      realname = #{record.realname,jdbcType=VARCHAR},
       trainname = #{record.trainname,jdbcType=VARCHAR},
       traintype = #{record.traintype,jdbcType=VARCHAR},
       starttime = #{record.starttime,jdbcType=TIMESTAMP},
@@ -235,6 +247,9 @@
     <set >
       <if test="staffno != null" >
         staffno = #{staffno,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null" >
+        realname = #{realname,jdbcType=VARCHAR},
       </if>
       <if test="trainname != null" >
         trainname = #{trainname,jdbcType=VARCHAR},
@@ -263,6 +278,7 @@
   <update id="updateByPrimaryKey" parameterType="cn.zouhuachao.pojo.StaffTrain" >
     update staff_train
     set staffno = #{staffno,jdbcType=VARCHAR},
+      realname = #{realname,jdbcType=VARCHAR},
       trainname = #{trainname,jdbcType=VARCHAR},
       traintype = #{traintype,jdbcType=VARCHAR},
       starttime = #{starttime,jdbcType=TIMESTAMP},

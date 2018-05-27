@@ -7,6 +7,8 @@ public class StaffTrain {
 
     private String staffno;
 
+    private String realname;
+
     private String trainname;
 
     private String traintype;
@@ -35,6 +37,14 @@ public class StaffTrain {
 
     public void setStaffno(String staffno) {
         this.staffno = staffno == null ? null : staffno.trim();
+    }
+
+    public String getRealname() {
+        return realname;
+    }
+
+    public void setRealname(String realname) {
+        this.realname = realname == null ? null : realname.trim();
     }
 
     public String getTrainname() {

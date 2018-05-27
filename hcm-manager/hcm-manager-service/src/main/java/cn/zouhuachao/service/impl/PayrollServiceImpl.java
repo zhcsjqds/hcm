@@ -76,6 +76,7 @@ public class PayrollServiceImpl implements IPayrollService {
 				payroll.setOvertime(new BigDecimal(0));
 				//考勤待完善
 				payroll.setAttendance(new BigDecimal(0));
+				//TODO 固定值代扣
 				//代扣比例
 				InsRate rate = rateService.getRate();
 				BigDecimal toPercent=new BigDecimal(Float.toString(0.01f));
@@ -145,8 +146,8 @@ public class PayrollServiceImpl implements IPayrollService {
 				}
 				//发放方式
 				payroll.setPayway("银行转账");
-				//银行账号(待完善)
-				//发放状态(待完善)
+				//TODO 银行账号(待完善)
+				//TODO 发放状态(待完善)
 				payroll.setPaystatus(null);
 				payrollMapper.insert(payroll);
 			}
@@ -161,7 +162,7 @@ public class PayrollServiceImpl implements IPayrollService {
 		//征缴个人所得税的计算方法，个税起征点目前是3500元，使用超额累进税率的计算方法如下：
 		//缴税=全月应纳税所得额*税率-速算扣除数
 		//全月应纳税所得额=(应发工资-四金)-个税起征点
-		//如果计算的是外籍人士（包括港、澳、台），则个税起征点应设为4800元。
+		//TODO 如果计算的是外籍人士（包括港、澳、台），则个税起征点应设为4800元。
 		/**
 		 * 级数  全月应纳税所得额（含税级距）                   全月应纳税所得额（不含税级距）                 税率(%) 速算扣除数
 		 * 1               不超过1,500元                                             不超过1455元的                       		3       0

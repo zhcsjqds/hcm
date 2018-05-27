@@ -11,4 +11,7 @@ public interface IUserService {
 
 	boolean autoAddUser(Staff staff, String roleid);
 
+	User findPasswordByUsername(String username);
+
+	String findRealnameByUser(User user);
 }

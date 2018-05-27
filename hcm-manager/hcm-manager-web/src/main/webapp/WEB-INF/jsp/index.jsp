@@ -31,14 +31,15 @@
 	<!-- 北 -->
 	<div style="height: 100px" data-options="region:'north',noheader:true,split:true,maxHeight:100,minHeight:100,border:false"">
 		<img alt="标题" src="${pageContext.request.contextPath}/images/top.png" style="height:100%;margin-left:10%">
-		<a data-options="iconCls:'icon-help',menu:'#mm'" class="easyui-menubutton" style="position:absolute;right:40px;bottom:10px;">我的信息</a>
+		<a href="${pageContext.request.contextPath}/logout" style="float:right;margin-right:15px;margin-top:70px;font-size:12px">退出</a>
+		<a data-options="menu:'#mm'" class="easyui-menubutton" style="font-size:20px;float:right;margin-top:65px;margin-right:10px;bottom:10px;">${realname}</a>
 		<div id="mm">
-			<div onclick="alert(111)">个人信息</div>
+			<div onclick="staffinfo('${user.staffid}');">个人信息</div>
 			<div data-options="iconCls:'icon-edit'" onclick="changePassword();">修改密码</div>
 			<div class="menu-sep"></div>
 			<div onclick="logout();">退出系统</div>
 		</div>
-		<a href="${pageContext.request.contextPath}/logout" style="position:absolute;right:10px;bottom:12px;font-size:12px">退出</a>
+		<div style="float:right;margin-right:0px;margin-top:70px;font-size:12px">欢迎您，</div>
 	</div>
 	<!-- 西 -->
 	<div title="系统菜单" style="width: 200px;" data-options="region:'west',split:true,maxWidth:200,minWidth:200">
@@ -94,7 +95,9 @@
 			<div title="薪资管理">
 				<ul id="navtree2"></ul>
 			</div>
-			<div title="培训管理"></div>
+			<div title="培训管理">
+				<ul id="navtree3"></ul>
+			</div>
 			<div title="考勤管理"></div>
 		</div>
 	</div>
@@ -103,7 +106,7 @@
 		</div>
 	</div>
 	<!-- 	<div style="width: 100px" data-options="region:'east'">东</div> -->
-	<div style="height: 50px;" data-options="region:'south',noheader:true,split:true,maxHeight:50,minHeight:50,border:false"">南</div>
+	<div style="height: 50px;" data-options="region:'south',noheader:true,split:true,maxHeight:50,minHeight:50,border:false""></div>
 
 </body>
 </html>

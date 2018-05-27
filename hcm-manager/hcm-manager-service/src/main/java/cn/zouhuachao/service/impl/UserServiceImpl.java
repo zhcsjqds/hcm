@@ -11,6 +11,7 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
+import cn.zouhuachao.mapper.StaffMapper;
 import cn.zouhuachao.mapper.UserMapper;
 import cn.zouhuachao.pojo.Staff;
 import cn.zouhuachao.pojo.User;
@@ -28,8 +29,14 @@ public class UserServiceImpl implements IUserService {
 	private UserMapper userMapper;
 	
 	@Autowired
+	private StaffMapper staffMapper;
+	
+	@Autowired
 	private JavaMailSenderImpl mailSender;
 	
+	/**
+	 * 根据用户名和密码获取用户
+	 */
 	@Override
 	public User login(String username, String password) {
 		UserExample userExample = new UserExample();
@@ -44,7 +51,26 @@ public class UserServiceImpl implements IUserService {
 		}
 		return null;
 	}
+	
+	/**
+	 * 根据用户名获取密码
+	 */
+	@Override
+	public User findPasswordByUsername(String username) {
+		UserExample userExample = new UserExample();
+		//设置查询条件
+		userExample.createCriteria().andUsernameEqualTo(username);
+		List<User> userList = userMapper.selectByExample(userExample);
+		if(userList!=null&&userList.size()>0) {
+			User user = userList.get(0);
+			return user;
+		}
+		return null;
+	}
 
+	/**
+	 * 修改密码
+	 */
 	@Override
 	public boolean updatePassword(String oldpassword, String username, String newpassword) {
 		UserExample userExample = new UserExample();
@@ -69,6 +95,16 @@ public class UserServiceImpl implements IUserService {
 		}
 	}
 
+	/**
+	 * 通过用户查找对应员工姓名
+	 */
+	@Override
+	public String findRealnameByUser(User user) {
+		Staff staff = staffMapper.selectByPrimaryKey(user.getStaffid());
+		return staff.getRealname();
+	}
+	
+	
 	/**
 	 * 自动生成账号
 	 */

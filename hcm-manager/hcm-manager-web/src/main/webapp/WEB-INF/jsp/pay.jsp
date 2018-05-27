@@ -165,19 +165,25 @@ $(function() {
 				{
 					field:"allowance",
 					title:"补贴",
-					width:50,
+					width:40,
+					sortable:true
+				},
+				{
+					field:"workagepay",
+					title:"工龄工资",
+					width:45,
 					sortable:true
 				},
 				{
 					field:"bonus",
 					title:"奖金",
-					width:50,
+					width:40,
 					sortable:true
 				},
 				{
 					field:"overtime",
 					title:"加班费",
-					width:50,
+					width:40,
 					sortable:true
 				},
 				{
@@ -231,7 +237,7 @@ $(function() {
 				{
 					field:"paytime",
 					title:"月份",
-					width:50,
+					width:45,
 					sortable:true,
 					formatter:formatDateboxYM
 				},

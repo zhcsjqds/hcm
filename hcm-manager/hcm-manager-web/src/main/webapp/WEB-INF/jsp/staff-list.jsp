@@ -253,6 +253,7 @@
 				realname:""
 			},
 			striped:true,
+			fit:true,
 			nowrap:true,//是否显示一行
 			fitColumns:true,//自适应
 			rownumbers:true,//显示行号

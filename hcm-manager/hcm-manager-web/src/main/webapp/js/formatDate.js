@@ -18,6 +18,26 @@ function formatDatebox(value) {
     return dt.format("yyyy-MM-dd hh:mm:ss");   // 这里用到一个javascript的Date类型的拓展方法，这个是自己添加的拓展方法，在后面的步骤3定义
 }
 
+function formatDateboxYMD(value) {
+	if (value == null || value == '') {
+		return '';
+	}
+	var dt;
+	if (value instanceof Date) {
+		dt = value;
+	}
+	else {
+		dt = new Date(value);
+		if (isNaN(dt)) {
+			value = value.replace(/\/Date\((-?\d+)\)\//, '$1'); // 标红的这段是关键代码，将那个长字符串的日期值转换成正常的JS日期格式
+			dt = new Date();
+			dt.setTime(value);
+		}
+	}
+	
+	return dt.format("yyyy-MM-dd");   // 这里用到一个javascript的Date类型的拓展方法，这个是自己添加的拓展方法，在后面的步骤3定义
+}
+
 function formatDateboxYM(value) {
     if (value == null || value == '') {
         return '';
